@@ -1,0 +1,107 @@
+/* Main style sheet for jQuery keypadi v2.0.0. */
+button.keypadi-trigger {
+	width: 25px;
+	padding: 0px;
+}
+img.keypadi-trigger {
+	margin: 2px;
+	vertical-align: middle;
+}
+.keypadi-popup, .keypadi-inline, .keypadi-key, .keypadi-special {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 14px;
+}
+.keypadi-popup {
+	display: none;
+	z-index: 10;
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #888;
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	border-radius: 0.25em;
+}
+.keypadi-keyentry {
+	display: none;
+}
+.keypadi-inline {
+	background-color: #fff;
+	border: 1px solid #123123;
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	border-radius: 0.25em;
+}
+.keypadi-disabled {
+	position: absolute;
+	z-index: 100;
+	background-color: white;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.keypadi-rtl {
+	direction: rtl;
+}
+.keypadi-prompt {
+	clear: both;
+	text-align: center;
+}
+.keypadi-prompt.ui-widget-header {
+	margin: 0.125em;
+}
+.keypadi-row {
+	width: 100%;
+}
+.keypadi-space {
+	display: inline-block;
+	margin: 0.125em;
+	width: 2em;
+}
+.keypadi-half-space {
+	display: inline-block;
+	margin: 0.125em 0.0625em;
+	width: 1em;
+}
+.keypadi-key, .keypadi-special {
+	margin: 0.125em;
+	padding: 0em;
+	width: 2em;
+    color: #fff;
+	background-color: #064F4F;
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	border-radius: 0.25em;
+	text-align: center;
+	cursor: pointer;
+}
+.keypadi-key[disabled] {
+	border: 0.125em outset;
+}
+.keypadi-key-down {
+}
+.keypadi-special {
+	width: 4.25em;
+}
+.keypadi-spacebar {
+	width: 13.25em;
+}
+.keypadi-tab {
+	width: 2em;
+}
+.keypadi-clear, .keypadi-back, .keypadi-close, .keypadi-shift {
+	color: #fff;
+	font-weight: bold;
+}
+.keypadi-clear {
+	background-color: #d67c6b;
+}
+.keypadi-back {
+	background-color: #4085ed;
+}
+.keypadi-close {
+	background-color: #82B24F;
+}
+.keypadi-shift {
+	background-color: #0aa;
+}

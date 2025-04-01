@@ -1,0 +1,335 @@
+<!--
+ * User: lucaferrari
+ * Date: 12/06/15
+ */
+ -->
+<script src="js/scripts.js"></script>
+<link rel="stylesheet" href="js/jquery/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="js/jquery/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
+<script type="text/javascript" src="js/DateTimePicker.js"></script>
+<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> 
+<script type="text/javascript" src="js/number/jquery.plugin.js"></script> 
+<script type="text/javascript" src="js/number/jquery.keypadi.js"></script>
+
+<!--[if lt IE 9]>
+ <link rel="stylesheet" type="text/css" href="DateTimePicker-ltie9.css" />
+ <script type="text/javascript" src="DateTimePicker-ltie9.js"></script>
+<![endif]-->
+
+<?php
+    if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
+        $dis = "disabled";
+    }
+    else {
+        $dis = "";
+    }
+require_once("./db/dati_pers_loadP.php");
+loadPage();
+require_once("./db/loadtab_padref.php");
+tab_padref();
+if(isset($_POST["dati_pers_cognome"])){
+    $cognome = $_POST["dati_pers_cognome"];
+    $class1 = "";
+}
+else {
+    $cognome = null;
+    $class1 = "errors";
+}
+if(isset($_POST["dati_pers_nome"])){
+    $nome = $_POST["dati_pers_nome"];
+    $class2 = "";
+}
+else {
+    $nome = null;
+    $class2 = "errors";
+}
+if(isset($_POST["dati_pers_dataN"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataN']);
+    $dataN = "$day-$month-$year";
+    $class3 = "";
+}
+else {
+    $dataN = null;
+    $class3 = "errors";
+}
+if(isset($_POST["dati_pers_luogoN"])){
+    $luogoN = $_POST["dati_pers_luogoN"];
+    $class4 = "";
+}
+else {
+    $luogoN = null;
+    $class4 = "errors";
+}
+if(isset($_POST["dati_pers_eta"])){
+    $eta = $_POST["dati_pers_eta"];
+    $class5 = "";
+}
+else {
+    $eta = null;
+    $class5 = "errors";
+}
+if(isset($_POST["dati_pers_via"])){
+    $via = $_POST["dati_pers_via"];
+    $class6 = "";
+}
+else {
+    $via = null;
+    $class6 = "errors";
+}
+if(isset($_POST["dati_pers_cap"])){
+    $cap = $_POST["dati_pers_cap"];
+    $class7 = "";
+}
+else {
+    $cap = null;
+    $class7 = "errors";
+}
+if(isset($_POST["dati_pers_comune"])){
+    $comune = $_POST["dati_pers_comune"];
+    $class8 = "";
+}
+else {
+    $comune = null;
+    $class8 = "errors";
+}
+if(isset($_POST["dati_pers_prov"])){
+    $prov = $_POST["dati_pers_prov"];
+    $class9 = "";
+}
+else {
+    $prov = null;
+    $class9 = "errors";
+}
+if(isset($_POST["dati_pers_etnia"])){
+    $etnia = $_POST["dati_pers_etnia"];
+    $class10 = "";
+}
+else {
+    $etnia = null;
+    $class10 = "errors";
+}
+if(isset($_POST["dati_pers_specE"])){
+    $specE = $_POST["dati_pers_specE"];
+    $class11 = "";
+}
+else {
+    $specE = null;
+    $class11 = "errors";
+}
+if(isset($_POST["dati_pers_professione"])){
+    $prof = $_POST["dati_pers_professione"];
+    $class12 = "";
+}
+else {
+    $prof = null;
+    $class12 = "errors";
+}
+
+?>
+<script>
+  $( document ).ready(function() {
+    if ('<?php echo $etnia; ?>' == 'altra'){
+    document.getElementById('spec').style.visibility = 'visible';
+    }
+});
+ $(function() {
+      $('#cap').keypad({
+          onClose: function(value, inst) { 
+            if(value.toString().length != 5){
+                alert('Attenzione! Cap sbagliato.'); 
+            }
+      }
+      });   
+  }); 
+  $(function() {
+      $( "#slct" ).selectmenu({
+           change: function(event, ui){
+               var select = document.getElementById('slct');
+                  var value = select.value;
+                  if (value == 'altra') {
+                     document.getElementById('spec').style.visibility='visible'; return;
+                  }
+                     document.getElementById('spec').style.visibility='hidden'; return;
+           }
+      })
+      .selectmenu( "menuWidget")
+      .addClass( "overflow" );;
+      $("#slct").val('<?php echo $etnia; ?>')
+      $('#slct').selectmenu('refresh', true);
+
+  });
+ 
+ function performSubmit(action)
+   {
+      // ASSIGN THE ACTION
+      var action = action;
+ 
+      // UPDATE THE HIDDEN FIELD
+      document.getElementById("action").value = action;
+ 
+      // SUBMIT THE FORM
+      document.adminform.submit();
+   }
+ 
+ $(function() {
+   $( "#dataN" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-70:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
+        onSelect: function(selectedDate) {
+            console.log(selectedDate);
+            var dd = selectedDate.split('-');
+            var daN = dd[2] + '-' + dd[1] + '-' + dd[0];
+            console.log(daN);
+            dob = new Date(daN);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            $("#eta").val(age);
+       }
+    });
+ });
+</script>
+<style>
+.overflow {
+    height: 150px;
+  }
+</style>
+
+<div id="dtBox"></div>
+<br/<br/><br/>
+<form id="adminform" name="adminform" action="db/dati_pers_sendf.php" method="post">
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class1; ?>>
+            Cognome *<br/>
+            <?php
+                echo "<input id=\"cognome\" $dis name=\"cognome\" tabindex=\"1\" value=\"".$cognome."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class2; ?>>
+            Nome *<br/>
+            <?php
+                echo "<input id=\"nome\" $dis name=\"nome\" tabindex=\"2\" value=\"".$nome."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-3">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data di Nascita *<br/>
+            <?php
+                echo "<input type=\"text\" $dis id=\"dataN\" name=\"dataN\" value=\"".$dataN."\" readonly>";
+            ?>
+        </label>
+    </div>
+    <div class="col-3">
+        <label style="padding-top: 6px;" <?php echo "class=".$class4; ?>>
+            Luogo di Nascita *<br/>
+            <?php
+                echo "<input id=\"luogoN\" $dis name=\"luogoN\" tabindex=\"4\" value=\"".$luogoN."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-3">
+        <label style="padding-bottom: -12px;" <?php echo "class=".$class5; ?>>
+            Età *<br/>
+            <?php
+                echo "<input id=\"eta\" $dis name=\"eta\" readonly value=\"".$eta."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-2b">
+        <label style="padding-top: 6px;">
+            Via e numero<br/>
+            <?php
+                echo "<input id=\"indirizzo\" $dis name=\"indirizzo\" tabindex=\"6\" value=\"".$via."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-3">
+        <label style="padding-top: 6px;">
+            CAP<br/>
+            <?php
+                echo "<input id=\"cap\" $dis name=\"cap\" tabindex=\"8\" value=\"".$cap."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class8; ?>>
+            Comune *<br/>
+            <?php
+                echo "<input id=\"comune\" $dis name=\"comune\" tabindex=\"9\" value=\"".$comune."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class9; ?>>
+            Provincia *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"prov\" tabindex=\"10\" value=\"".$prov."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-4">
+        <label style="padding-top: 9px;" <?php echo "class=".$class10; ?>>
+            Etnia *<br/>
+            <select tabindex="11" id="slct" name="etnia" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="mancante">Dato Mancante</option>    
+                <option value="caucasica">Caucasica</option>
+                <option value="ispanica">Ispanica</option>
+                <option value="medio orientale">Medio Orientale</option>
+                <option value="indiana">Indiana (subcontinentale)</option>
+                <option value="asiatica">Asiatica</option>
+                <option value="nera">Nera</option>
+                <option value="meticcia">Meticcia</option>
+                <option value="magrebina">Magrebina</option>
+                <option value="altra">Altra (specificare)</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-4">
+        <label  id="spec" style="visibility: hidden;padding-top: 6px;" <?php echo "class=".$class11; ?>>
+            Specificare *<br/>
+            <?php
+                echo "<input name=\"specEtnia\" $dis tabindex=\"10\" value=\"".$specE."\">";
+            ?>
+        </label>    
+    </div>
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class12; ?>>
+            Professione *<br/>
+            <?php
+                echo "<input name=\"prof\" $dis tabindex=\"12\" value=\"".$prof."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-9">
+        <label style="font-size: 10px; color: #e80d0d;">
+               * Campi obbligatori. 
+        </label>
+    </div>
+    <div class="col-7">
+        <label style="font-size: 15px; color: #000;">
+                <?php
+                     echo "<button class='guide' onclick=\"performSubmit('succ_b')\">< Prec</button>";
+                ?>
+
+            </label>
+        </div>
+    <div class="col-7">
+        <label style="font-size: 15px; color: #000;">
+            <?php
+                 echo "<button class='guide' onclick=\"performSubmit('succ')\">Succ ></button>";
+            ?>            
+            <input type="hidden" id="action" name="action"  value="" /> 
+            <input type="hidden" id="tipo" name="tipo"  value="PADRE" />    
+        </label>
+    </div>
+
+</form>
