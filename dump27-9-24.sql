@@ -44,7 +44,7 @@ CREATE TABLE `allattamento` (
   PRIMARY KEY (`scheda_sids_schede_id`),
   KEY `fk_allattamento_scheda_sids` (`scheda_sids_schede_id`),
   CONSTRAINT `fk_allattamento_scheda_sids` FOREIGN KEY (`scheda_sids_schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `apparato_cardiovascolare_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_apparato_cardiovascolare_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -142,7 +142,7 @@ CREATE TABLE `apparato_cardiovascolare_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_apparato_cardiovascolare_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,7 +179,7 @@ CREATE TABLE `apparato_respiratorio_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_apparato_respiratorio_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +216,7 @@ CREATE TABLE `apparato_respiratorio_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_apparato_respiratorio_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,7 +291,7 @@ CREATE TABLE `cavita_addominale_mf` (
   `conclusa2` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_cavita_addominale_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -334,7 +334,7 @@ CREATE TABLE `cavita_addominale_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_cavita_addominale_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,7 +368,7 @@ CREATE TABLE `cavita_toracica_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_cavita_toracica_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -399,7 +399,7 @@ CREATE TABLE `cavita_toracica_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_cavita_toracica_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -432,7 +432,7 @@ CREATE TABLE `cavo_orale_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_cavo_orale_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -463,7 +463,7 @@ CREATE TABLE `cavo_orale_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_cavo_orale_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -496,7 +496,7 @@ CREATE TABLE `centri` (
   `direttore` tinytext,
   `responsabile_schede` tinytext,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -524,7 +524,7 @@ CREATE TABLE `consenso` (
   `conclusa` enum('Y','N') NOT NULL DEFAULT 'N',
   PRIMARY KEY (`id_scheda`,`id`),
   CONSTRAINT `fk_consenso` FOREIGN KEY (`id_scheda`) REFERENCES `schede` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -559,7 +559,7 @@ CREATE TABLE `dati_feto` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`schede_id`),
   CONSTRAINT `fk_dati_feto_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -598,7 +598,7 @@ CREATE TABLE `dati_pers` (
   PRIMARY KEY (`schede_id`,`tipo`),
   KEY `fk_dati_pers_schede` (`schede_id`),
   CONSTRAINT `fk_dati_pers_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -632,7 +632,7 @@ CREATE TABLE `dati_protocollo_mf` (
   PRIMARY KEY (`schede_id`),
   KEY `fk_dati_protocollo_sids_schede1` (`schede_id`),
   CONSTRAINT `fk_dati_protocollo_mf_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -667,7 +667,7 @@ CREATE TABLE `dati_protocollo_sids` (
   PRIMARY KEY (`schede_id`),
   KEY `fk_dati_protocollo_sids_schede1` (`schede_id`),
   CONSTRAINT `fk_dati_protocollo_sids_schede1` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -707,7 +707,7 @@ CREATE TABLE `dati_sids` (
   PRIMARY KEY (`schede_id`),
   KEY `fk_dati_sids_schede` (`schede_id`),
   CONSTRAINT `fk_dati_sids_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -747,7 +747,7 @@ CREATE TABLE `encefalo_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_encefalo_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -779,7 +779,7 @@ CREATE TABLE `encefalo_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_encefalo_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -830,7 +830,7 @@ CREATE TABLE `esame_esterno_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_esame_esterno_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -864,7 +864,7 @@ CREATE TABLE `esame_esterno_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_esame_esterno_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `dati_protocollo_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -893,7 +893,7 @@ CREATE TABLE `esame_interno_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_esame_interno_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `dati_protocollo_mf` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -938,7 +938,7 @@ CREATE TABLE `fratelli` (
   PRIMARY KEY (`patologie_gest_madre_schede_id`),
   KEY `fk_fratelli_patologie_gest` (`patologie_gest_madre_schede_id`),
   CONSTRAINT `fk_fratelli_patologie_gest` FOREIGN KEY (`patologie_gest_madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -975,7 +975,7 @@ CREATE TABLE `fumo_attivo` (
   PRIMARY KEY (`madre_schede_id`),
   KEY `fk_fumo_attivo_madre` (`madre_schede_id`),
   CONSTRAINT `fk_fumo_attivo_madre` FOREIGN KEY (`madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1010,7 +1010,7 @@ CREATE TABLE `fumo_passivo` (
   PRIMARY KEY (`madre_schede_id`),
   KEY `fk_fumo_passivo_madre` (`madre_schede_id`),
   CONSTRAINT `fk_fumo_passivo_madre` FOREIGN KEY (`madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1061,7 +1061,7 @@ CREATE TABLE `info_morte_fetale` (
   PRIMARY KEY (`madre_schede_id`),
   KEY `fk_info_morte_fetale_madre` (`madre_schede_id`),
   CONSTRAINT `fk_info_morte_fetale_madre` FOREIGN KEY (`madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1090,7 +1090,7 @@ CREATE TABLE `log_activities` (
   `schede_id` int DEFAULT NULL,
   `id` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1865 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1865 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1126,7 +1126,7 @@ CREATE TABLE `madre` (
   PRIMARY KEY (`schede_id`),
   KEY `fk_madre_schede_idx` (`schede_id`),
   CONSTRAINT `fk_madre_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1166,7 +1166,7 @@ CREATE TABLE `padre` (
   `conclusa3` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`schede_id`),
   CONSTRAINT `fk_padre_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1203,7 +1203,7 @@ CREATE TABLE `parti_prec` (
   PRIMARY KEY (`madre_schede_id`),
   KEY `fk_parti_prec_madre` (`madre_schede_id`),
   CONSTRAINT `fk_parti_prec_madre` FOREIGN KEY (`madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1246,7 +1246,7 @@ CREATE TABLE `patologie_gest` (
   PRIMARY KEY (`madre_schede_id`),
   KEY `fk_patologie_gest_madre` (`madre_schede_id`),
   CONSTRAINT `fk_patologie_gest_madre` FOREIGN KEY (`madre_schede_id`) REFERENCES `madre` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1318,7 +1318,7 @@ CREATE TABLE `prelievi_mf` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_mf_schede_id`),
   CONSTRAINT `fk_prelievi_mf_dati_protocollo_mf` FOREIGN KEY (`dati_protocollo_mf_schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1390,7 +1390,7 @@ CREATE TABLE `prelievi_sids` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_protocollo_sids_schede_id`),
   CONSTRAINT `fk_prelievi_sids_dati_protocollo_sids` FOREIGN KEY (`dati_protocollo_sids_schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1450,7 +1450,7 @@ CREATE TABLE `referto_macroscopico_annessi_fetali` (
   `conclusa3` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`schede_id`),
   CONSTRAINT `fk_referto_macroscopico_annessi_fetali_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1514,7 +1514,7 @@ CREATE TABLE `ritrovamento` (
   `conclusa3` enum('Y','N') DEFAULT 'N',
   PRIMARY KEY (`schede_id`),
   CONSTRAINT `fk_ritrovamento_schede` FOREIGN KEY (`schede_id`) REFERENCES `schede` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1542,7 +1542,7 @@ CREATE TABLE `ritrovamento_casa` (
   PRIMARY KEY (`ritrovamento_schede_id`),
   KEY `fk_ritrovamento_casa_ritrovamento` (`ritrovamento_schede_id`),
   CONSTRAINT `fk_ritrovamento_casa_ritrovamento` FOREIGN KEY (`ritrovamento_schede_id`) REFERENCES `ritrovamento` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1569,7 +1569,7 @@ CREATE TABLE `ritrovamento_fuori_casa` (
   PRIMARY KEY (`ritrovamento_schede_id`),
   KEY `fk_ritrovamento_fuori_casa_ritrovamento` (`ritrovamento_schede_id`),
   CONSTRAINT `fk_ritrovamento_fuori_casa_ritrovamento` FOREIGN KEY (`ritrovamento_schede_id`) REFERENCES `ritrovamento` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1594,7 +1594,7 @@ CREATE TABLE `ritrovamento_ospedale` (
   `nome_ospedale` tinytext,
   PRIMARY KEY (`ritrovamento_schede_id`),
   CONSTRAINT `fk_ritrovamento_ospedale_ritrovamento` FOREIGN KEY (`ritrovamento_schede_id`) REFERENCES `ritrovamento` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1628,7 +1628,7 @@ CREATE TABLE `scheda_feto` (
   `conclusa` enum('Y','N') DEFAULT NULL,
   PRIMARY KEY (`dati_feto_schede_id`),
   CONSTRAINT `fk_scheda_feto_dati_feto` FOREIGN KEY (`dati_feto_schede_id`) REFERENCES `dati_feto` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1672,7 +1672,7 @@ CREATE TABLE `scheda_sids` (
   PRIMARY KEY (`dati_sids_schede_id`),
   KEY `fk_scheda_sids_schede_idx` (`dati_sids_schede_id`),
   CONSTRAINT `fk_scheda_sids_schede` FOREIGN KEY (`dati_sids_schede_id`) REFERENCES `dati_sids` (`schede_id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1711,7 +1711,7 @@ CREATE TABLE `schede` (
   PRIMARY KEY (`id`),
   KEY `fk_schede_utenti` (`utenti_centri_id`),
   CONSTRAINT `fk_schede_utenti` FOREIGN KEY (`utenti_centri_id`) REFERENCES `utenti` (`centri_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1742,7 +1742,7 @@ CREATE TABLE `utenti` (
   PRIMARY KEY (`centri_id`),
   KEY `fk_utenti_centri` (`centri_id`),
   CONSTRAINT `fk_utenti_centri` FOREIGN KEY (`centri_id`) REFERENCES `centri` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

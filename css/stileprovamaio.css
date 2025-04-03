@@ -1,0 +1,53 @@
+/* Barra laterale */
+.barra-verticale {
+    position: fixed;
+    height: 100vh; /* Copre tutta l'altezza dello schermo */
+    width: 20%; /* 20% della larghezza dello schermo */
+    background-color: #064f4f; /* Colore della barra */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Allinea il contenuto in alto */
+}
+
+/* Contenuto principale */
+.container-content {
+    margin-left: 20%; /* Aggiunge spazio per la barra laterale */
+    padding: 20px;
+}
+
+/* Stili del form */
+form {
+    background-color: transparent;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; /* Aggiunge margine in alto per spostare la form verso l'alto */
+}
+
+input, button {
+    margin-bottom: 10px; /* Aggiunge spazio tra gli input */
+}
+
+.submitbtn {
+    background-color: rgb(10, 173, 214); /* Puoi cambiare il colore del pulsante */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submitbtn:hover {
+    background-color: #ff7ab5; /* Colore di hover */
+}
+
+/* Centrare l'immagine più in basso e a sinistra */
+#login img {
+    position: relative;
+    top: 200px;  /* Sposta l'immagine verso il basso */
+    left: 150px; /* Sposta l'immagine verso sinistra */
+    display: block;
+}
+
+
+
