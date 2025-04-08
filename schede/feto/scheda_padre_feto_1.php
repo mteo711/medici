@@ -102,6 +102,26 @@ else {
     $prov = null;
     $class9 = "errors";
 }
+
+//inserimento Cell e Codfiscale
+if(isset($_POST["dati_pers_cell"])){
+    $cell = $_POST["dati_pers_cell"];
+    $class13 = "";
+}
+else {
+    $cell = null;
+    $class13 = "errors";
+}
+
+if(isset($_POST["dati_pers_codfiscale"])){
+    $codfiscale = $_POST["dati_pers_codfiscale"];
+    $class14 = "";
+}
+else {
+    $codfiscale = null;
+    $class14 = "errors";
+}
+
 if(isset($_POST["dati_pers_etnia"])){
     $etnia = $_POST["dati_pers_etnia"];
     $class10 = "";
@@ -126,6 +146,54 @@ else {
     $prof = null;
     $class12 = "errors";
 }
+
+//Inserimento Rischi, Titolo di studio, Stato civile, Altezza, Peso
+
+if(isset($_POST["dati_pers_rischi"])){
+    $rischi = $_POST["dati_pers_rischi"];
+    $class15 = "";
+}
+else {
+    $rischi = null;
+    $class15 = "errors";
+}
+
+if(isset($_POST["dati_pers_titolodistudio"])){
+    $titolodistudio = $_POST["dati_pers_titolodistudio"];
+    $class16 = "";
+}
+else {
+    $titolodistudio = null;
+    $class16 = "errors";
+}
+
+if(isset($_POST["dati_pers_statocivile"])){
+    $statocivile = $_POST["dati_pers_statocivile"];
+    $class17 = "";
+}
+else {
+    $statocivile = null;
+    $class17 = "errors";
+}
+
+if(isset($_POST["dati_pers_altezza"])){
+    $altezza = $_POST["dati_pers_altezza"];
+    $class18 = "";
+}
+else {
+    $altezza = null;
+    $class18 = "errors";
+}
+
+if(isset($_POST["dati_pers_peso"])){
+    $peso = $_POST["dati_pers_peso"];
+    $class19 = "";
+}
+else {
+    $peso = null;
+    $class19 = "errors";
+}
+
 
 ?>
 <script>
@@ -160,6 +228,26 @@ else {
       $('#slct').selectmenu('refresh', true);
 
   });
+//funzione per stato civile
+
+$(function() {
+      $( "#slct2" ).selectmenu({
+           change: function(event, ui){
+               var select = document.getElementById('slct2');
+                  var value = select.value;
+                  if (value == 'altra') {
+                     document.getElementById('spec').style.visibility='visible'; return;
+                  }
+                     document.getElementById('spec').style.visibility='hidden'; return;
+           }
+      })
+      .selectmenu( "menuWidget")
+      .addClass( "overflow" );;
+      $("#slct2").val('<?php echo $statocivile; ?>')
+      $('#slct2').selectmenu('refresh', true);
+
+  });
+
  
  function performSubmit(action)
    {
@@ -275,6 +363,24 @@ else {
             ?>
         </label>
     </div>
+     <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class13; ?>>
+            Cell *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class14; ?>>
+            Codice Fiscale *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
+            ?>
+        </label>
+    </div>
+
     <div class="col-4">
         <label style="padding-top: 9px;" <?php echo "class=".$class10; ?>>
             Etnia *<br/>
@@ -309,6 +415,62 @@ else {
             ?>
         </label>
     </div>
+<!-- aggiunta nuovi div-->
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class15; ?>>
+            Riconosciuti rischi nell’ambiente di lavoro *<br/>
+            <?php
+                echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class16; ?>>
+            Titolo di Studio *<br/>
+            <?php
+                echo "<input name=\"titolodistudio\" $dis tabindex=\"16\" value=\"".$titolodistudio."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-4">
+        <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
+            Stato Civile *<br/>
+            <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="mancante">Dato Mancante</option> 
+                <option value="mancante">Nubile</option>    
+                <option value="caucasica">Separato</option>
+                <option value="ispanica">Divorziato</option>
+                <option value="medio orientale">Vedovo</option>
+                <option value="indiana">Coniugato</option>
+                <option value="asiatica">Convivente</option>               
+            </select>
+          
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
+            Altezza *<br/>
+            <?php
+                echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
+            ?>
+        </label>
+    </div>
+    
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
+            Peso *<br/>
+            <?php
+                echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
+            ?>
+        </label>
+    </div>
+
+
+
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. 

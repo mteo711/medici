@@ -44,7 +44,15 @@ class dati_pers extends Database
 				'etnia'  => 'string',
 				'specifica_etnia'  => 'string',
 				'professione'  => 'string',
-                'conclusa' => 'bool'
+				'cell' => 'string',
+				'codice_fiscale' => 'string',
+				'rischi' => 'string',
+				'titolo_studio' => 'string',
+				'stato_civile' => 'string',
+				'altezza' => 'string',
+				'peso' => 'string',
+                'conclusa' => 'bool',
+				'data_matrimonio' => 'date'
 				);
 
 private function checkInput(array $val_cols)
@@ -74,6 +82,8 @@ private function checkInput(array $val_cols)
 			  break;
 			}
 		}
+
+		
 		if ($col=='tipo')
 		{ if (!in_array($checked_val_cols[$col],$this->tipoGenitore)) 
 			{ $this->error_status=7;
@@ -81,6 +91,10 @@ private function checkInput(array $val_cols)
 			  break;
 			}
 		}
+
+		//inserire controllo per tipoStatocivile
+		
+	
 		
 		
 	 }

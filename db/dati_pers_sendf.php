@@ -95,6 +95,49 @@ if((isset($_POST['prof'])) && (!empty($_POST['prof']))){
 }
 else {
 }
+if((isset($_POST['cell'])) && (!empty($_POST['cell']))){
+    $insert_data["cell"] = $_POST['cell'];
+}
+else {
+}
+
+if((isset($_POST['codfiscale'])) && (!empty($_POST['codfiscale']))){
+    $insert_data["codice_fiscale"] = $_POST['codfiscale'];
+}
+else {
+}
+
+if((isset($_POST['rischi'])) && (!empty($_POST['rischi']))){
+    $insert_data["rischi"] = $_POST['rischi'];
+}
+else {
+}
+
+if((isset($_POST['titolodistudio'])) && (!empty($_POST['titolodistudio']))){
+    $insert_data["titolo_studio"] = $_POST['titolodistudio'];
+}
+else {
+}
+
+if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
+    $insert_data["stato_civile"] = $_POST['statocivile'];
+}
+else {
+}
+
+if((isset($_POST['altezza'])) && (!empty($_POST['altezza']))){
+    $insert_data["altezza"] = $_POST['altezza'];
+}
+else {
+}
+
+if((isset($_POST['peso'])) && (!empty($_POST['peso']))){
+    $insert_data["peso"] = $_POST['peso'];
+}
+else {
+}
+
+
 echo "qui";
 
 

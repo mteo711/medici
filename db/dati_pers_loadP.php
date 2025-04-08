@@ -25,6 +25,14 @@ function loadPage() {
         $_POST["dati_pers_etnia"] = $records['etnia'];
         $_POST["dati_pers_specE"] = $records['specifica_etnia'];
         $_POST["dati_pers_professione"] = $records['professione'];
+        $_POST["dati_pers_cell"] = $records['cell'];
+        $_POST["dati_pers_codfiscale"] = $records['codice_fiscale'];
+        $_POST["dati_pers_rischi"] = $records['rischi'];
+        $_POST["dati_pers_titolodistudio"] = $records['titolo_studio'];
+        $_POST["dati_pers_statocivile"] = $records['stato_civile'];
+        $_POST["dati_pers_altezza"] = $records['altezza'];
+        $_POST["dati_pers_peso"] = $records['peso'];
+
 
         $_SESSION["dati_pers"] = "Y";
 		$_SESSION["dati_persF"] = "Y";
