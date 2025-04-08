@@ -103,7 +103,7 @@ else {
     $class9 = "errors";
 }
 
-//inserimento Cell e Codfiscale
+//ins1 Cell e Codfiscale
 if(isset($_POST["dati_pers_cell"])){
     $cell = $_POST["dati_pers_cell"];
     $class13 = "";
@@ -121,6 +121,7 @@ else {
     $codfiscale = null;
     $class14 = "errors";
 }
+//fine ins1
 
 if(isset($_POST["dati_pers_etnia"])){
     $etnia = $_POST["dati_pers_etnia"];
@@ -147,7 +148,7 @@ else {
     $class12 = "errors";
 }
 
-//Inserimento Rischi, Titolo di studio, Stato civile, Altezza, Peso
+//Ins2 Rischi, Titolo di studio, Stato civile, Altezza, Peso
 
 if(isset($_POST["dati_pers_rischi"])){
     $rischi = $_POST["dati_pers_rischi"];
@@ -193,6 +194,7 @@ else {
     $peso = null;
     $class19 = "errors";
 }
+//fine ins2
 
 
 ?>
@@ -229,7 +231,6 @@ else {
 
   });
 //funzione per stato civile
-
 $(function() {
       $( "#slct2" ).selectmenu({
            change: function(event, ui){
@@ -417,10 +418,10 @@ $(function() {
     </div>
 <!-- aggiunta nuovi div-->
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class15; ?>>
+        <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
             Riconosciuti rischi nell’ambiente di lavoro *<br/>
             <?php
-                echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";
+                echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";               
             ?>
         </label>
     </div>
@@ -434,24 +435,24 @@ $(function() {
         </label>
     </div>
 
-    <div class="col-4">
+    <div class="col-3">
         <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
             Stato Civile *<br/>
             <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
                 <option value="mancante">Dato Mancante</option> 
-                <option value="mancante">Nubile</option>    
-                <option value="caucasica">Separato</option>
-                <option value="ispanica">Divorziato</option>
-                <option value="medio orientale">Vedovo</option>
-                <option value="indiana">Coniugato</option>
-                <option value="asiatica">Convivente</option>               
+                <option value="nubile">Nubile</option>    
+                <option value="separato">Separato</option>
+                <option value="divorziato">Divorziato</option>
+                <option value="vedovo">Vedovo</option>
+                <option value="coniugato">Coniugato</option>
+                <option value="convivente">Convivente</option>               
             </select>
           
         </label>
     </div>
 
-    <div class="col-2">
+    <div class="col-3">
         <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
             Altezza *<br/>
             <?php
@@ -460,7 +461,7 @@ $(function() {
         </label>
     </div>
     
-    <div class="col-2">
+    <div class="col-3">
         <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
             Peso *<br/>
             <?php

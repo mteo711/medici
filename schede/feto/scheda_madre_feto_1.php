@@ -127,6 +127,101 @@ else {
     $class12 = "errors";
 }
 
+//inserimento Cell e Codfiscale
+if(isset($_POST["dati_pers_cell"])){
+    $cell = $_POST["dati_pers_cell"];
+    $class13 = "";
+}
+else {
+    $cell = null;
+    $class13 = "errors";
+}
+
+if(isset($_POST["dati_pers_codfiscale"])){
+    $codfiscale = $_POST["dati_pers_codfiscale"];
+    $class14 = "";
+}
+else {
+    $codfiscale = null;
+    $class14 = "errors";
+}
+
+//Inserimento Rischi, Titolo di studio, Stato civile, Altezza, Peso
+
+if(isset($_POST["dati_pers_rischi"])){
+    $rischi = $_POST["dati_pers_rischi"];
+    $class15 = "";
+}
+else {
+    $rischi = null;
+    $class15 = "errors";
+}
+
+if(isset($_POST["dati_pers_titolodistudio"])){
+    $titolodistudio = $_POST["dati_pers_titolodistudio"];
+    $class16 = "";
+}
+else {
+    $titolodistudio = null;
+    $class16 = "errors";
+}
+
+if(isset($_POST["dati_pers_statocivile"])){
+    $statocivile = $_POST["dati_pers_statocivile"];
+    $class17 = "";
+}
+else {
+    $statocivile = null;
+    $class17 = "errors";
+}
+
+if(isset($_POST["dati_pers_specM"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_specM']);
+    $specM = "$day-$month-$year";
+    $class20 = "";
+}
+else {
+    $specM = null;
+    $class20 = "errors";
+}
+
+if(isset($_POST["dati_pers_altezza"])){
+    $altezza = $_POST["dati_pers_altezza"];
+    $class18 = "";
+}
+else {
+    $altezza = null;
+    $class18 = "errors";
+}
+
+if(isset($_POST["dati_pers_peso"])){
+    $peso = $_POST["dati_pers_peso"];
+    $class19 = "";
+}
+else {
+    $peso = null;
+    $class19 = "errors";
+}
+
+//ins3 accorta, notato
+if(isset($_POST["dati_pers_morteFeto"])){
+    $morteFeto = $_POST["dati_pers_morteFeto"];
+    $class21 = "";
+}
+else {
+    $morteFeto = null;
+    $class21 = "errors";
+}
+
+if(isset($_POST["dati_pers_ultimoAvv"])){
+    $ultimoAvv = $_POST["dati_pers_ultimoAvv"];
+    $class22 = "";
+}
+else {
+    $ultimoAvv = null;
+    $class22 = "errors";
+}
+
 ?>
 <script>
 $( document ).ready(function() {
@@ -166,6 +261,29 @@ $( document ).ready(function() {
       $('#slct').selectmenu('refresh', true);
 
   });
+
+  $(function() {
+    $("#slct2").selectmenu({
+        change: function(event, ui) {
+            gestisciSpec2(ui.item.value);
+        }
+    }).selectmenu("menuWidget").addClass("overflow");
+
+    var statoIniziale = '<?php echo $statocivile; ?>';
+    $("#slct2").val(statoIniziale);
+    $('#slct2').selectmenu('refresh');
+
+    gestisciSpec2(statoIniziale);
+
+    function gestisciSpec2(valore) {
+        if (valore === 'coniugata') {
+            $('#spec2').css('visibility', 'visible');
+        } else {
+            $('#spec2').css('visibility', 'hidden');
+        }
+    }
+});
+
  
  function performSubmit(action)
    {
@@ -198,6 +316,24 @@ $( document ).ready(function() {
        }
     });
  });
+ //funzione per data matromonio
+ $(function() {
+   $( "#specM" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-60:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
+        onSelect: function(selectedDate) {
+            console.log(selectedDate);
+            var dd = selectedDate.split('-');
+            var daN = dd[2] + '-' + dd[1] + '-' + dd[0];
+            console.log(daN);
+            
+        }
+    });
+});
+
 </script>
 <style>
 .overflow {
@@ -280,6 +416,23 @@ $( document ).ready(function() {
             ?>
         </label>
     </div>
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class13; ?>>
+            Cell *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class14; ?>>
+            Codice Fiscale *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
+            ?>
+        </label>
+    </div>
     <div class="col-4">
         <label style="padding-top: 9px;" <?php echo "class=".$class10; ?>>
             Etnia *<br/>
@@ -314,6 +467,88 @@ $( document ).ready(function() {
             ?>
         </label>
     </div>
+
+    <!-- aggiunta nuovi div-->
+    <div class="col-2">
+        <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
+            Riconosciuti rischi nell’ambiente di lavoro *<br/>
+            <?php
+                echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";               
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class16; ?>>
+            Titolo di Studio *<br/>
+            <?php
+                echo "<input name=\"titolodistudio\" $dis tabindex=\"16\" value=\"".$titolodistudio."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-4">
+        <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
+            Stato Civile *<br/>
+            <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="mancante">Dato Mancante</option> 
+                <option value="nubile">Nubile</option>    
+                <option value="convivente">convivente</option>
+                <option value="separata">separata</option>
+                <option value="divorziata">divorziata</option>
+                <option value="vedova">vedova</option>
+                <option value="madre single">madre single</option>   
+                <option value="coniugata">coniugata</option>              
+            </select>          
+        </label>
+    </div>
+
+    <div class="col-4">
+        <label  id="spec2" style="visibility: hidden;padding-top: 6px;" <?php echo "class=".$class20; ?>>
+            Data Matrimonio *<br/>
+            <?php
+                echo "<input type=\"text\" id=\"specM\" $dis name=\"specM\" value=\"".$specM."\" readonly>";
+            ?>
+        </label>    
+    </div>
+
+    <div class="col-4">
+        <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
+            Altezza *<br/>
+            <?php
+                echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
+            ?>
+        </label>
+    </div>
+    
+    <div class="col-4">
+        <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
+            Peso *<br/>
+            <?php
+                echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
+            ?>
+        </label>
+    </div>
+    <div class="col-2">
+		<label style="padding-top: 8px;" >
+			Come si è accorta della morte del feto <br/>
+            <?php
+			echo "<textarea name=\"morteFeto\" style=\"height:40px;\" $dis tabindex=\"21\">$morteFeto</textarea>";
+            ?>
+		</label>
+	</div>
+    <div class="col-2">
+		<label style="padding-top: 8px;" >
+			Quando è stato notato vivo/muoversi l'ultima volta <br/>
+            <?php
+			echo "<textarea name=\"ultimoAvv\" style=\"height:40px;\" $dis tabindex=\"22\"> $ultimoAvv</textarea>";
+            ?>
+		</label>
+	</div>
+
+
+    
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. 

@@ -125,6 +125,15 @@ if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
 else {
 }
 
+
+if((isset($_POST['specM'])) && (!empty($_POST['specM']))){
+    list($day, $month, $year) = explode("-", $_POST['specM']);
+    $ymdN2 = "$year-$month-$day";
+    $insert_data["specifica_matrimonio"] = $ymdN2;
+}
+else {
+}
+
 if((isset($_POST['altezza'])) && (!empty($_POST['altezza']))){
     $insert_data["altezza"] = $_POST['altezza'];
 }
@@ -136,6 +145,19 @@ if((isset($_POST['peso'])) && (!empty($_POST['peso']))){
 }
 else {
 }
+
+if((isset($_POST['morteFeto'])) && (!empty($_POST['morteFeto']))){
+    $insert_data["morte_feto"] = $_POST['morteFeto'];
+}
+else {
+}
+
+if((isset($_POST['ultimoAvv'])) && (!empty($_POST['ultimoAvv']))){
+    $insert_data["ultimo_avvistamento"] = $_POST['ultimoAvv'];
+}
+else {
+}
+
 
 
 echo "qui";

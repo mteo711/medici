@@ -49,10 +49,12 @@ class dati_pers extends Database
 				'rischi' => 'string',
 				'titolo_studio' => 'string',
 				'stato_civile' => 'string',
+				'specifica_matrimonio' => 'date',
 				'altezza' => 'string',
 				'peso' => 'string',
+				'morte_feto' => 'string',
+				'ultimo_avvistamento' => 'string',
                 'conclusa' => 'bool',
-				'data_matrimonio' => 'date'
 				);
 
 private function checkInput(array $val_cols)
