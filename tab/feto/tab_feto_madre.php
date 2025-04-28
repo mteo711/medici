@@ -108,7 +108,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button> 
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button> 
 STAMP;
 	}
 	if ($tab == 2){
@@ -121,7 +121,7 @@ STAMP;
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button> 
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button> 
 STAMP;
 	}
 	if ($tab == 3){
@@ -134,7 +134,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 	if ($tab == 30){
@@ -147,7 +147,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 	if ($tab == 4){
@@ -160,7 +160,7 @@ echo <<<STAMP
 	<button class="tabs_att" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 	if ($tab == 5){
@@ -173,7 +173,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="tabs_att" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 	if ($tab == 6){
@@ -186,7 +186,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="tabs_att" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 	if ($tab == 7){
@@ -199,7 +199,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="tabs_att" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button> 
+	<button class="tabs_att" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button> 
 STAMP;
 	}
 	if ($tab == 8){
@@ -212,7 +212,7 @@ echo <<<STAMP
 	<button class="$alcmf" id="t4" onclick="location.href='scheda_reg.php?scheda=madre&tab=4&tipo=feto'" $p5>Alcol/Stupefacenti</button>
 	<button class="$farmmf" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=5&tipo=feto'" $p6>Farmaci</button>
 	<button class="$patomf" id="t6" onclick="location.href='scheda_reg.php?scheda=madre&tab=6&tipo=feto'" $p7>Patologie gestante</button>
-	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Mestruazioni</button>
+	<button class="$mestruof" id="t5" onclick="location.href='scheda_reg.php?scheda=madre&tab=7&tipo=feto'" $p8>Informazioni Ginecologiche</button>
 STAMP;
 	}
 ?>

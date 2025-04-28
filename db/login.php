@@ -4,6 +4,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 include_once("databases.php");
 include_once("utenti.php");
 
+use Sonata\GoogleAuthenticator\GoogleAuthenticator;
+use BaconQrCode\Writer;
+use BaconQrCode\Renderer\ImageRenderer;
+use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use BaconQrCode\Renderer\Image\SvgImageBackEnd;
 
 $name = $_POST['username'];
 $pass = $_POST['password'];

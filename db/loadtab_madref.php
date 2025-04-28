@@ -23,7 +23,7 @@
             $_SESSION['perso_madreF'] = "tabs";
         }
         else {
-            if (($recordp['cognome'] == null) || ($recordp['nome'] == null) || ($recordp['comune'] == null) || ($recordp['provincia'] == null) || ($recordp['data_nascita'] == null) || ($recordp['luogo_nascita'] == null) || ($recordp['eta'] == null) || ($recordp['professione'] == null) || (($recordp['etnia'] == null) || (($recordp['etnia'] == 'altra') && ($recordp['specifica_etnia'] == null))))
+            if (($recordp['cognome'] == null) || ($recordp['nome'] == null) || ($recordp['comune'] == null) || ($recordp['provincia'] == null) || ($recordp['data_nascita'] == null) || ($recordp['luogo_nascita'] == null) || ($recordp['eta'] == null) || ($recordp['professione'] == null) || (($recordp['etnia'] == null) || (($recordp['etnia'] == 'altra') && ($recordp['specifica_etnia'] == null) )) || ($recordp['cell'] == null) || ($recordp['codice_fiscale'] == null) || ($recordp['ultimo_avvistamento'] == null) ||($recordp['rischi'] == null) || ($recordp['titolo_studio'] == null) || ($recordp['altezza'] == null) || ($recordp['peso'] == null) || ($recordp['morte_feto'] == null) || (($recordp['stato_civile'] == null) || (($recordp['stato_civile'] == 'coniugata') && ($recordp['specifica_matrimonio'] == null))))
             {
              
                 $insert_data = array();

@@ -49,6 +49,24 @@ function loadPage() {
             $_POST["dati_pers_peso"] = $records['peso'];
             $_POST["dati_pers_morteFeto"] = $records['morte_feto'];
             $_POST["dati_pers_ultimoAvv"] = $records['ultimo_avvistamento'];
+
+            $_POST["dati_pers_numVisite"] = $records['num_visite'];
+
+             $_POST["dati_pers_fecondazione"] = $records['fecondazione'];
+        $_POST["dati_pers_dataF"] = $records['dataF'];
+        $_POST["dati_pers_struttura"] = $records['struttura'];
+        $_POST["dati_pers_endouterina"] = $records['inseminazione_endouterina'];
+        $_POST["dati_pers_vitro"] = $records['fecondazione_in_vitro'];
+        $_POST["dati_pers_intracitoplasmatica"] = $records['intracitoplasmatica'];
+        $_POST["dati_pers_gameti"] = $records['gameti'];
+        $_POST["dati_pers_altre"] = $records['specifica_altre'];
+        $_POST["dati_pers_ovulazione"] = $records['ovulazione_indotta'];
+        $_POST["dati_pers_omologa"] = $records['omologa'];
+        $_POST["dati_pers_eterologa"] = $records['eterologa'];
+        $_POST["dati_pers_embriodonazione"] = $records['embriodonazione'];
+        $_POST["dati_pers_fresco"] = $records['a_fresco'];
+        $_POST["dati_pers_crioconservazione"] = $records['crioconservazione'];
+        $_POST["dati_pers_preimpianto"] = $records['test_preimpianto'];   
         }
 
         $_SESSION["dati_pers"] = "Y";

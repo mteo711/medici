@@ -3,7 +3,7 @@
  * Date: 12/06/15
  */
  -->
-<script src="js/scripts.js"></script>
+ <script src="js/scripts.js"></script>
 <link rel="stylesheet" href="js/jquery/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="js/jquery/jquery-ui.js"></script>
@@ -202,6 +202,7 @@ else {
     $peso = null;
     $class19 = "errors";
 }
+//fine ins2
 
 //ins3 accorta, notato
 if(isset($_POST["dati_pers_morteFeto"])){
@@ -221,6 +222,7 @@ else {
     $ultimoAvv = null;
     $class22 = "errors";
 }
+//fine ins3
 
 ?>
 <script>
@@ -468,7 +470,7 @@ $( document ).ready(function() {
         </label>
     </div>
 
-    <!-- aggiunta nuovi div-->
+    <!-- ins2-->
     <div class="col-2">
         <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
             Riconosciuti rischi nell’ambiente di lavoro *<br/>
@@ -546,7 +548,7 @@ $( document ).ready(function() {
             ?>
 		</label>
 	</div>
-
+    
 
     
     <div class="col-9">
@@ -572,4 +574,4 @@ $( document ).ready(function() {
         </label>
     </div>
     
-</form>
+</form>     

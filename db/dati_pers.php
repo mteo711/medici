@@ -52,9 +52,30 @@ class dati_pers extends Database
 				'specifica_matrimonio' => 'date',
 				'altezza' => 'string',
 				'peso' => 'string',
+				'num_visite' => 'int',
 				'morte_feto' => 'string',
 				'ultimo_avvistamento' => 'string',
+				
                 'conclusa' => 'bool',
+
+				'fecondazione' => 'string',
+				'dataF' => 'date',
+				'struttura' => 'string',
+				'inseminazione_endouterina' => 'bool',
+				'fecondazione_in_vitro' => 'bool',
+				'intracitoplasmatica' => 'bool',
+				'gameti' => 'bool',
+				'specifica_altre' => 'string',
+				'ovulazione_indotta' => 'bool',
+				'omologa' => 'bool',
+				'eterologa' => 'string',
+				'embriodonazione' => 'bool',
+				'a_fresco' => 'bool',
+				'crioconservazione' => 'bool',
+				'test_preimpianto' => 'bool',
+
+
+
 				);
 
 private function checkInput(array $val_cols)

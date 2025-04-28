@@ -42,6 +42,30 @@ class info_morte_fetale extends Database
 				 'data_presunta_parto_anamnestico' => 'date',
 				 'data_presunta_parto_ecografico' => 'date',
 				 'num_visite_controllo_in_gravidanza' => 'int',
+
+
+				 
+				 'ultima_visita_ostetrica' => 'date',
+				 'ginecologo_curante' => 'string',
+				 'ostetrica' => 'string',
+				 'fecondazione' => 'string',
+				 'dataF' => 'date',
+				 'struttura' => 'string',
+				 'inseminazione_endouterina' => 'bool',
+				 'fecondazione_in_vitro' => 'bool',
+				 'intracitoplasmatica' => 'bool',
+				 'gameti' => 'bool',
+				 'specifica_altre' => 'string',
+				 'ovulazione_indotta' => 'bool',
+				 'omologa' => 'bool',
+				 'eterologa' => 'string',
+				 'embriodonazione' => 'bool',
+				 'a_fresco' => 'bool',
+				 'crioconservazione' => 'bool',
+				 'test_preimpianto' => 'bool',
+
+
+
                  'conclusa1' => 'bool',
                  'idindagini' => 'int',
                  'biopsia_villocoriale' => 'string',

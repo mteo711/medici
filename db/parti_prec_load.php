@@ -8,7 +8,9 @@ function loadPage() {
     
     $recordz= $obx->fetchRecord(array("schede_id"=>$_SESSION['case_id'],'tipo' => 'MADRE'));
     
-    $_POST["data_nascita"] = $recordz['data_nascita'];
+    if ((isset($_POST['data_nascita'])) && (!empty($_POST['data_nascita']))) {
+        $insert_data["data_nascita"] = $_POST['data_nascita'];
+    } 
 
 	$obj = new parti_prec();
 

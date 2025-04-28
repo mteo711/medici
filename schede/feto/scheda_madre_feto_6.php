@@ -182,6 +182,34 @@
      $patologie = null;
      $class15 = "errors";
  }
+
+ if(isset($_POST["patologie_gest_screening"])){
+    $screening = $_POST["patologie_gest_screening"];
+    $class20 = "";
+}
+else {
+    $screening = null;
+    $class20 = "errors";
+}
+
+if(isset($_POST["patologie_gest_sanguematerno"])){
+    $sanguematerno = $_POST["patologie_gest_sanguematerno"];
+    $class20 = "";
+}
+else {
+    $sanguematerno = null;
+    $class20 = "errors";
+}
+
+if(isset($_POST["dati_pers_dataDNA"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataDNA']);
+    $dataDNA = "$day-$month-$year";
+    $class21 = "";
+}
+else {
+    $dataDNA = null;
+    $class21 = "errors";
+}
  if(isset($_POST["patologie_gest_tipoP"])){
      $tipoP = $_POST["patologie_gest_tipoP"];
      $class16 = "";
@@ -230,6 +258,15 @@
        document.getElementById('p'+i).style.display='inline-block';
     }
     if ('<?php echo $patologie; ?>' == 'Y'){
+    for (j=1; j<13; j++)
+       document.getElementById('d'+j).style.display='inline-block';
+    }
+    if ('<?php echo $screening; ?>' == 'Y'){
+    for (j=1; j<13; j++)
+       document.getElementById('d'+j).style.display='inline-block';
+    }
+
+    if ('<?php echo $sanguematerno; ?>' == 'Y'){
     for (j=1; j<13; j++)
        document.getElementById('d'+j).style.display='inline-block';
     }
@@ -343,6 +380,50 @@ $(function() {
     });
     $("#slct6").val('<?php echo $patologie; ?>')
     $('#slct6').selectmenu('refresh', true);
+
+});
+
+$(function() {
+    $( "#slct7" ).selectmenu({
+         change: function(event, ui){
+             j=1;
+                var select = document.getElementById('slct7');
+                var value = select.value;
+                if (value == 'Y') {
+                    for (j=1; j<13; j++)
+                    document.getElementById('b'+j).style.display='inline-block';
+                           return;
+                }
+                else {
+                    for (j=1; j<13;j++)
+                    document.getElementById('b'+j).style.display='none';
+                           return;  
+                }
+         }
+    });
+    $("#slct7").val('<?php echo $screening; ?>')
+    $('#slct7').selectmenu('refresh', true);
+
+});
+
+$(function() {
+    $( "#slct8" ).selectmenu({
+         change: function(event, ui){
+             j=1;
+                var select = document.getElementById('slct8');
+                var value = select.value;
+                if (value == 'Y') {
+                    document.getElementById('dataDNA'+j).style.display='inline-block';
+                           return;
+                }
+                else {
+                    document.getElementById('dataDNA'+j).style.display='none';
+                           return;  
+                }
+         }
+    });
+    $("#slct8").val('<?php echo $sanguematerno; ?>')
+    $('#slct8').selectmenu('refresh', true);
 
 });
 
@@ -707,6 +788,94 @@ function performSubmit(action)
             ?>
         </label>
     </div>
+   <!-- aggiunte -->
+   <div class="col-1">
+        <label style="padding-top: 7px;" <?php echo "class=".$class15; ?>>
+            Screening *<br/>
+            <select tabindex="11" id="slct7" name="screening" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="Y">Si (specificare)</option>
+                <option value="N">No</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-12" id="b1" style="display: none;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class18; ?>>
+            <input type="checkbox" name="patologie[]" value="disturbi tiroide" style="margin-bottom: 0px;"<?php echo $checked13."  ".$dis;?> >
+        </label>
+    </div>
+    <div class="col-14" id="b2" style="display: none;">
+        <label style="padding-top:8px;" <?php echo "class=".$class18; ?>>
+        Translucenza nucale (NT) patologico
+        </label>
+    </div>
+    <div class="col-12" id="b3" style="display: none;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class18; ?>>
+            <input type="checkbox" name="patologie[]" value="cardiopatia" style="margin-bottom: 0px;" <?php echo $checked14."  ".$dis;?> >
+        </label>
+    </div>
+    <div class="col-14" id="b4" style="display: none;">
+        <label style="padding-top: 8px;" <?php echo "class=".$class18; ?>>
+        Translucenza nucale (NT)  NON patologico
+        </label>
+    </div>
+    <div class="col-12" id="b5" style="display: none;">
+        <label style="padding-top: 8px;" <?php echo "class=".$class18; ?>>
+            <input type="checkbox" name="patologie[]" value="patologie renali" style="margin-bottom: 0px;" <?php echo $checked15."  ".$dis;?>>
+        </label>
+    </div>
+    <div class="col-14" id="b6" style="display: none;">
+        <label style="padding-top: 9px;" <?php echo "class=".$class18; ?>>
+        Screening per cromosomopatie (NT+-BI TEST) patologico
+        </label>
+    </div>
+    <div class="col-12" id="b7" style="display: none;">
+        <label style="padding-top: 8px;" <?php echo "class=".$class18; ?>>
+            <input type="checkbox" name="patologie[]" value="colestasi gravidica" style="margin-bottom: 0px;" <?php echo $checked16."  ".$dis;?>>
+        </label>
+    </div>
+    <div class="col-14" id="b8" style="display: none;">
+        <label style="padding-top: 9px;" <?php echo "class=".$class18; ?>>
+        Screening per cromosomopatie (NT+-BI TEST) NON patologico
+        </label>
+    </div>
+    <div class="col-12" id="b9" style="display: none;">
+        <label style="padding-top: 8px;" <?php echo "class=".$class18; ?>>
+            <input type="checkbox" name="patologie[]" value="parodontopatie" style="margin-bottom: 0px;" <?php echo $checked17."  ".$dis ;?> >
+        </label>
+    </div>
+    <div class="col-14" id="b10" style="display: none;">
+        <label style="padding-top: 9px;" <?php echo "class=".$class18; ?>>
+            TRIPLO TEST patologico
+        </label>
+    </div>
+    <div class="col-14" id="b10" style="display: none;">
+        <label style="padding-top: 9px;" <?php echo "class=".$class18; ?>>
+            TRIPLO TEST NON patologico
+        </label>
+    </div>
+
+    <div class="col-1">
+        <label style="padding-top: 7px;" <?php echo "class=".$class15; ?>>
+            DNA fetale nel sangue materno *<br/>
+            <select tabindex="11" id="slct8" name="sanguematerno" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="Y">Si (specificare)</option>
+                <option value="N">No</option>
+            </select>
+        </label>
+    </div>
+
+   
+    <div class="col-14" id="b10" style="display: none;">
+        <label style="padding-top: 9px;" <?php echo "class=".$class18; ?>>
+            TRIPLO TEST NON patologico
+        </label>
+    </div>
+    
+
+
+
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. 

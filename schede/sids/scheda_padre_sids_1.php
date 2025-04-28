@@ -3,13 +3,13 @@
  * Date: 12/06/15
  */
  -->
-<script src="js/scripts.js"></script>
+ <script src="js/scripts.js"></script>
 <link rel="stylesheet" href="js/jquery/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="js/jquery/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
-<!-- <script type="text/javascript" src="js/DateTimePicker.js"></script>
-<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> -->
+<script type="text/javascript" src="js/DateTimePicker.js"></script>
+<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> 
 <script type="text/javascript" src="js/number/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/number/jquery.keypadi.js"></script>
 
@@ -102,6 +102,27 @@ else {
     $prov = null;
     $class9 = "errors";
 }
+
+//ins1 Cell e Codfiscale
+if(isset($_POST["dati_pers_cell"])){
+    $cell = $_POST["dati_pers_cell"];
+    $class13 = "";
+}
+else {
+    $cell = null;
+    $class13 = "errors";
+}
+
+if(isset($_POST["dati_pers_codfiscale"])){
+    $codfiscale = $_POST["dati_pers_codfiscale"];
+    $class14 = "";
+}
+else {
+    $codfiscale = null;
+    $class14 = "errors";
+}
+//fine ins1
+
 if(isset($_POST["dati_pers_etnia"])){
     $etnia = $_POST["dati_pers_etnia"];
     $class10 = "";
@@ -127,6 +148,55 @@ else {
     $class12 = "errors";
 }
 
+//Ins2 Rischi, Titolo di studio, Stato civile, Altezza, Peso
+
+if(isset($_POST["dati_pers_rischi"])){
+    $rischi = $_POST["dati_pers_rischi"];
+    $class15 = "";
+}
+else {
+    $rischi = null;
+    $class15 = "errors";
+}
+
+if(isset($_POST["dati_pers_titolodistudio"])){
+    $titolodistudio = $_POST["dati_pers_titolodistudio"];
+    $class16 = "";
+}
+else {
+    $titolodistudio = null;
+    $class16 = "errors";
+}
+
+if(isset($_POST["dati_pers_statocivile"])){
+    $statocivile = $_POST["dati_pers_statocivile"];
+    $class17 = "";
+}
+else {
+    $statocivile = null;
+    $class17 = "errors";
+}
+
+if(isset($_POST["dati_pers_altezza"])){
+    $altezza = $_POST["dati_pers_altezza"];
+    $class18 = "";
+}
+else {
+    $altezza = null;
+    $class18 = "errors";
+}
+
+if(isset($_POST["dati_pers_peso"])){
+    $peso = $_POST["dati_pers_peso"];
+    $class19 = "";
+}
+else {
+    $peso = null;
+    $class19 = "errors";
+}
+//fine ins2
+
+
 ?>
 <script>
   $( document ).ready(function() {
@@ -134,8 +204,7 @@ else {
     document.getElementById('spec').style.visibility = 'visible';
     }
 });
-    
-  $(function() {
+ $(function() {
       $('#cap').keypad({
           onClose: function(value, inst) { 
             if(value.toString().length != 5){
@@ -144,7 +213,6 @@ else {
       }
       });   
   }); 
-    
   $(function() {
       $( "#slct" ).selectmenu({
            change: function(event, ui){
@@ -162,6 +230,25 @@ else {
       $('#slct').selectmenu('refresh', true);
 
   });
+//funzione per stato civile
+$(function() {
+      $( "#slct2" ).selectmenu({
+           change: function(event, ui){
+               var select = document.getElementById('slct2');
+                  var value = select.value;
+                  if (value == 'altra') {
+                     document.getElementById('spec').style.visibility='visible'; return;
+                  }
+                     document.getElementById('spec').style.visibility='hidden'; return;
+           }
+      })
+      .selectmenu( "menuWidget")
+      .addClass( "overflow" );;
+      $("#slct2").val('<?php echo $statocivile; ?>')
+      $('#slct2').selectmenu('refresh', true);
+
+  });
+
  
  function performSubmit(action)
    {
@@ -178,7 +265,7 @@ else {
  $(function() {
    $( "#dataN" ).datepicker({
         dateFormat: "dd-mm-yy",
-        yearRange: "-60:+0",
+        yearRange: "-70:+0",
         changeMonth: true,
         changeYear: true,
         maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
@@ -194,7 +281,6 @@ else {
        }
     });
  });
-    
 </script>
 <style>
 .overflow {
@@ -255,7 +341,7 @@ else {
         </label>
     </div>
     <div class="col-3">
-        <label style="padding-top: 6px;" >
+        <label style="padding-top: 6px;">
             CAP<br/>
             <?php
                 echo "<input id=\"cap\" $dis name=\"cap\" tabindex=\"8\" value=\"".$cap."\">";
@@ -278,10 +364,28 @@ else {
             ?>
         </label>
     </div>
+     <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class13; ?>>
+            Cell *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class14; ?>>
+            Codice Fiscale *<br/>
+            <?php
+                echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
+            ?>
+        </label>
+    </div>
+
     <div class="col-4">
         <label style="padding-top: 9px;" <?php echo "class=".$class10; ?>>
             Etnia *<br/>
-            <select tabindex="11" id="slct" name="etnia" style="width:75%;"<?php echo $dis; ?>>
+            <select tabindex="11" id="slct" name="etnia" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
                 <option value="mancante">Dato Mancante</option>    
                 <option value="caucasica">Caucasica</option>
@@ -312,6 +416,62 @@ else {
             ?>
         </label>
     </div>
+<!-- aggiunta nuovi div-->
+    <div class="col-2">
+        <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
+            Riconosciuti rischi nell’ambiente di lavoro *<br/>
+            <?php
+                echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";               
+            ?>
+        </label>
+    </div>
+
+    <div class="col-2">
+        <label style="padding-top: 6px;" <?php echo "class=".$class16; ?>>
+            Titolo di Studio *<br/>
+            <?php
+                echo "<input name=\"titolodistudio\" $dis tabindex=\"16\" value=\"".$titolodistudio."\">";
+            ?>
+        </label>
+    </div>
+
+    <div class="col-3">
+        <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
+            Stato Civile *<br/>
+            <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="mancante">Dato Mancante</option> 
+                <option value="nubile">Nubile</option>    
+                <option value="separato">Separato</option>
+                <option value="divorziato">Divorziato</option>
+                <option value="vedovo">Vedovo</option>
+                <option value="coniugato">Coniugato</option>
+                <option value="convivente">Convivente</option>               
+            </select>
+          
+        </label>
+    </div>
+
+    <div class="col-3">
+        <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
+            Altezza *<br/>
+            <?php
+                echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
+            ?>
+        </label>
+    </div>
+    
+    <div class="col-3">
+        <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
+            Peso *<br/>
+            <?php
+                echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
+            ?>
+        </label>
+    </div>
+
+
+
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. 

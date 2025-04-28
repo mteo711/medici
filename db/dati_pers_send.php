@@ -24,76 +24,149 @@ if($_POST && array_key_exists("action", $_POST)){
    }
 }
 
+function convertiData($data) {
+    list($giorno, $mese, $anno) = explode("-", $data);
+    return "$anno-$mese-$giorno";
+}
+
 function invia($i){
-echo "inizio";
-$insert_data = array();
-$insert_data["schede_id"] = $_SESSION['case_id'];
-$insert_data["tipo"] = $_POST['tipo'];
+    if((isset($_POST['cognome'])) && (!empty($_POST['cognome']))){
+        $insert_data["cognome"] = $_POST['cognome'];
+    }
+    else {
+    }
+    if((isset($_POST['nome'])) && (!empty($_POST['nome']))){
+        $insert_data["nome"] = $_POST['nome'];
+    }
+    else {
+    }
+    if((isset($_POST['dataN'])) && (!empty($_POST['dataN']))){
+        list($day, $month, $year) = explode("-", $_POST['dataN']);
+        $ymdN = "$year-$month-$day";
+        $insert_data["data_nascita"] = $ymdN;
+    }
+    else {
+    }
+    if((isset($_POST['luogoN'])) && (!empty($_POST['luogoN']))){
+        $insert_data["luogo_nascita"] = $_POST['luogoN'];
+    }
+    else{
+    }
+    if((isset($_POST['eta'])) && (!empty($_POST['eta']))){
+        $insert_data["eta"] = $_POST['eta'];
+    }
+    else{
+    }
+    if((isset($_POST['indirizzo'])) && (!empty($_POST['indirizzo']))){
+        $insert_data["via"] = $_POST['indirizzo'];
+    }
+    else {
+    }
+    if((isset($_POST['cap'])) && (ctype_digit($_POST['cap'])) && (!empty($_POST['cap'])) && (strlen($_POST['cap']) == 5)){
+        $insert_data["cap"] = $_POST['cap'];
+    }
+    else {
+    }
+    if((isset($_POST['comune'])) && (!empty($_POST['comune']))){
+        $insert_data["comune"] = $_POST['comune'];
+    }
+    else {
+    }
+    if((isset($_POST['prov'])) && (!empty($_POST['prov']))){
+        $insert_data["provincia"] = $_POST['prov'];
+    }
+    else {
+    }
+    if((isset($_POST['etnia'])) && (!empty($_POST['etnia']))){
+        $insert_data["etnia"] = $_POST['etnia'];
+    }
+    else {
+    }
+    if((isset($_POST['specEtnia'])) && (!empty($_POST['specEtnia']))){
+        $insert_data["specifica_etnia"] = $_POST['specEtnia'];
+    }
+    else {
+    }
+    if((isset($_POST['prof'])) && (!empty($_POST['prof']))){
+        $insert_data["professione"] = $_POST['prof'];
+    }
+    else {
+    }
+    if((isset($_POST['cell'])) && (!empty($_POST['cell']))){
+        $insert_data["cell"] = $_POST['cell'];
+    }
+    else {
+    }
+    
+    if((isset($_POST['codfiscale'])) && (!empty($_POST['codfiscale']))){
+        $insert_data["codice_fiscale"] = $_POST['codfiscale'];
+    }
+    else {
+    }
+    
+    if((isset($_POST['rischi'])) && (!empty($_POST['rischi']))){
+        $insert_data["rischi"] = $_POST['rischi'];
+    }
+    else {
+    }
+    
+    if((isset($_POST['titolodistudio'])) && (!empty($_POST['titolodistudio']))){
+        $insert_data["titolo_studio"] = $_POST['titolodistudio'];
+    }
+    else {
+    }
+    
+    if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
+        $insert_data["stato_civile"] = $_POST['statocivile'];
+    }
+    else {
+    }
+    
+    
+    if((isset($_POST['specM'])) && (!empty($_POST['specM']))){
+        list($day, $month, $year) = explode("-", $_POST['specM']);
+        $ymdN2 = "$year-$month-$day";
+        $insert_data["specifica_matrimonio"] = $ymdN2;
+    }
+    else {
+    }
+    
+    if((isset($_POST['altezza'])) && (!empty($_POST['altezza']))){
+        $insert_data["altezza"] = $_POST['altezza'];
+    }
+    else {
+    }
+    
+    if((isset($_POST['peso'])) && (!empty($_POST['peso']))){
+        $insert_data["peso"] = $_POST['peso'];
+    }
+    else {
+    }
 
-$insert_tipo["schede_id"] = $_SESSION['case_id'];
+    if((isset($_POST['fecondazione'])) && (!empty($_POST['fecondazione']))){
+        $insert_data["fecondazione"] = $_POST['fecondazione'];
+    }
+    else {
+    }
 
-if((isset($_POST['cognome'])) && (!empty($_POST['cognome']))){
-    $insert_data["cognome"] = $_POST['cognome'];
-}
-else {
-}
-if((isset($_POST['nome'])) && (!empty($_POST['nome']))){
-    $insert_data["nome"] = $_POST['nome'];
-}
-else {
-}
-if((isset($_POST['dataN'])) && (!empty($_POST['dataN']))){
-    list($day, $month, $year) = explode("-", $_POST['dataN']);
-    $ymd = "$year-$month-$day";
-    $insert_data["data_nascita"] = $ymd;
-}
-else {
-}
-if((isset($_POST['luogoN'])) && (!empty($_POST['luogoN']))){
-    $insert_data["luogo_nascita"] = $_POST['luogoN'];
-}
-else{
-}
-if((isset($_POST['eta'])) && (!empty($_POST['eta']))){
-    $insert_data["eta"] = $_POST['eta'];
-}
-else{
-}
-if((isset($_POST['indirizzo'])) && (!empty($_POST['indirizzo']))){
-    $insert_data["via"] = $_POST['indirizzo'];
-}
-else {
-}
-if((isset($_POST['cap'])) && (ctype_digit($_POST['cap'])) && (!empty($_POST['cap'])) && (strlen($_POST['cap']) == 5)){
-    $insert_data["cap"] = $_POST['cap'];
-}
-else {
-}
-if((isset($_POST['comune'])) && (!empty($_POST['comune']))){
-    $insert_data["comune"] = $_POST['comune'];
-}
-else {
-}
-if((isset($_POST['prov'])) && (!empty($_POST['prov']))){
-    $insert_data["provincia"] = $_POST['prov'];
-}
-else {
-}
-if((isset($_POST['etnia'])) && (!empty($_POST['etnia']))){
-    $insert_data["etnia"] = $_POST['etnia'];
-}
-else {
-}
-if((isset($_POST['specEtnia'])) && (!empty($_POST['specEtnia']))){
-    $insert_data["specifica_etnia"] = $_POST['specEtnia'];
-}
-else {
-}
-if((isset($_POST['prof'])) && (!empty($_POST['prof']))){
-    $insert_data["professione"] = $_POST['prof'];
-}
-else {
-}
+
+
+    if (!empty($_POST['numVisite'])) $insert_data["num_visite"] = $_POST['numVisite'];
+    if (!empty($_POST['dataF'])) $insert_data["dataF"] = convertiData($_POST['dataF']);
+    if (!empty($_POST['struttura'])) $insert_data["struttura"] = $_POST['struttura'];
+    if (!empty($_POST['eterologa'])) $insert_data["eterologa"] = $_POST['eterologa'];
+    if (!empty($_POST['altre'])) $insert_data["specifica_altre"] = $_POST['altre'];
+    
+    $insert_data["inseminazione_endouterina"] = !empty($_POST['endouterina']) ? $_POST['endouterina'] : 'N';
+    $insert_data["fecondazione_in_vitro"] = !empty($_POST['vitro']) ? $_POST['vitro'] : 'N';
+    $insert_data["intracitoplasmatica"] = !empty($_POST['intracitoplasmatica']) ? $_POST['intracitoplasmatica'] : 'N';
+    $insert_data["gameti"] = !empty($_POST['gameti']) ? $_POST['gameti'] : 'N';
+    $insert_data["ovulazione_indotta"] = !empty($_POST['ovulazione']) ? $_POST['ovulazione'] : 'N';
+    $insert_data["omologa"] = !empty($_POST['omologa']) ? $_POST['omologa'] : 'N';
+    $insert_data["embriodonazione"] = !empty($_POST['embriodonazione']) ? $_POST['embriodonazione'] : 'N';
+    $insert_data["a_fresco"] = !empty($_POST['fresco']) ? $_POST['fresco'] : 'N';
+    $insert_data["crioconservazione"] = !empty($_POST['crioconservazione']) ? $_POST['crioconservazione'] : 'N';
+    $insert_data["test_preimpianto"] = !empty($_POST['preimpianto']) ? $_POST['preimpianto'] : 'N';
 echo "qui";
 
 
