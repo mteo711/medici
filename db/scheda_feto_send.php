@@ -76,6 +76,12 @@ else {
 
 echo "qui";
 
+
+echo "<h2>POST</h2><pre>";
+print_r($_POST);
+echo "</pre>";
+
+
 // 
 if($_SESSION["scheda_feto"] != "Y"){
 	echo "insert";

@@ -23,7 +23,56 @@
             $_SESSION['perso_madreF'] = "tabs";
         }
         else {
-            if (($recordp['cognome'] == null) || ($recordp['nome'] == null) || ($recordp['comune'] == null) || ($recordp['provincia'] == null) || ($recordp['data_nascita'] == null) || ($recordp['luogo_nascita'] == null) || ($recordp['eta'] == null) || ($recordp['professione'] == null) || (($recordp['etnia'] == null) || (($recordp['etnia'] == 'altra') && ($recordp['specifica_etnia'] == null) )) || ($recordp['cell'] == null) || ($recordp['codice_fiscale'] == null) || ($recordp['ultimo_avvistamento'] == null) ||($recordp['rischi'] == null) || ($recordp['titolo_studio'] == null) || ($recordp['altezza'] == null) || ($recordp['peso'] == null) || ($recordp['morte_feto'] == null) || (($recordp['stato_civile'] == null) || (($recordp['stato_civile'] == 'coniugata') && ($recordp['specifica_matrimonio'] == null))))
+            if (
+                // Dati anagrafici
+                $recordp['cognome'] == null ||
+                $recordp['nome'] == null ||
+                $recordp['comune'] == null ||
+                $recordp['provincia'] == null ||
+                $recordp['data_nascita'] == null ||
+                $recordp['luogo_nascita'] == null ||
+                $recordp['eta'] == null ||
+                $recordp['professione'] == null ||
+            
+                // Etnia (con specifica se 'altra')
+                $recordp['etnia'] == null ||
+                ($recordp['etnia'] == 'altra' && $recordp['specifica_etnia'] == null) ||
+            
+                // Contatti e identificazione
+                $recordp['cell'] == null ||
+                $recordp['codice_fiscale'] == null ||
+            
+                // Altri dati generali
+                $recordp['ultimo_avvistamento'] == null ||
+                $recordp['rischi'] == null ||
+                $recordp['titolo_studio'] == null ||
+                $recordp['altezza'] == null ||
+                $recordp['peso'] == null ||
+                $recordp['morte_feto'] == null ||
+            
+                // Stato civile (con specifica se coniugata)
+                $recordp['stato_civile'] == null ||
+                ($recordp['stato_civile'] == 'coniugata' && $recordp['specifica_matrimonio'] == null) ||
+            
+                // Morte fetale / Procreazione assistita
+                $recordp['num_visite'] == null ||
+                $recordp['fecondazione'] == null ||
+                $recordp['dataF'] == null ||
+                $recordp['struttura'] == null ||
+                $recordp['inseminazione_endouterina'] == null ||
+                $recordp['fecondazione_in_vitro'] == null ||
+                $recordp['intracitoplasmatica'] == null ||
+                $recordp['gameti'] == null ||
+                $recordp['specifica_altre'] == null ||
+                $recordp['ovulazione_indotta'] == null ||
+                $recordp['omologa'] == null ||
+                $recordp['eterologa'] == null ||
+                $recordp['embriodonazione'] == null ||
+                $recordp['a_fresco'] == null ||
+                $recordp['crioconservazione'] == null ||
+                $recordp['test_preimpianto'] == null
+            ) 
+            
             {
              
                 $insert_data = array();

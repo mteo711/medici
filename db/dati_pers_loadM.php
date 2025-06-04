@@ -5,12 +5,13 @@ function loadPage() {
 	
 	$obj = new dati_pers();
 	$records= $obj->fetchRecord(array("schede_id"=>$_SESSION['case_id'],'tipo' => 'MADRE'));
+  
 
 	
     if($obj->fetchNumRows() == 0){
       $_SESSION["dati_pers"] = "N";
       $_SESSION["dati_persF"] = "N";
-    }
+    } 
     else {
 	    if($_SESSION['stato']=='chiusa'){
             $_POST["dati_pers_cognome"] = "****";

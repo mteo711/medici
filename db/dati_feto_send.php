@@ -77,10 +77,44 @@ if((isset($_POST['eta'])) && (!empty($_POST['eta'])) && (ctype_digit($_POST['eta
 }
 else {
 }
+
+
+if((isset($_POST['mortequando'])) && (!empty($_POST['mortequando']))){
+    list($day, $month, $year) = explode("-", $_POST['mortequando']);
+    $ymdM = "$year-$month-$day";
+    $insert_data["morte_quando"] = $ymdM;
+}
+else {
+}
+
+if((isset($_POST['mortedove'])) && (!empty(trim($_POST['mortedove'])))){
+    $insert_data["morte_dove"] = $_POST['mortedove'];
+}
+else {
+}
+
+if((isset($_POST['mortecome'])) && (!empty(trim($_POST['mortecome'])))){
+    $insert_data["morte_come"] = $_POST['mortecome'];
+}
+else {
+}
+
+
+
+
+
+
+
+
+
+
 echo "qui";
 
+
+
+
 if($_SESSION["dati_feto"] != "Y"){
-	echo "insert";
+	echo "insert";  
     //creo la connessione con il database
     $obj = new dati_feto();
     // a questo punto posso effettuare la seguente insert
@@ -88,6 +122,7 @@ if($_SESSION["dati_feto"] != "Y"){
     $obj->insert($insert_data);
     var_dump($insert_data);
     $obj->error();
+    
     
     //log
     $scritta = "";

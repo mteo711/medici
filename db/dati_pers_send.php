@@ -30,6 +30,12 @@ function convertiData($data) {
 }
 
 function invia($i){
+    echo "inizio";
+    $insert_data = array();
+    $insert_data["schede_id"] = $_SESSION['case_id'];
+    $insert_data["tipo"] = $_POST['tipo'];
+    
+    $insert_tipo["schede_id"] = $_SESSION['case_id'];
     if((isset($_POST['cognome'])) && (!empty($_POST['cognome']))){
         $insert_data["cognome"] = $_POST['cognome'];
     }

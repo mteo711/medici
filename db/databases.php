@@ -203,6 +203,7 @@ public function fetchNumRows()
 
 
 public function fetchRecord(array $val_cols){
+	
 	$i=0;
 	$table= get_class($this);
 
@@ -217,7 +218,6 @@ public function fetchRecord(array $val_cols){
 		$types .= 's'; // Assuming all values are strings. Adjust as needed for different types.
 	}
 	$sql = "SELECT * FROM $table WHERE " . implode(" AND ", $conditions);
-    	
 	// Prepare the statement
 	if ($stmt = $this->connection->prepare($sql)) {
 		// Bind parameters
@@ -228,7 +228,6 @@ public function fetchRecord(array $val_cols){
 
 		// Get the result
 		$result = $stmt->get_result();
-
 		if ($this->connection->errno) {
 			$this->error_status = 4;
 			die("Fail Select " . $this->connection->error);
@@ -345,7 +344,8 @@ public function insert(array $val_cols) {
     // Bind parameters dynamically
     $types = str_repeat('s', count($val_cols)); // Assuming all values are strings; adjust types as necessary
     $stmt->bind_param($types, ...array_values($val_cols)); // Use the spread operator
-
+	echo "INSERT INTO $tblname ($keysString) VALUES ($placeholders)";
+	print_r($_SESSION["dati_persF"]);
     // Execute the statement
     if ($stmt->execute()) {
         $this->num_rows = $stmt->affected_rows;
@@ -353,7 +353,8 @@ public function insert(array $val_cols) {
         return 1;
     } else {
         $this->error_status = 0;
-        echo "Error: " . $stmt->error . "<br/>";
+		
+        echo "Error: " . $stmt->error . "INSERT INTO $tblname ($keysString) VALUES ($placeholders)". "<br/>";
         return 0;
     }
 }

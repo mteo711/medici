@@ -14,6 +14,7 @@
  <link rel="stylesheet" type="text/css" href="DateTimePicker-ltie9.css" />
  <script type="text/javascript" src="DateTimePicker-ltie9.js"></script>
 <![endif]-->
+
 <?php
     if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
         $dis = "disabled";

@@ -36,7 +36,13 @@ class dati_feto extends Database
 				'data_morte' => 'date',
                 'data_ultimo_controllo' => 'date',
 				'eta_settimana_gestazione'  => 'int',
-                'conclusa' => 'bool'
+        'morte_quando' => 'date',
+        'morte_dove' => 'string',
+        'morte_come' => 'string',
+      
+        
+
+                'conclusa' => 'bool', 
 				);
 
 private function checkInput(array $val_cols)

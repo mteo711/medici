@@ -192,11 +192,11 @@ else{
 }
 
 if (isset($_POST["morte_fetale_ovulazione"]) && $_POST["morte_fetale_ovulazione"] == 'Y') {
-    $checked5 = "checked";  // Se il checkbox è selezionato, aggiungi l'attributo checked
+    $checked5 = "checked"; 
     $ovulazione = $_POST["morte_fetale_ovulazione"];
 } else {
-    $ovulazione = null;  // Se non è selezionato, lascia il valore come null
-    $class14 = "errors";  // Aggiungi eventuale classe di errore
+    $ovulazione = null; 
+    $class14 = "errors";  
 }
 
 if((isset($_POST["morte_fetale_omologa"]))&&($_POST["morte_fetale_omologa"] == 'Y')){
@@ -411,7 +411,7 @@ $(document).ready(function() {
 </script>
 
 
-<br/<br/><br/>
+<br/><br/>
 <form id="adminform" name="adminform" action="db/info_morte_fetale_sendf.php" method="post">
     <div class="col-2">
         <label <?php echo "class=".$class1; ?>>

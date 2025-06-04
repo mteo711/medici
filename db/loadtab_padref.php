@@ -14,7 +14,36 @@
             $_SESSION['perso_padreF'] = "tabs";
         }
         else {
-            if (($recordp['cognome'] == null) || ($recordp['nome'] == null) || ($recordp['comune'] == null) || ($recordp['provincia'] == null) || ($recordp['data_nascita'] == null) || ($recordp['luogo_nascita'] == null) || ($recordp['eta'] == null) || ($recordp['professione'] == null) || (($recordp['etnia'] == null) || (($recordp['etnia'] == 'altra') && ($recordp['specifica_etnia'] == null)))){
+            if (
+                // Dati anagrafici
+                $recordp['cognome'] == null ||
+                $recordp['nome'] == null ||
+                $recordp['comune'] == null ||
+                $recordp['provincia'] == null ||
+                $recordp['data_nascita'] == null ||
+                $recordp['luogo_nascita'] == null ||
+                $recordp['eta'] == null ||
+            
+                // Professione
+                $recordp['professione'] == null ||
+            
+                // Etnia e specifica
+                $recordp['etnia'] == null ||
+                ($recordp['etnia'] == 'altra' && $recordp['specifica_etnia'] == null) ||
+            
+                // Contatti
+                $recordp['cell'] == null ||
+            
+                // Codice fiscale
+                $recordp['codice_fiscale'] == null ||
+            
+                // Informazioni aggiuntive
+                $recordp['rischi'] == null ||
+                $recordp['titolo_studio'] == null ||
+                $recordp['stato_civile'] == null ||
+                $recordp['altezza'] == null ||
+                $recordp['peso'] == null
+            ){
                 
                 $insert_data = array();
                 $insert_data["conclusa"] = "N";

@@ -30,6 +30,16 @@ function loadPage() {
         $_POST["patologie_gest_patologie"] = $records['altre_patologie'];
         $_POST["patologie_gest_tipoP"] = $records['tipo_altre_patologie'];
         $_POST["patologie_gest_specP"] = $records['specifica_altre_patologie'];
+
+         $_POST["patologie_gest_screening"] = $records['screening'];
+         $_POST["patologie_gest_tipoS"] = $records['tipo_screening'];
+
+
+         $_POST["patologie_gest_sanguematerno"] = $records['sangue_materno'];
+         $_POST["patologie_gest_dataDNA"] = $records['dataDNA'];
+         $_POST["patologie_gest_risultato"] = $records['risultato'];         
+         $_POST["patologie_gest_altriTest"] = $records['altri_test'];
+
         
 		$_SESSION["patologie_gest"] = "Y";
         $_SESSION["patologie_gestF"] = "Y";

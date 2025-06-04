@@ -118,6 +118,41 @@ if((isset($_POST['specAltrePato'])) && (!empty($_POST['specAltrePato']))){
 else {
 }
 
+if((isset($_POST['screening'])) && (!empty($_POST['screening']))){
+    $insert_data["screening"] = $_POST['screening'];
+}
+else {
+}
+if($_POST['screening'] == 'Y' && (isset($_POST['tipo_screening'])) && (!empty($_POST['tipo_screening']))){
+    $spec_pato_atto4 = "";
+    $spec_pato_atto4 = implode(",", $_POST['tipo_screening']);
+    $insert_data["tipo_screening"] = $spec_pato_atto4;
+}
+else {
+}
+
+if((isset($_POST['sanguematerno'])) && (!empty($_POST['sanguematerno']))){
+    $insert_data["sangue_materno"] = $_POST['sanguematerno'];
+}
+else {
+}
+if((isset($_POST['dataDNA'])) && (!empty($_POST['dataDNA']))){
+    list($day, $month, $year) = explode("-", $_POST['dataDNA']);
+    $ymdN = "$year-$month-$day";
+    $insert_data["dataDNA"] = $ymdN;
+}
+else {
+}
+if((isset($_POST['risultato'])) && (!empty($_POST['risultato']))){
+    $insert_data["risultato"] = $_POST['risultato'];
+}
+else {
+}
+if((isset($_POST['altriTest'])) && (!empty($_POST['altriTest']))){
+    $insert_data["altri_test"] = $_POST['altriTest'];
+}
+else {
+}
 echo "qui";
 
 // 

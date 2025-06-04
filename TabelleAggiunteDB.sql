@@ -57,4 +57,96 @@ ADD COLUMN `crioconservazione` ENUM('Y','N') DEFAULT NULL AFTER `a_fresco`,
 ADD COLUMN `test_preimpianto` ENUM('Y','N') DEFAULT NULL AFTER `crioconservazione`,
 ADD COLUMN `specifica_altre` VARCHAR(50) DEFAULT NULL AFTER `test_preimpianto`;
 
---tabella dati_pers
+--tabella patologie_gest
+ALTER TABLE `patologie_gest`
+  ADD COLUMN `screening` ENUM('Y','N','mancante') DEFAULT NULL AFTER `altre_patologie`,
+  ADD COLUMN `tipo_screening` SET('NT_Patologico','NT_nonPatologico','cromosopatie_Patologico','cromosopatie_nonPatologico','triplotest_Patologico','riplotest_nonPatologico') DEFAULT NULL AFTER `screening`;
+ ADD COLUMN `sangue_materno` ENUM('Y','N','mancante') DEFAULT NULL AFTER `tipo_screening`,
+ ADD COLUMN `dataDNA` DATE DEFAULT NULL AFTER `sangue_materno`,
+ ADD COLUMN `risultato` VARCHAR(50) DEFAULT NULL AFTER `dataDNA`,
+ ADD COLUMN `altri_test` VARCHAR(50) DEFAULT NULL AFTER `risultato`,
+
+ --tabella dati_feto
+ALTER TABLE `dati_feto`
+  ADD COLUMN `morte_come` VARCHAR(100) DEFAULT NULL AFTER `eta_settimana_gestazione`,
+  ADD COLUMN `morte_dove` VARCHAR(100) DEFAULT NULL AFTER `morte_come`,
+  ADD COLUMN `morte_quando` DATE DEFAULT NULL AFTER `morte_dove`;
+ 
+--
+-- Table structure for table `fratelli`
+--
+
+DROP TABLE IF EXISTS `fratelli`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `fratelli` (
+  `patologie_gest_madre_schede_id` INT UNSIGNED NOT NULL,
+  `data_ultimo_parto_precedente` DATE DEFAULT NULL,
+  `fratelli_sorelle` VARCHAR(255) DEFAULT NULL,
+
+  -- Fratello 1
+  `dataN1` DATE DEFAULT NULL,
+  `mesiM1` INT DEFAULT NULL,
+  `anniM1` INT DEFAULT NULL,
+  `causaM1` TINYTEXT DEFAULT NULL,
+  `vivo1` VARCHAR(10) DEFAULT NULL,
+  `ereditarieM1` TINYTEXT DEFAULT NULL,
+  `geneticheM1` TINYTEXT DEFAULT NULL,
+  `dismetabolicheM1` TINYTEXT DEFAULT NULL,
+  `altroM1` TINYTEXT DEFAULT NULL,
+
+  -- Fratello 2
+  `dataN2` DATE DEFAULT NULL,
+  `mesiM2` INT DEFAULT NULL,
+  `anniM2` INT DEFAULT NULL,
+  `causaM2` TINYTEXT DEFAULT NULL,
+  `vivo2` VARCHAR(10) DEFAULT NULL,
+  `ereditarieM2` TINYTEXT DEFAULT NULL,
+  `geneticheM2` TINYTEXT DEFAULT NULL,
+  `dismetabolicheM2` TINYTEXT DEFAULT NULL,
+  `altroM2` TINYTEXT DEFAULT NULL,
+
+  -- Fratello 3
+  `dataN3` DATE DEFAULT NULL,
+  `mesiM3` INT DEFAULT NULL,
+  `anniM3` INT DEFAULT NULL,
+  `causaM3` TINYTEXT DEFAULT NULL,
+  `vivo3` VARCHAR(10) DEFAULT NULL,
+  `ereditarieM3` TINYTEXT DEFAULT NULL,
+  `geneticheM3` TINYTEXT DEFAULT NULL,
+  `dismetabolicheM3` TINYTEXT DEFAULT NULL,
+  `altroM3` TINYTEXT DEFAULT NULL,
+
+  -- Fratello 4
+  `dataN4` DATE DEFAULT NULL,
+  `mesiM4` INT DEFAULT NULL,
+  `anniM4` INT DEFAULT NULL,
+  `causaM4` TINYTEXT DEFAULT NULL,
+  `vivo4` VARCHAR(10) DEFAULT NULL,
+  `ereditarieM4` TINYTEXT DEFAULT NULL,
+  `geneticheM4` TINYTEXT DEFAULT NULL,
+  `dismetabolicheM4` TINYTEXT DEFAULT NULL,
+  `altroM4` TINYTEXT DEFAULT NULL,
+
+  -- Fratello 5
+  `dataN5` DATE DEFAULT NULL,
+  `mesiM5` INT DEFAULT NULL,
+  `anniM5` INT DEFAULT NULL,
+  `causaM5` TINYTEXT DEFAULT NULL,
+  `vivo5` VARCHAR(10) DEFAULT NULL,
+  `ereditarieM5` TINYTEXT DEFAULT NULL,
+  `geneticheM5` TINYTEXT DEFAULT NULL,
+  `dismetabolicheM5` TINYTEXT DEFAULT NULL,
+  `altroM5` TINYTEXT DEFAULT NULL,
+
+  `conclusa` ENUM('Y','N') DEFAULT 'N',
+
+  PRIMARY KEY (`patologie_gest_madre_schede_id`),
+  KEY `fk_fratelli_patologie_gest` (`patologie_gest_madre_schede_id`),
+  CONSTRAINT `fk_fratelli_patologie_gest`
+    FOREIGN KEY (`patologie_gest_madre_schede_id`)
+    REFERENCES `madre` (`schede_id`)
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+

@@ -60,6 +60,15 @@ class patologie_gest extends Database
 				 'altre_patologie' => 'string',
 				 'tipo_altre_patologie' => 'set',
 				 'specifica_altre_patologie' => 'string',
+
+				 'screening' => 'string',
+				 'tipo_screening' => 'set',
+
+				 'sangue_materno' => 'string',
+				 'dataDNA' => 'date',
+				 'risultato' => 'string',
+				 'altri_test' => 'string',
+
                  'conclusa' => 'bool'
 				 );
 

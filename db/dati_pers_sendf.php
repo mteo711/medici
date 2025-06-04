@@ -1,5 +1,8 @@
 <?php
-session_start();
+session_start(); 
+echo "<pre>";
+echo "</pre>";
+
 include_once("databases.php");
 include_once("dati_pers.php");
 include_once("madre.php");
@@ -9,23 +12,30 @@ require_once("loadtab_padref.php");
 require_once("loadmenu_feto.php");
 include_once("log_activities.php");
 
+echo "Stato dati_persF: ".$_SESSION["dati_persF"];
 
-if($_POST && array_key_exists("action", $_POST)){
-  switch($_POST['action'])
-   {
-	  case "succ":
-		invia('succ');
-	  break;
-	  case "succ_b":
-	    invia('succ_b');
-	  break;
-	  case "back":
-		back();
-	  break;
-   }
+
+if ($_POST && array_key_exists("action", $_POST)) {
+    echo "<pre>";
+    print_r($_POST); // Visualizza i dati ricevuti dal form
+    echo "</pre>";
+
+    switch ($_POST['action']) {
+        case "succ":
+            invia('succ');
+            break;
+        case "succ_b":
+            invia('succ_b');
+            break;
+        case "back":
+            back();
+            break;
+    }
 }
 
+
 function invia($i){
+
 echo "inizio";
 $insert_data = array();
 $insert_data["schede_id"] = $_SESSION['case_id'];
@@ -106,7 +116,6 @@ if((isset($_POST['codfiscale'])) && (!empty($_POST['codfiscale']))){
 }
 else {
 }
-
 if((isset($_POST['rischi'])) && (!empty($_POST['rischi']))){
     $insert_data["rischi"] = $_POST['rischi'];
 }
@@ -124,8 +133,6 @@ if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
 }
 else {
 }
-
-
 if((isset($_POST['specM'])) && (!empty($_POST['specM']))){
     list($day, $month, $year) = explode("-", $_POST['specM']);
     $ymdN2 = "$year-$month-$day";
@@ -152,34 +159,43 @@ if((isset($_POST['morteFeto'])) && (!empty($_POST['morteFeto']))){
 else {
 }
 
-if((isset($_POST['ultimoAvv'])) && (!empty($_POST['ultimoAvv']))){
+if (isset($_POST['ultimoAvv']) && !empty(trim($_POST['ultimoAvv']))) {
     $insert_data["ultimo_avvistamento"] = $_POST['ultimoAvv'];
 }
+
 else {
 }
 
 
 
+
 echo "qui";
+   echo "<pre>";
+print_r($insert_data);
+echo "</pre>";
 
 
 if($_SESSION["dati_persF"] != "Y"){
 	echo "insert";
     //creo la connessione con il database
     if( $_POST['tipo']=='MADRE'){
-    $obj = new madre();
-    $obj->insert($insert_tipo);
+    $obj = new madre(); 
+
+    $obj->insert($insert_tipo); 
+
     echo "MADRE: ";
-    var_dump($insert_tipo);
     $obj->error();
     }
     
-    
-    $objj = new dati_pers();
-    // a questo punto posso effettuare la seguente insert
-    $objj->insert($insert_data);
-    echo "DATI_PERS: ";
-    var_dump($insert_data);
+echo "Dati da inserire nel database:<br>";
+echo "<pre>";
+print_r($insert_data); // Visualizza i dati da inserire
+echo "</pre>";
+
+$objj = new dati_pers(); // Creazione dell'oggetto
+$objj->insert($insert_data);
+
+
     $objj->error();
     $scritta = "";
     if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
@@ -284,7 +300,6 @@ else {
     }
 
 }
-
 }
 
 function back(){

@@ -12,6 +12,10 @@
 <link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> 
 <script type="text/javascript" src="js/number/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/number/jquery.keypadi.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
 
 <!--[if lt IE 9]>
  <link rel="stylesheet" type="text/css" href="DateTimePicker-ltie9.css" />
@@ -330,14 +334,27 @@ function performSubmit(action)
             ?>
         </label>
     </div>
-    <div class="col-3">
-        <label style="padding-top: 8px;"  <?php echo "class=".$class2; ?>>
-            Ora somministrazione *<br/>
-            <?php
-                echo "<input type=\"text\" $dis data-field=\"time\" name=\"oraS\" readonly value=\"".$oraU."\">";
-            ?>
-        </label>
-    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr("#oraS", {
+            enableTime: true,          
+            noCalendar: true,        
+            dateFormat: "H:i",      
+            defaultDate: "<?php echo $oraU; ?>"  
+        });
+    });
+</script>
+
+
+<div class="col-3">
+    <label class="form-label" style="padding-top: 8px;">
+        Ora somministrazione *<br/>
+        <input type="text" id="oraS" name="oraS" readonly value="<?php echo $oraU; ?>">
+    </label>
+</div>
+
     <div class="col-3">
         <label style="padding-top: 8px;"  <?php echo "class=".$class3; ?>>
             Persona che lo ha sommministrato *<br/>

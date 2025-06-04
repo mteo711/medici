@@ -7,6 +7,7 @@ function loadPage() {
 	$obj = new dati_feto();
 
 	$records= $obj->fetchRecord(array("schede_id"=>$_SESSION['case_id']));
+    
 
     	
     if($obj->fetchNumRows() == 0){
@@ -23,6 +24,12 @@ function loadPage() {
          $_POST["dati_feto_dataM"] = $records['data_morte'];
          $_POST["dati_feto_eta"] = $records['eta_settimana_gestazione'];
          $_POST["dati_feto_sex"] = $records['sesso'];
+
+         $_POST["dati_feto_mortequando"] = $records['morte_quando'];
+         $_POST["dati_feto_mortecome"] = $records['morte_come'];
+         $_POST["dati_feto_mortedove"] = $records['morte_dove'];
+         
+       
 
         $_SESSION["dati_feto"] = "Y";
     }

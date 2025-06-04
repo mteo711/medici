@@ -4,6 +4,7 @@
  */
  -->
  
+ 
 <script src="js/scripts.js"></script>
 <link rel="stylesheet" href="js/jquery/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -21,6 +22,9 @@
  <script type="text/javascript" src="DateTimePicker-ltie9.js"></script>
 <![endif]-->
  <?php
+
+
+ 
     if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
         $dis = "disabled";
     }
@@ -113,7 +117,41 @@
         $sex = null;
         $class10 = "errors";
     }
+    /*nuovi inserimenti*/
+
+     if(isset($_POST["dati_feto_mortecome"])){
+        $mortecome = $_POST["dati_feto_mortecome"];
+        $class12 = "";
+    }
+    else {
+        $mortecome = null;
+        $class12 = "errors";
+    }
+
+     if(isset($_POST["dati_feto_mortedove"])){
+        $mortedove = $_POST["dati_feto_mortedove"];
+        $class13 = "";
+    }
+    else {
+        $mortedove = null;
+        $class13 = "errors";
+    }
+
+    if(isset($_POST["dati_feto_mortequando"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_feto_mortequando']);
+    $mortequando = "$day-$month-$year";
+    $class11 = "";
+}
+else {
+    $mortequando = null;
+    $class11 = "errors";
+}
+
+
+    
+ 
 ?>
+
  <script>
    $( document ).ready(function() {
     if (('<?php echo $dataM; ?>' == '') || ('<?php echo $_SESSION["stato"]; ?>' == 'chiusa') || ('<?php echo $_SESSION["stato"]; ?>' == 'chiusa_usr')){
@@ -167,6 +205,18 @@
    $(function() {
       $('#eta').keypad();    
   });
+
+  $(function() {
+    $( "#mortequando" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-10:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0",//new Date(2015, 10 - 10, 29) //"+0D"
+        
+    });
+   });
+ console.log()
  function performSubmit(action)
 {
    // ASSIGN THE ACTION
@@ -180,7 +230,7 @@
 }
  </script>
  <div id="dtBox"></div>
-<br/<br/><br/>
+<br/><br/>
 <form id="adminform" name="adminform" action="db/dati_feto_send.php" method="post">
     <div class="col-2">
         <label  <?php echo "class=".$class1; ?> >
@@ -264,6 +314,39 @@
             ?>
         </label>
     </div>  
+    <!-- nuovi div-->
+    <div class="col-1">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Quando è stata riscontrata la morte? *<br/>
+            <?php
+                echo "<input type=\"text\" id=\"mortequando\" $dis name=\"mortequando\" value=\"".$mortequando."\" readonly>";
+            ?>
+        </label>
+    </div>
+    
+     <div class="col-2">
+		<label style="padding-top: 8px;" >
+			Come è stata riscontrata la morte? <br/>
+            <?php
+			echo "<textarea name=\"mortecome\" style=\"height:40px;\" $dis tabindex=\"22\"> $mortecome</textarea>";
+            ?>
+		</label>
+	</div>
+
+     <div class="col-2">
+		<label style="padding-top: 8px;" >
+			Dove è stata riscontrata la morte? <br/>
+            <?php
+			echo "<textarea name=\"mortedove\" style=\"height:40px;\" $dis tabindex=\"22\"> $mortedove</textarea>";
+            ?>
+		</label>
+	</div>
+
+  
+    
+    
+
+
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. <br/>

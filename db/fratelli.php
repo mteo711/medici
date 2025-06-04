@@ -25,25 +25,65 @@ class fratelli extends Database
 {
  		
  private  $columns = array('patologie_gest_madre_schede_id' => 'int',
-				'num_figli_in_vita'  => 'string',
 				'data_ultimo_parto_precedente'  => 'date',			
-                'num_figli_morti'  => 'string',
-                'dataN1' => 'date',
+                'fratelli_sorelle'  => 'string',
+        //fratello 1
+        'dataN1' => 'date',
 				'mesiM1'  => 'int',
 				'anniM1'  => 'int',
 				'causaM1' => 'string',
-                'dataN2' => 'date',
+
+        'vivo1' => 'string',
+        'ereditarieM1'=> 'string',
+        'geneticheM1' => 'string',
+        'dismetabolicheM1' => 'string',
+        'altroM1' => 'string',
+        //fratello 2
+        'dataN2' => 'date',
 				'mesiM2'  => 'int',
 				'anniM2'  => 'int',
 				'causaM2' => 'string',
-                'dataN3' => 'date',
+        'vivo2' => 'string',
+        'ereditarieM2'=> 'string',
+        'geneticheM2' => 'string',
+        'dismetabolicheM2' => 'string',
+        'altroM2' => 'string',
+        //fratello 3
+        'dataN3' => 'date',
 				'mesiM3'  => 'int',
 				'anniM3'  => 'int',
 				'causaM3' => 'string',
-                'dataN4' => 'date',
+
+        'vivo3' => 'string',
+        'ereditarieM3'=> 'string',
+        'geneticheM3' => 'string',
+        'dismetabolicheM3' => 'string',
+        'altroM3' => 'string',
+        //fratello 4
+        'dataN4' => 'date',
 				'mesiM4'  => 'int',
 				'anniM4'  => 'int',
 				'causaM4' => 'string',
+
+        'vivo4' => 'string',
+        'ereditarieM4'=> 'string',
+        'geneticheM4' => 'string',
+        'dismetabolicheM4' => 'string',
+        'altroM4' => 'string',
+
+        //fratello 5
+        'dataN5' => 'date',
+				'mesiM5'  => 'int',
+				'anniM5'  => 'int',
+				'causaM5' => 'string',
+
+        'vivo5' => 'string',
+        'ereditarieM5'=> 'string',
+        'geneticheM5' => 'string',
+        'dismetabolicheM5' => 'string',
+        'altroM5' => 'string',
+
+
                 'conclusa' => 'bool'
 				);
 

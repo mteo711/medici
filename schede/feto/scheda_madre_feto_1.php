@@ -25,10 +25,13 @@
     else {
         $dis = "";
     }
+    
+
 require_once("./db/dati_pers_loadM.php");
 loadPage();
 require_once("./db/loadtab_madref.php");
 tab_madref();
+
 if(isset($_POST["dati_pers_cognome"])){
     $cognome = $_POST["dati_pers_cognome"];
     $class1 = "";
@@ -221,8 +224,119 @@ if(isset($_POST["dati_pers_ultimoAvv"])){
 else {
     $ultimoAvv = null;
     $class22 = "errors";
-}
+}   
 //fine ins3
+//NUOVI ANAMNESI FAMILIARE
+if(isset($_POST["dati_pers_anni_nonnamaterna"])){
+    $anni_nonnamaterna = $_POST["dati_pers_anni_nonnamaterna"];
+    $class23 = "";
+}
+else {
+    $anni_nonnamaterna = null;
+    $class23 = "errors23";
+}
+
+if(isset($_POST["dati_pers_anni_nonnomaterno"])){
+    $anni_nonnomaterno = $_POST["dati_pers_anni_nonnomaterno"];
+    $class24 = "";
+}
+else {
+    $anni_nonnomaterno = null;
+    $class24 = "errors24";
+}
+
+if(isset($_POST["dati_pers_patologie_nonnamaterna"])){
+    $patologie_nonnamaterna = $_POST["dati_pers_patologie_nonnamaterna"];
+    $class25 = "";
+}
+else {
+    $patologie_nonnamaterna = null;
+    $class25 = "errors25";
+}
+
+if(isset($_POST["dati_pers_patologie_nonnomaterno"])){
+    $patologie_nonnomaterno = $_POST["dati_pers_patologie_nonnomaterno"];
+    $class26 = "";
+}
+else {
+    $patologie_nonnomaterno = null;
+    $class26 = "errors26";
+}
+
+if(isset($_POST["dati_pers_fratelli_sorelle"])){
+    $fratelli_sorelle = $_POST["dati_pers_fratelli_sorelle"];
+    $class27 = "";
+}
+else {
+    $fratelli_sorelle = null;
+    $class27 = "errors27";
+}
+
+if(isset($_POST["dati_pers_patologie_famiglia"])){
+    $patologie_famiglia = $_POST["dati_pers_patologie_famiglia"];
+    $class28 = "";
+}
+else {
+    $patologie_famiglia = null;
+    $class28 = "errors28";
+}
+
+if(isset($_POST["dati_pers_altricasi"])){
+    $altricasi = $_POST["dati_pers_altricasi"];
+    $class29 = "";
+}
+else {
+    $altricasi = null;
+    $class29 = "errors29";
+}
+
+if(isset($_POST["dati_pers_altri_casi"])){
+    $altri_casi = $_POST["dati_pers_altri_casi"];
+    $class30 = "";
+}
+else {
+    $altri_casi = null;
+    $class30 = "errors30";
+}
+
+if(isset($_POST["dati_pers_nonnaviva"])){
+    $nonnaviva = $_POST["dati_pers_nonnaviva"];
+    $class31 = "";
+}
+else {
+    $nonnaviva = null;
+    $class31 = "errors31";
+}
+
+if(isset($_POST["dati_pers_nonnovivo"])){
+    $nonnovivo = $_POST["dati_pers_nonnovivo"];
+    $class32 = "";
+}
+else {
+    $nonnovivo = null;
+    $class32 = "errors32";
+}
+
+if(isset($_POST["causa_morte_nonnamaterna"])){
+    $morte_nonnamaterna = $_POST["causa_morte_nonnamaterna"];
+    $class33 = "";
+}
+else {
+    $morte_nonnamaterna = null;
+    $class33 = "errors33";
+}
+
+if(isset($_POST["causa_morte_nonnomaterno"])){
+    $nonnomaterno = $_POST["causa_morte_nonnomaterno"];
+    $class34 = "";
+}
+else {
+    $nonnomaterno = null;
+    $class34 = "errors34";
+}
+
+
+
 
 ?>
 <script>
@@ -286,6 +400,70 @@ $( document ).ready(function() {
     }
 });
 
+$(function () {
+    $('.slct3').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        // Nasconde il blocco associato all'inizio
+        $(targetSelector).hide();
+
+        // Se il valore iniziale è "no", mostra il blocco
+        if ($select.val() === 'no') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'no') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
+                }
+            }
+        });
+    });
+});
+
+$(function () {
+    $('.slct4').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        $(targetSelector).hide();
+
+        if ($select.val() === 'si') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'si') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
+                }
+            }
+        });
+    });
+});
+
+$(function() {
+    // Per mesiM1 ... mesiM5 con limite max 11
+   
+
+    // Per anniM1 ... anniM5 senza limiti particolari
+    for (let i = 1; i <= 5; i++) {
+        $('#anni_' + i).keypad();
+    }
+});
+
+
+
  
  function performSubmit(action)
    {
@@ -343,7 +521,7 @@ $( document ).ready(function() {
   }
 </style>
 <div id="dtBox"></div>
-<br/<br/><br/>
+<br/><br/>
 <form id="adminform" name="adminform" action="db/dati_pers_sendf.php" method="post">
     <div class="col-2">
         <label style="padding-top: 6px;" <?php echo "class=".$class1; ?>>
@@ -548,6 +726,130 @@ $( document ).ready(function() {
             ?>
 		</label>
 	</div>
+
+    <div class="col-2">
+        <label <?php echo "class=".$class5 ?>>
+            Madre (nonna materna del lattante deceduto) di anni<br/>
+            <?php
+                echo "<input id=\"anni_nonnamaterna\" $dis name=\"anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
+            ?>
+        </label>
+    </div>
+
+     <div class="col-2">
+    <label <?php echo "class=".$class7 ?>>
+        Patologie della madre
+        <textarea name="patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
+    </label>
+</div>
+    
+
+<div class="col-3">
+    <label <?php echo "class=".$class3 ?>>
+        Vivente <br/>
+        <select tabindex="17"
+                name="nonnaviva"
+                class="slct3"
+                data-target="#morte_nonnamaterna"
+                style="width:50%;"
+                <?php echo $class22; ?>>
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($nonnaviva === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($nonnaviva === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($nonnaviva === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+<div class="col-3" id="morte_nonnamaterna">
+    <label <?php echo "class=".$class7 ?>>
+        Causa di morte
+        <textarea name="causa_morte_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $causa_morte_nonnamaterna; ?></textarea>
+    </label>
+</div>
+<br>
+
+<div class="col-2">
+        <label <?php echo "class=".$class5 ?>>
+           Padre (nonno materno del lattante deceduto) di anni<br/>
+            <?php
+                echo "<input id=\"anni_nonnomaterno\" $dis name=\"anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
+            ?>
+        </label>
+    </div>
+
+     <div class="col-2">
+    <label <?php echo "class=".$class7 ?>>
+        Patologie del padre
+        <textarea name="patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
+    </label>
+</div>
+
+    
+
+<div class="col-3">
+    <label <?php echo "class=".$class3 ?>>
+        Vivente <br/>
+        <select tabindex="17"
+                name="nonnovivo"
+                class="slct3"
+                data-target="#morte_nonnomaterno"
+                style="width:50%;"
+                <?php echo $class22; ?>>
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($nonnovivo === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($nonnovivo === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($nonnovivo === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+
+<div class="col-3" id="morte_nonnomaterno">
+    <label <?php echo "class=".$class7 ?>>
+        Causa di morte
+        <textarea name="causa_morte_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $causa_morte_nonnomaterno; ?></textarea>
+    </label>
+</div>
+<br>
+
+ <div class="col-2">
+    <label <?php echo "class=".$class7 ?>>
+        Fratelli/Sorelle: Età e stato di salute
+        <textarea name="fratelli_sorelle" style="height:40px;" <?php echo $dis; ?>><?php echo $fratelli_sorelle; ?></textarea>
+    </label>
+</div>
+
+ <div class="col-2">
+    <label <?php echo "class=".$class7 ?>>
+        Altre patologie nella famiglia
+        <textarea name="patologie_famiglia" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_famiglia; ?></textarea>
+    </label>
+</div>
+
+<div class="col-3">
+    <label <?php echo "class=".$class3 ?>>
+        Ci sono stati altri casi di morte improvvisa in famiglia? <br/>
+        <select tabindex="17"
+                name="altricasi"
+                class="slct4"
+                data-target="#altri_casi"
+                style="width:50%;"
+                <?php echo $class22; ?>>
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($altricasi === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($altricasi === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($altricasi === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+<div class="col-3" id="altri_casi">
+    <label <?php echo "class=".$class7 ?>>
+       Se sì, specificare
+        <textarea name="altri_casi" style="height:40px;" <?php echo $dis; ?>><?php echo $altri_casi; ?></textarea>
+    </label>
+</div>
     
 
     

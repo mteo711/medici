@@ -21,17 +21,12 @@ if($_POST && array_key_exists("action", $_POST)){
    }
 }
 
+
 function invia($i){
 echo "inizio";
 $insert_data = array();
 
 $insert_data["patologie_gest_madre_schede_id"] = $_SESSION['case_id'];
-    
-if((isset($_POST['figliVivi'])) && (!empty($_POST['figliVivi']))){
-    $insert_data["num_figli_in_vita"] = $_POST['figliVivi'];
-}
-else {
-}
     
 if((isset($_POST['dataU'])) && (!empty($_POST['dataU']))){
     list($day, $month, $year) = explode("-", $_POST['dataU']);
@@ -41,20 +36,22 @@ if((isset($_POST['dataU'])) && (!empty($_POST['dataU']))){
 else {
 }
     
-if((isset($_POST['figliMorti'])) && (!empty($_POST['figliMorti']))){
-    $insert_data["num_figli_morti"] = $_POST['figliMorti'];
+if(!empty($_POST['fratelli_sorelle'])){
+    $insert_data["fratelli_sorelle"] = $_POST['fratelli_sorelle'];
+} else {
+    // eventualmente gestisci errore
 }
-else {
-}
+//fratello 1   
+
     
 if((isset($_POST['dataN1'])) && (!empty($_POST['dataN1']))){
     list($day, $month, $year) = explode("-", $_POST['dataN1']);
     $ymd = "$year-$month-$day";
     $insert_data["dataN1"] = $ymd;
 }
+
 else {
-}
-    
+}    
 if((isset($_POST['mesiM1'])) && (!empty($_POST['mesiM1']))){
     $insert_data["mesiM1"] = $_POST['mesiM1'];
 }
@@ -72,7 +69,43 @@ if((isset($_POST['causaM1'])) && (!empty($_POST['causaM1']))){
 }
 else {
 }
+
+if((isset($_POST['vivo1'])) && (!empty($_POST['vivo1']))){
+    $insert_data["vivo1"] = $_POST['vivo1'];
+}
+else {
+}
+if((isset($_POST['ereditarieM1'])) && (!empty($_POST['ereditarieM1']))){
+    $insert_data["ereditarieM1"] = $_POST['ereditarieM1'];
+}
+else {
+}
     
+if((isset($_POST['geneticheM1'])) && (!empty($_POST['geneticheM1']))){
+    $insert_data["geneticheM1"] = $_POST['geneticheM1'];
+}
+else {
+}
+    
+if((isset($_POST['dismetabolicheM1'])) && (!empty($_POST['dismetabolicheM1']))){
+    $insert_data["dismetabolicheM1"] = $_POST['dismetabolicheM1'];
+}
+else {
+}
+
+if((isset($_POST['altroM1'])) && (!empty($_POST['altroM1']))){
+    $insert_data["altroM1"] = $_POST['altroM1'];
+}
+else {
+}
+
+    
+
+    
+
+    
+
+//fratello 2
 if((isset($_POST['dataN2'])) && (!empty($_POST['dataN2']))){
     list($day, $month, $year) = explode("-", $_POST['dataN2']);
     $ymd = "$year-$month-$day";
@@ -98,7 +131,39 @@ if((isset($_POST['causaM2'])) && (!empty($_POST['causaM2']))){
 }
 else {
 }
+
+
+if((isset($_POST['vivo2'])) && (!empty($_POST['vivo2']))){
+    $insert_data["vivo2"] = $_POST['vivo2'];
+}
+else {
+}
+if((isset($_POST['ereditarieM2'])) && (!empty($_POST['ereditarieM2']))){
+    $insert_data["ereditarieM2"] = $_POST['ereditarieM2'];
+}
+else {
+}
     
+if((isset($_POST['geneticheM2'])) && (!empty($_POST['geneticheM2']))){
+    $insert_data["geneticheM2"] = $_POST['geneticheM2'];
+}
+else {
+}
+    
+if((isset($_POST['dismetabolicheM2'])) && (!empty($_POST['dismetabolicheM2']))){
+    $insert_data["dismetabolicheM2"] = $_POST['dismetabolicheM2'];
+}
+else {
+}
+
+if((isset($_POST['altroM2'])) && (!empty($_POST['altroM2']))){
+    $insert_data["altroM2"] = $_POST['altroM2'];
+}
+else {
+}
+
+
+//fratello 3
 if((isset($_POST['dataN3'])) && (!empty($_POST['dataN3']))){
     list($day, $month, $year) = explode("-", $_POST['dataN3']);
     $ymd = "$year-$month-$day";
@@ -124,7 +189,36 @@ if((isset($_POST['causaM3'])) && (!empty($_POST['causaM3']))){
 }
 else {
 }
+
+if((isset($_POST['vivo3'])) && (!empty($_POST['vivo3']))){
+    $insert_data["vivo3"] = $_POST['vivo3'];
+}
+else {
+}
+if((isset($_POST['ereditarieM3'])) && (!empty($_POST['ereditarieM3']))){
+    $insert_data["ereditarieM3"] = $_POST['ereditarieM3'];
+}
+else {
+}
     
+if((isset($_POST['geneticheM3'])) && (!empty($_POST['geneticheM3']))){
+    $insert_data["geneticheM3"] = $_POST['geneticheM3'];
+}
+else {
+}
+    
+if((isset($_POST['dismetabolicheM3'])) && (!empty($_POST['dismetabolicheM3']))){
+    $insert_data["dismetabolicheM3"] = $_POST['dismetabolicheM3'];
+}
+else {
+}
+
+if((isset($_POST['altroM3'])) && (!empty($_POST['altroM3']))){
+    $insert_data["altroM3"] = $_POST['altroM3'];
+}
+else {
+}
+//fratello 4
 if((isset($_POST['dataN4'])) && (!empty($_POST['dataN4']))){
     list($day, $month, $year) = explode("-", $_POST['dataN4']);
     $ymd = "$year-$month-$day";
@@ -150,6 +244,94 @@ if((isset($_POST['causaM4'])) && (!empty($_POST['causaM4']))){
 }
 else {
 }
+
+if((isset($_POST['vivo4'])) && (!empty($_POST['vivo4']))){
+    $insert_data["vivo4"] = $_POST['vivo4'];
+}
+else {
+}
+if((isset($_POST['ereditarieM4'])) && (!empty($_POST['ereditarieM4']))){
+    $insert_data["ereditarieM4"] = $_POST['ereditarieM4'];
+}
+else {
+}
+    
+if((isset($_POST['geneticheM4'])) && (!empty($_POST['geneticheM4']))){
+    $insert_data["geneticheM4"] = $_POST['geneticheM4'];
+}
+else {
+}
+    
+if((isset($_POST['dismetabolicheM4'])) && (!empty($_POST['dismetabolicheM4']))){
+    $insert_data["dismetabolicheM4"] = $_POST['dismetabolicheM4'];
+}
+else {
+}
+
+if((isset($_POST['altroM4'])) && (!empty($_POST['altroM4']))){
+    $insert_data["altroM4"] = $_POST['altroM4'];
+}
+else {
+}
+//fratello 5
+
+if((isset($_POST['dataN5'])) && (!empty($_POST['dataN5']))){
+    list($day, $month, $year) = explode("-", $_POST['dataN5']);
+    $ymd = "$year-$month-$day";
+    $insert_data["dataN5"] = $ymd;
+}
+else {
+}
+    
+if((isset($_POST['mesiM5'])) && (!empty($_POST['mesiM5']))){
+    $insert_data["mesiM5"] = $_POST['mesiM5'];
+}
+else {
+}
+    
+if((isset($_POST['anniM5'])) && (!empty($_POST['anniM5']))){
+    $insert_data["anniM5"] = $_POST['anniM5'];
+}
+else {
+}
+    
+if((isset($_POST['causaM5'])) && (!empty($_POST['causaM5']))){
+    $insert_data["causaM5"] = $_POST['causaM5'];
+}
+else {
+}
+
+if((isset($_POST['vivo5'])) && (!empty($_POST['vivo5']))){
+    $insert_data["vivo5"] = $_POST['vivo5'];
+}
+else {
+}
+if((isset($_POST['ereditarieM5'])) && (!empty($_POST['ereditarieM5']))){
+    $insert_data["ereditarieM5"] = $_POST['ereditarieM5'];
+}
+else {
+}
+    
+if((isset($_POST['geneticheM5'])) && (!empty($_POST['geneticheM5']))){
+    $insert_data["geneticheM5"] = $_POST['geneticheM5'];
+}
+else {
+}
+    
+if((isset($_POST['dismetabolicheM5'])) && (!empty($_POST['dismetabolicheM5']))){
+    $insert_data["dismetabolicheM5"] = $_POST['dismetabolicheM5'];
+}
+else {
+}
+
+if((isset($_POST['altroM5'])) && (!empty($_POST['altroM5']))){
+    $insert_data["altroM5"] = $_POST['altroM5'];
+}
+else {
+}
+
+
+
 
 if($_SESSION["fratelliF"] != "Y"){
     $obj = new fratelli();

@@ -8,11 +8,14 @@
 <link rel="stylesheet" href="js/jquery/jquery-ui.css">
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="js/jquery/jquery-ui.js"></script>
-<!-- <link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
+ <link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
 <script type="text/javascript" src="js/DateTimePicker.js"></script>
-<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> -->
+<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> 
 <script type="text/javascript" src="js/number/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/number/jquery.keypadi.js"></script>
+<!-- libreria nuova-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
 
@@ -20,6 +23,7 @@
  <link rel="stylesheet" type="text/css" href="DateTimePicker-ltie9.css" />
  <script type="text/javascript" src="DateTimePicker-ltie9.js"></script>
 <![endif]-->
+
 <?php
     if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
         $dis = "disabled";
@@ -345,25 +349,43 @@ function performSubmit(action)
             ?>
         </label>
     </div>
-    <div class="col-3">
-        <label  <?php echo "class=".$class12; ?> >
-            Ora del rilievo del decesso *<br/>
-            <?php
-               //  echo "<input type=\"text\" $dis data-field=\"time\"  name=\"oraD\" value=\"".$oraD."\"  readonly>";
-               //MM 
-               echo "<input type=\"time\" $dis  name=\"oraD\" value=\"".$oraD."\">";
-            ?>
-        </label>
-    </div>
-    <div class="col-3">
-        <label  <?php echo "class=".$class13; ?> >
-            Ora AAA dell'ultimo controllo parentale *<br/>
-            <?php
-              //  echo "<input type=\"text\" $dis data-field=\"time\"  name=\"oraC\" value=\"".$oraC."\" readonly>";
-              echo "<input type=\"time\" $dis   name=\"oraC\" value=\"".$oraC."\">";
-            ?>
-        </label>
-    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr("#oraD", {
+            enableTime: true,          
+            noCalendar: true,        
+            dateFormat: "H:i",      
+            defaultDate: "<?php echo $oraD; ?>"  
+        });
+    });
+</script>
+
+<div class="col-3">
+    <label class="form-label" style="padding-top: 8px;">
+        Ora del rilievo del decesso * *<br/>
+        <input type="text" id="oraD" name="oraD" readonly value="<?php echo $oraD; ?>">
+    </label>
+</div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        flatpickr("#oraC", {
+            enableTime: true,          
+            noCalendar: true,        
+            dateFormat: "H:i",      
+            defaultDate: "<?php echo $oraC; ?>"  
+        });
+    });
+</script>
+
+<div class="col-3">
+    <label class="form-label" style="padding-top: 8px;">
+    Ora AAA dell'ultimo controllo parentale *<br/>
+        <input type="text" id="oraC" name="oraC" readonly value="<?php echo $oraC; ?>">
+    </label>
+</div>
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. <br/>

@@ -110,6 +110,7 @@
         $medico = null;
         $class9 = "errors";
     }
+    
 ?>
 <script>
 $( document ).ready(function() {

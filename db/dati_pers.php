@@ -56,7 +56,6 @@ class dati_pers extends Database
 				'morte_feto' => 'string',
 				'ultimo_avvistamento' => 'string',
 				
-                'conclusa' => 'bool',
 
 				'fecondazione' => 'string',
 				'dataF' => 'date',
@@ -74,12 +73,13 @@ class dati_pers extends Database
 				'crioconservazione' => 'bool',
 				'test_preimpianto' => 'bool',
 
-
+'conclusa' => 'bool',
 
 				);
+				
 
-private function checkInput(array $val_cols)
-{	
+private function checkInput(array $val_cols){	
+	
   $checked_val_cols=array();
   $error=0;
   
@@ -131,10 +131,13 @@ private function checkInput(array $val_cols)
   }
   if ($error) return 0;
   else return $checked_val_cols;
+  
 }
+
   
 // $val_cols si aspetta un array indicizzato sui nome delle colonne della tabella che non abbia valore nullo
 public function insert(array $val_cols){
+	var_dump($val_cols);  
   $checked_val_cols=$this->checkInput($val_cols);
   // se non Ë un array si Ë verificato un errore e restituisco il numero di errore
   

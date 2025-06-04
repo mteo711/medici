@@ -121,7 +121,7 @@ public function insert(array $val_cols){
   
   if ($checked_val_cols==0) return $checked_val_cols;
   // atrimenti proseguo per l'inserimento
-  return parent::insert($checked_val_cols); 
+  return parent::insert($checked_val_cols);
 }
 
 

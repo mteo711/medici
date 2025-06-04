@@ -8,8 +8,8 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script src="js/jquery/jquery-ui.js"></script>
 <link rel="stylesheet" type="text/css" href="css/DateTimePicker.css" />
-<!-- <script type="text/javascript" src="js/DateTimePicker.js"></script>
-<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> -->
+<script type="text/javascript" src="js/DateTimePicker.js"></script>
+<link type="text/css" href="css/jquery.keypad.css" rel="stylesheet"> 
 <script type="text/javascript" src="js/number/jquery.plugin.js"></script> 
 <script type="text/javascript" src="js/number/jquery.keypadi.js"></script>
 
