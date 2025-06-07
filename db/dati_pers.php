@@ -73,6 +73,21 @@ class dati_pers extends Database
 				'crioconservazione' => 'bool',
 				'test_preimpianto' => 'bool',
 
+				  'anni_nonnamaterna' => 'int',
+    'anni_nonnomaterno' => 'int',
+    'patologie_nonnamaterna' => 'string',
+    'patologie_nonnomaterno' => 'string',
+    'fratelli_sorelle' => 'string',
+    'patologie_famiglia' => 'string',
+    'altricasi' => 'string',
+    'altri_casi' => 'string',
+    'nonnaviva' => 'string',
+    'nonnovivo' => 'string',
+    'morte_nonnamaterna' => 'string',
+    'morte_nonnomaterno' => 'string',
+
+				
+
 'conclusa' => 'bool',
 
 				);

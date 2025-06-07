@@ -317,21 +317,21 @@ else {
     $class32 = "errors32";
 }
 
-if(isset($_POST["causa_morte_nonnamaterna"])){
-    $morte_nonnamaterna = $_POST["causa_morte_nonnamaterna"];
+if (isset($_POST["dati_pers_morte_nonnamaterna"])) {
+    $mortenonnamaterna = $_POST["dati_pers_morte_nonnamaterna"];
     $class33 = "";
-}
-else {
-    $morte_nonnamaterna = null;
+} else {
+    $mortenonnamaterna = null;
     $class33 = "errors33";
 }
 
-if(isset($_POST["causa_morte_nonnomaterno"])){
-    $nonnomaterno = $_POST["causa_morte_nonnomaterno"];
+
+if(isset($_POST["dati_pers_morte_nonnomaterno"])){
+    $morte_nonnomaterno = $_POST["dati_pers_morte_nonnomaterno"];
     $class34 = "";
 }
 else {
-    $nonnomaterno = null;
+    $morte_nonnomaterno = null;
     $class34 = "errors34";
 }
 
@@ -349,6 +349,20 @@ $( document ).ready(function() {
     document.getElementById('spec').style.visibility = 'visible';
     }
 });
+
+$(function() {
+    // mesiM1 ... mesiM5 senza limiti
+    for (let i = 1; i <= 5; i++) {
+        $('#mesiM' + i).keypad();
+    }
+
+    // anniM1 ... anniM5 senza limiti
+    for (let i = 1; i <= 5; i++) {
+        $('#anniM' + i).keypad();
+    }
+});
+
+
     
   $(function() {
       $('#cap').keypad({
@@ -405,10 +419,8 @@ $(function () {
         const $select = $(this);
         const targetSelector = $select.data('target');
 
-        // Nasconde il blocco associato all'inizio
         $(targetSelector).hide();
 
-        // Se il valore iniziale è "no", mostra il blocco
         if ($select.val() === 'no') {
             $(targetSelector).show();
         }
@@ -434,6 +446,31 @@ $(function () {
 
         $(targetSelector).hide();
 
+        if ($select.val() === 'no') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'no') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
+                }
+            }
+        });
+    });
+});
+
+$(function () {
+    $('.slct5').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        $(targetSelector).hide();
+
         if ($select.val() === 'si') {
             $(targetSelector).show();
         }
@@ -453,14 +490,13 @@ $(function () {
 });
 
 $(function() {
-    // Per mesiM1 ... mesiM5 con limite max 11
-   
+    // Applica keypad all'input anni_nonnamaterna
+    $('#anni_nonnamaterna').keypad();
 
-    // Per anniM1 ... anniM5 senza limiti particolari
-    for (let i = 1; i <= 5; i++) {
-        $('#anni_' + i).keypad();
-    }
+    // Applica keypad a anni_nonnomaterno solo se esiste nell'HTML
+    $('#anni_nonnomaterno').keypad();
 });
+
 
 
 
@@ -597,7 +633,7 @@ $(function() {
         </label>
     </div>
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class13; ?>>
+        <label style="padding-top: 6px;">
             Cell *<br/>
             <?php
                 echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
@@ -606,7 +642,7 @@ $(function() {
     </div>
 
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class14; ?>>
+        <label style="padding-top: 6px;">
             Codice Fiscale *<br/>
             <?php
                 echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
@@ -650,7 +686,7 @@ $(function() {
 
     <!-- ins2-->
     <div class="col-2">
-        <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
+        <label style="padding-top: 6px; ">
             Riconosciuti rischi nell’ambiente di lavoro *<br/>
             <?php
                 echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";               
@@ -659,8 +695,8 @@ $(function() {
     </div>
 
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class16; ?>>
-            Titolo di Studio *<br/>
+        <label style="padding-top: 6px;">
+            Titolo di Studio <br/>
             <?php
                 echo "<input name=\"titolodistudio\" $dis tabindex=\"16\" value=\"".$titolodistudio."\">";
             ?>
@@ -668,8 +704,8 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
-            Stato Civile *<br/>
+        <label style="padding-top: 9px;">
+            Stato Civile <br/>
             <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
                 <option value="mancante">Dato Mancante</option> 
@@ -685,8 +721,8 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label  id="spec2" style="visibility: hidden;padding-top: 6px;" <?php echo "class=".$class20; ?>>
-            Data Matrimonio *<br/>
+        <label  id="spec2" style="visibility: hidden;padding-top: 6px;" >
+            Data Matrimonio <br/>
             <?php
                 echo "<input type=\"text\" id=\"specM\" $dis name=\"specM\" value=\"".$specM."\" readonly>";
             ?>
@@ -694,8 +730,8 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
-            Altezza *<br/>
+        <label style="padding-top: 6px;">
+            Altezza <br/>
             <?php
                 echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
             ?>
@@ -703,8 +739,8 @@ $(function() {
     </div>
     
     <div class="col-4">
-        <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
-            Peso *<br/>
+        <label style="padding-top: 6px;" >
+            Peso <br/>
             <?php
                 echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
             ?>
@@ -728,29 +764,29 @@ $(function() {
 	</div>
 
     <div class="col-2">
-        <label <?php echo "class=".$class5 ?>>
+        <label>
             Madre (nonna materna del lattante deceduto) di anni<br/>
             <?php
-                echo "<input id=\"anni_nonnamaterna\" $dis name=\"anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
+                echo "<input id=\"anni_nonnamaterna\" $dis name=\"dati_pers_anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
             ?>
         </label>
     </div>
 
      <div class="col-2">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Patologie della madre
-        <textarea name="patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
+        <textarea name="dati_pers_patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
     </label>
 </div>
     
 
 <div class="col-3">
-    <label <?php echo "class=".$class3 ?>>
+    <label class="<?php echo $class31; ?>">
         Vivente <br/>
         <select tabindex="17"
-                name="nonnaviva"
+                name="dati_pers_nonnaviva"
                 class="slct3"
-                data-target="#morte_nonnamaterna"
+                data-target="#nonnamaterna"
                 style="width:50%;"
                 <?php echo $class22; ?>>
             <option value=""> &nbsp; </option> 
@@ -761,41 +797,43 @@ $(function() {
     </label>
 </div>
 
-<div class="col-3" id="morte_nonnamaterna">
-    <label <?php echo "class=".$class7 ?>>
+
+<div class="col-3" id="nonnamaterna">
+    <label>
         Causa di morte
-        <textarea name="causa_morte_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $causa_morte_nonnamaterna; ?></textarea>
+        <textarea name="dati_pers_morte_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $mortenonnamaterna; ?></textarea>
+
     </label>
 </div>
 <br>
 
 <div class="col-2">
-        <label <?php echo "class=".$class5 ?>>
+        <label>
            Padre (nonno materno del lattante deceduto) di anni<br/>
             <?php
-                echo "<input id=\"anni_nonnomaterno\" $dis name=\"anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
+                echo "<input id=\"anni_nonnomaterno\" $dis name=\"dati_pers_anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
             ?>
         </label>
     </div>
 
      <div class="col-2">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Patologie del padre
-        <textarea name="patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
+        <textarea name="dati_pers_patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
     </label>
 </div>
 
     
 
 <div class="col-3">
-    <label <?php echo "class=".$class3 ?>>
+    <label >
         Vivente <br/>
         <select tabindex="17"
-                name="nonnovivo"
-                class="slct3"
-                data-target="#morte_nonnomaterno"
+                name="dati_pers_nonnovivo"
+                class="slct4"
+                data-target="#nonnomaterno"
                 style="width:50%;"
-                <?php echo $class22; ?>>
+               >
             <option value=""> &nbsp; </option> 
             <option value="mancante" <?php if($nonnovivo === "mancante") echo "selected"; ?>>Dato Mancante</option>
             <option value="si" <?php if($nonnovivo === "si") echo "selected"; ?>>Si</option>
@@ -805,37 +843,38 @@ $(function() {
 </div>
 
 
-<div class="col-3" id="morte_nonnomaterno">
-    <label <?php echo "class=".$class7 ?>>
-        Causa di morte
-        <textarea name="causa_morte_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $causa_morte_nonnomaterno; ?></textarea>
+
+<div class="col-3" id="nonnomaterno">
+    <label>
+       Causa di morte
+        <textarea name="dati_pers_morte_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $morte_nonnomaterno; ?></textarea>
     </label>
 </div>
 <br>
 
  <div class="col-2">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Fratelli/Sorelle: Età e stato di salute
-        <textarea name="fratelli_sorelle" style="height:40px;" <?php echo $dis; ?>><?php echo $fratelli_sorelle; ?></textarea>
+        <textarea name="dati_pers_fratelli_sorelle" style="height:40px;" <?php echo $dis; ?>><?php echo $fratelli_sorelle; ?></textarea>
     </label>
 </div>
 
  <div class="col-2">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altre patologie nella famiglia
-        <textarea name="patologie_famiglia" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_famiglia; ?></textarea>
+        <textarea name="dati_pers_patologie_famiglia" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_famiglia; ?></textarea>
     </label>
 </div>
 
 <div class="col-3">
-    <label <?php echo "class=".$class3 ?>>
+    <label>
         Ci sono stati altri casi di morte improvvisa in famiglia? <br/>
         <select tabindex="17"
-                name="altricasi"
-                class="slct4"
+                name="dati_pers_altricasi"
+                class="slct5"
                 data-target="#altri_casi"
                 style="width:50%;"
-                <?php echo $class22; ?>>
+               >
             <option value=""> &nbsp; </option> 
             <option value="mancante" <?php if($altricasi === "mancante") echo "selected"; ?>>Dato Mancante</option>
             <option value="si" <?php if($altricasi === "si") echo "selected"; ?>>Si</option>
@@ -845,9 +884,9 @@ $(function() {
 </div>
 
 <div class="col-3" id="altri_casi">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
        Se sì, specificare
-        <textarea name="altri_casi" style="height:40px;" <?php echo $dis; ?>><?php echo $altri_casi; ?></textarea>
+        <textarea name="dati_pers_altri_casi" style="height:40px;" <?php echo $dis; ?>><?php echo $altri_casi; ?></textarea>
     </label>
 </div>
     

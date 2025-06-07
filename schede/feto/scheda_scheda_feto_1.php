@@ -101,6 +101,8 @@
         $dataM = null;
         $class8 = "errors";
     }
+
+
     if(isset($_POST["dati_feto_eta"])) {
         $eta = $_POST["dati_feto_eta"];
         $class9 = "";
@@ -147,6 +149,7 @@ else {
     $class11 = "errors";
 }
 
+ 
 
     
  
@@ -228,7 +231,9 @@ else {
    // SUBMIT THE FORM
    document.adminform.submit();
 }
+
  </script>
+ 
  <div id="dtBox"></div>
 <br/><br/>
 <form id="adminform" name="adminform" action="db/dati_feto_send.php" method="post">
@@ -316,7 +321,7 @@ else {
     </div>  
     <!-- nuovi div-->
     <div class="col-1">
-        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+        <label style="padding-top: 6px;">
             Quando è stata riscontrata la morte? *<br/>
             <?php
                 echo "<input type=\"text\" id=\"mortequando\" $dis name=\"mortequando\" value=\"".$mortequando."\" readonly>";

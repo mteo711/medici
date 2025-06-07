@@ -29,7 +29,21 @@ ADD COLUMN `a_fresco` ENUM('Y','N') DEFAULT NULL AFTER `embriodonazione`,
 ADD COLUMN `crioconservazione` ENUM('Y','N') DEFAULT NULL AFTER `a_fresco`,
 ADD COLUMN `test_preimpianto` ENUM('Y','N') DEFAULT NULL AFTER `crioconservazione`,
 ADD COLUMN `specifica_altre` VARCHAR(50) DEFAULT NULL AFTER `test_preimpianto`;
-ADD COLUMN  `num_visite` int unsigned DEFAULT NULL AFTER `specifica_altre`
+ADD COLUMN  `num_visite` int unsigned DEFAULT NULL AFTER `specifica_altre`;
+
+ADD COLUMN `anni_nonnamaterna` INT DEFAULT NULL AFTER `num_visite`,
+ADD COLUMN `anni_nonnomaterno` INT DEFAULT NULL AFTER `anni_nonnamaterna`,
+ADD COLUMN `patologie_nonnamaterna` VARCHAR(255) DEFAULT NULL AFTER `anni_nonnomaterno`,
+ADD COLUMN `patologie_nonnomaterno` VARCHAR(255) DEFAULT NULL AFTER `patologie_nonnamaterna`,
+ADD COLUMN `fratelli_sorelle` VARCHAR(255) DEFAULT NULL AFTER `patologie_nonnomaterno`,
+ADD COLUMN `patologie_famiglia` VARCHAR(255) DEFAULT NULL AFTER `fratelli_sorelle`,
+ADD COLUMN `altricasi` VARCHAR(255) DEFAULT NULL AFTER `patologie_famiglia`,
+ADD COLUMN `altri_casi` VARCHAR(255) DEFAULT NULL AFTER `altricasi`,
+ADD COLUMN `nonnaviva` VARCHAR(255) DEFAULT NULL AFTER `altri_casi`,
+ADD COLUMN `nonnovivo` VARCHAR(255) DEFAULT NULL AFTER `nonnaviva`,
+ADD COLUMN `morte_nonnamaterna` VARCHAR(255) DEFAULT NULL AFTER `nonnovivo`,
+ADD COLUMN `morte_nonnomaterno` VARCHAR(255) DEFAULT NULL AFTER `morte_nonnamaterna`;
+
 
 
 

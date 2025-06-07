@@ -619,7 +619,7 @@ $(function() {
         </label>
     </div>
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class13; ?>>
+        <label style="padding-top: 6px;">
             Cell *<br/>
             <?php
                 echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
@@ -628,8 +628,8 @@ $(function() {
     </div>
 
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class14; ?>>
-            Codice Fiscale *<br/>
+        <label style="padding-top: 6px;">
+            Codice Fiscale <br/>
             <?php
                 echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
             ?>
@@ -670,8 +670,8 @@ $(function() {
         </label>
     </div>
     <div class="col-2">
-        <label style="padding-top: 6px; " <?php echo "class=".$class15; ?>>
-            Riconosciuti rischi nell’ambiente di lavoro *<br/>
+        <label style="padding-top: 6px; ">
+            Riconosciuti rischi nell’ambiente di lavoro <br/>
             <?php
                 echo "<input name=\"rischi\" $dis tabindex=\"15\" value=\"".$rischi."\">";               
             ?>
@@ -679,8 +679,8 @@ $(function() {
     </div>
 
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class16; ?>>
-            Titolo di Studio *<br/>
+        <label style="padding-top: 6px;">
+            Titolo di Studio <br/>
             <?php
                 echo "<input name=\"titolodistudio\" $dis tabindex=\"16\" value=\"".$titolodistudio."\">";
             ?>
@@ -688,7 +688,7 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label style="padding-top: 9px;" <?php echo "class=".$class17; ?>>
+        <label style="padding-top: 9px;">
             Stato Civile *<br/>
             <select tabindex="17" id="slct2" name="statocivile" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
@@ -705,7 +705,7 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label  id="spec2" style="visibility: hidden;padding-top: 6px;" <?php echo "class=".$class20; ?>>
+        <label  id="spec2" style="visibility: hidden;padding-top: 6px;">
             Data Matrimonio *<br/>
             <?php
                 echo "<input type=\"text\" id=\"specM\" $dis name=\"specM\" value=\"".$specM."\" readonly>";
@@ -714,7 +714,7 @@ $(function() {
     </div>
 
     <div class="col-4">
-        <label style="padding-top: 6px;" <?php echo "class=".$class18; ?>>
+        <label style="padding-top: 6px;">
             Altezza *<br/>
             <?php
                 echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
@@ -723,7 +723,7 @@ $(function() {
     </div>
     
     <div class="col-4">
-        <label style="padding-top: 6px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 6px;" >
             Peso *<br/>
             <?php
                 echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
@@ -738,7 +738,7 @@ $(function() {
     </div>
 <br>
 <div class="col-3" style="width:40%;">
-    <label style="padding-top:7px;" class="<?php echo $class18 ?>">
+    <label style="padding-top:7px;">
         La Fecondazione è stata medicalmente assistita? * <br/>
         <select tabindex="15" id="slct3" name="fecondazione" style="width:50%;" <?php echo $dis; ?>>
             <option value="">-- Seleziona --</option>

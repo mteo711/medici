@@ -16,9 +16,7 @@ echo "Stato dati_persF: ".$_SESSION["dati_persF"];
 
 
 if ($_POST && array_key_exists("action", $_POST)) {
-    echo "<pre>";
-    print_r($_POST); // Visualizza i dati ricevuti dal form
-    echo "</pre>";
+    
 
     switch ($_POST['action']) {
         case "succ":
@@ -128,43 +126,127 @@ if((isset($_POST['titolodistudio'])) && (!empty($_POST['titolodistudio']))){
 else {
 }
 
-if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
-    $insert_data["stato_civile"] = $_POST['statocivile'];
-}
-else {
-}
-if((isset($_POST['specM'])) && (!empty($_POST['specM']))){
-    list($day, $month, $year) = explode("-", $_POST['specM']);
-    $ymdN2 = "$year-$month-$day";
-    $insert_data["specifica_matrimonio"] = $ymdN2;
-}
-else {
+    if((isset($_POST['statocivile'])) && (!empty($_POST['statocivile']))){
+        $insert_data["stato_civile"] = $_POST['statocivile'];
+    }
+    else {
+    }
+    if((isset($_POST['specM'])) && (!empty($_POST['specM']))){
+        list($day, $month, $year) = explode("-", $_POST['specM']);
+        $ymdN2 = "$year-$month-$day";
+        $insert_data["specifica_matrimonio"] = $ymdN2;
+    }
+    else {
+    }
+
+    if((isset($_POST['altezza'])) && (!empty($_POST['altezza']))){
+        $insert_data["altezza"] = $_POST['altezza'];
+    }
+    else {
+    }
+
+    if((isset($_POST['peso'])) && (!empty($_POST['peso']))){
+        $insert_data["peso"] = $_POST['peso'];
+    }
+    else {
+    }
+
+    if((isset($_POST['morteFeto'])) && (!empty($_POST['morteFeto']))){
+        $insert_data["morte_feto"] = $_POST['morteFeto'];
+    }
+    else {
+    }
+
+   if (isset($_POST['ultimoAvv']) && !empty(trim($_POST['ultimoAvv']))) {
+    $insert_data["ultimo_avvistamento"] = trim($_POST['ultimoAvv']);
+} else {
 }
 
-if((isset($_POST['altezza'])) && (!empty($_POST['altezza']))){
-    $insert_data["altezza"] = $_POST['altezza'];
-}
-else {
-}
-
-if((isset($_POST['peso'])) && (!empty($_POST['peso']))){
-    $insert_data["peso"] = $_POST['peso'];
-}
-else {
+//ANAMNESI FAMILIARE 
+// Nonna materna - età
+if (isset($_POST["dati_pers_anni_nonnamaterna"]) && !empty(trim($_POST["dati_pers_anni_nonnamaterna"]))) {
+    $insert_data["anni_nonnamaterna"] = trim($_POST["dati_pers_anni_nonnamaterna"]);
+    $class23 = "";
+} else {
 }
 
-if((isset($_POST['morteFeto'])) && (!empty($_POST['morteFeto']))){
-    $insert_data["morte_feto"] = $_POST['morteFeto'];
-}
-else {
-}
-
-if (isset($_POST['ultimoAvv']) && !empty(trim($_POST['ultimoAvv']))) {
-    $insert_data["ultimo_avvistamento"] = $_POST['ultimoAvv'];
+// Nonno materno - età
+if (isset($_POST["dati_pers_anni_nonnomaterno"]) && !empty(trim($_POST["dati_pers_anni_nonnomaterno"]))) {
+    $insert_data["anni_nonnomaterno"] = trim($_POST["dati_pers_anni_nonnomaterno"]);
+    $class24 = "";
+} else {
 }
 
-else {
+// Nonna materna - patologie
+if (isset($_POST["dati_pers_patologie_nonnamaterna"]) && !empty(trim($_POST["dati_pers_patologie_nonnamaterna"]))) {
+    $insert_data["patologie_nonnamaterna"] = trim($_POST["dati_pers_patologie_nonnamaterna"]);
+    $class25 = "";
+} else {
 }
+
+// Nonno materno - patologie
+if (isset($_POST["dati_pers_patologie_nonnomaterno"]) && !empty(trim($_POST["dati_pers_patologie_nonnomaterno"]))) {
+    $insert_data["patologie_nonnomaterno"] = trim($_POST["dati_pers_patologie_nonnomaterno"]);
+    $class26 = "";
+} else {
+}
+
+// Fratelli/Sorelle
+if (isset($_POST["dati_pers_fratelli_sorelle"]) && !empty(trim($_POST["dati_pers_fratelli_sorelle"]))) {
+    $insert_data["fratelli_sorelle"] = trim($_POST["dati_pers_fratelli_sorelle"]);
+    $class27 = "";
+} else {
+}
+
+// Patologie familiari
+if (isset($_POST["dati_pers_patologie_famiglia"]) && !empty(trim($_POST["dati_pers_patologie_famiglia"]))) {
+    $insert_data["patologie_famiglia"] = trim($_POST["dati_pers_patologie_famiglia"]);
+    $class28 = "";
+} else {
+}
+
+// Altricasi
+if (isset($_POST["dati_pers_altricasi"]) && !empty(trim($_POST["dati_pers_altricasi"]))) {
+    $insert_data["altricasi"] = trim($_POST["dati_pers_altricasi"]);
+    $class29 = "";
+} else {
+}
+
+// Altri_casi
+if (isset($_POST["dati_pers_altri_casi"]) && !empty(trim($_POST["dati_pers_altri_casi"]))) {
+    $insert_data["altri_casi"] = trim($_POST["dati_pers_altri_casi"]);
+    $class30 = "";
+} else {
+}
+
+// Nonna viva
+if (isset($_POST["dati_pers_nonnaviva"]) && !empty(trim($_POST["dati_pers_nonnaviva"]))) {
+    $insert_data["nonnaviva"] = trim($_POST["dati_pers_nonnaviva"]);
+    $class31 = "";
+} else {
+}
+
+// Nonno vivo
+if (isset($_POST["dati_pers_nonnovivo"]) && !empty(trim($_POST["dati_pers_nonnovivo"]))) {
+    $insert_data["nonnovivo"] = trim($_POST["dati_pers_nonnovivo"]);
+    $class32 = "";
+} else {
+}
+
+// Causa morte nonna materna
+if (isset($_POST["dati_pers_morte_nonnamaterna"]) && !empty(trim($_POST["dati_pers_morte_nonnamaterna"]))) {
+    $insert_data["morte_nonnamaterna"] = trim($_POST["dati_pers_morte_nonnamaterna"]);
+    $class33 = "";
+} else {
+}
+
+// Causa morte nonno materno
+if (isset($_POST["dati_pers_morte_nonnomaterno"]) && !empty(trim($_POST["dati_pers_morte_nonnomaterno"]))) {
+    $insert_data["morte_nonnomaterno"] = trim($_POST["dati_pers_morte_nonnomaterno"]);
+    $class34 = "";
+} else {
+}
+
 
 
 

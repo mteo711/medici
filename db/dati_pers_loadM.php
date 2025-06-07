@@ -67,8 +67,30 @@ function loadPage() {
         $_POST["dati_pers_embriodonazione"] = $records['embriodonazione'];
         $_POST["dati_pers_fresco"] = $records['a_fresco'];
         $_POST["dati_pers_crioconservazione"] = $records['crioconservazione'];
-        $_POST["dati_pers_preimpianto"] = $records['test_preimpianto'];   
+        $_POST["dati_pers_preimpianto"] = $records['test_preimpianto'];  
+        
+        
+
+              $_POST["dati_pers_anni_nonnamaterna"] = $records['anni_nonnamaterna'];
+$_POST["dati_pers_anni_nonnomaterno"] = $records['anni_nonnomaterno'];
+$_POST["dati_pers_patologie_nonnamaterna"] = $records['patologie_nonnamaterna'];
+$_POST["dati_pers_patologie_nonnomaterno"] = $records['patologie_nonnomaterno'];
+$_POST["dati_pers_fratelli_sorelle"] = $records['fratelli_sorelle'];
+$_POST["dati_pers_patologie_famiglia"] = $records['patologie_famiglia'];
+$_POST["dati_pers_altricasi"] = $records['altricasi'];
+$_POST["dati_pers_altri_casi"] = $records['altri_casi'];
+$_POST["dati_pers_nonnaviva"] = $records['nonnaviva'];
+$_POST["dati_pers_nonnovivo"] = $records['nonnovivo'];
+$_POST["dati_pers_morte_nonnamaterna"] = $records['morte_nonnamaterna'];
+$_POST["dati_pers_morte_nonnomaterno"] = $records['morte_nonnomaterno'];
+
+
+
+        
         }
+
+  
+
 
         $_SESSION["dati_pers"] = "Y";
         $_SESSION["dati_persF"] = "Y";

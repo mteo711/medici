@@ -35,431 +35,411 @@ tab_madref();
 if(isset($_POST["fratelli_dataU"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataU']);
     $dataU = "$day-$month-$year";
-    $class2 = "";
-}
-else {
+    $class = "";
+} else {
     $dataU = null;
-    $class2 = "errors";
+    $class = "errors";
 }
+
 if(isset($_POST["fratelli_sorelle"])){
     $morti = $_POST["fratelli_sorelle"];
-    $class3 = "";
+    $class2 = "";
 } else {
     $morti = null;
-    $class3 = "errors";
+    $class2 = "errors";
 }
 
 if(isset($_POST["fratelli_dataN1"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataN1']);
     $dataN1 = "$day-$month-$year";
-    $class4 = "";
-}
-else {
+    $class3 = "";
+} else {
     $dataN1 = null;
-    $class4 = "errors";
+    $class3 = "errors";
 }
+
 if(isset($_POST["fratelli_mesiM1"])){
     $mesiM1 = $_POST["fratelli_mesiM1"];
-    $class5 = "";
-}
-else {
+    $class4 = "";
+} else {
     $mesiM1 = null;
-    $class5 = "errors";
+    $class4 = "errors";
 }
 
 if(isset($_POST["fratelli_anniM1"])){
     $anniM1 = $_POST["fratelli_anniM1"];
-    $class6 = "";
-}
-else {
+    $class5 = "";
+} else {
     $anniM1 = null;
-    $class6 = "errors";
+    $class5 = "errors";
 }
+
 if(isset($_POST["fratelli_causaM1"])){
     $causaM1 = $_POST["fratelli_causaM1"];
-    $class7 = "";
-}
-else {
+    $class6 = "";
+} else {
     $causaM1 = null;
-    $class7 = "errors";
+    $class6 = "errors";
 }
 
 if(isset($_POST["fratelli_dataN2"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataN2']);
     $dataN2 = "$day-$month-$year";
-    $class8 = "";
-}
-else {
+    $class7 = "";
+} else {
     $dataN2 = null;
-    $class8 = "errors";
+    $class7 = "errors";
 }
+
 if(isset($_POST["fratelli_mesiM2"])){
     $mesiM2 = $_POST["fratelli_mesiM2"];
-    $class9 = "";
-}
-else {
+    $class8 = "";
+} else {
     $mesiM2 = null;
-    $class9 = "errors";
+    $class8 = "errors";
 }
 
 if(isset($_POST["fratelli_anniM2"])){
     $anniM2 = $_POST["fratelli_anniM2"];
-    $class10 = "";
-}
-else {
+    $class9 = "";
+} else {
     $anniM2 = null;
-    $class10 = "errors";
+    $class9 = "errors";
 }
+
 if(isset($_POST["fratelli_causaM2"])){
     $causaM2 = $_POST["fratelli_causaM2"];
-    $class11 = "";
-}
-else {
+    $class10 = "";
+} else {
     $causaM2 = null;
-    $class11 = "errors";
+    $class10 = "errors";
 }
 
 if(isset($_POST["fratelli_dataN3"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataN3']);
     $dataN3 = "$day-$month-$year";
-    $class12 = "";
-}
-else {
+    $class11 = "";
+} else {
     $dataN3 = null;
-    $class12 = "errors";
+    $class11 = "errors";
 }
+
 if(isset($_POST["fratelli_mesiM3"])){
     $mesiM3 = $_POST["fratelli_mesiM3"];
-    $class13 = "";
-}
-else {
+    $class12 = "";
+} else {
     $mesiM3 = null;
-    $class13 = "errors";
+    $class12 = "errors";
 }
 
 if(isset($_POST["fratelli_anniM3"])){
     $anniM3 = $_POST["fratelli_anniM3"];
-    $class14 = "";
-}
-else {
+    $class13 = "";
+} else {
     $anniM3 = null;
-    $class14 = "errors";
+    $class13 = "errors";
 }
+
 if(isset($_POST["fratelli_causaM3"])){
     $causaM3 = $_POST["fratelli_causaM3"];
-    $class15 = "";
-}
-else {
+    $class14 = "";
+} else {
     $causaM3 = null;
-    $class15 = "errors";
+    $class14 = "errors";
 }
 
 if(isset($_POST["fratelli_dataN4"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataN4']);
     $dataN4 = "$day-$month-$year";
-    $class16 = "";
-}
-else {
+    $class15 = "";
+} else {
     $dataN4 = null;
-    $class16 = "errors";
+    $class15 = "errors";
 }
+
 if(isset($_POST["fratelli_mesiM4"])){
     $mesiM4 = $_POST["fratelli_mesiM4"];
-    $class17 = "";
-}
-else {
+    $class16 = "";
+} else {
     $mesiM4 = null;
-    $class17 = "errors";
+    $class16 = "errors";
 }
 
 if(isset($_POST["fratelli_anniM4"])){
     $anniM4 = $_POST["fratelli_anniM4"];
-    $class18 = "";
-}
-else {
+    $class17 = "";
+} else {
     $anniM4 = null;
-    $class18 = "errors";
+    $class17 = "errors";
 }
+
 if(isset($_POST["fratelli_causaM4"])){
     $causaM4 = $_POST["fratelli_causaM4"];
-    $class19 = "";
-}
-else {
+    $class18 = "";
+} else {
     $causaM4 = null;
-    $class19 = "errors";
+    $class18 = "errors";
 }
 
+// Nuovi dati
 
-//nuoviDATA
 if(isset($_POST["fratelli_dataN5"])){
     list($year, $month, $day) = explode("-", $_POST['fratelli_dataN5']);
     $dataN5 = "$day-$month-$year";
-    $class16 = "";
-}
-else {
+    $class19 = "";
+} else {
     $dataN5 = null;
-    $class16 = "errors";
+    $class19 = "errors";
 }
-//NUOVI VIVO
+
 if(isset($_POST["fratelli_vivo1"])){
     $vivo1 = $_POST["fratelli_vivo1"];
-    $class18 = "";
-}
-else {
+    $class20 = "";
+} else {
     $vivo1 = null;
-    $class18 = "errors";
+    $class20 = "errors";
 }
+
 if(isset($_POST["fratelli_vivo2"])){
     $vivo2 = $_POST["fratelli_vivo2"];
-    $class18 = "";
-}
-else {
+    $class21 = "";
+} else {
     $vivo2 = null;
-    $class18 = "errors";
+    $class21 = "errors";
 }
+
 if(isset($_POST["fratelli_vivo3"])){
     $vivo3 = $_POST["fratelli_vivo3"];
-    $class18 = "";
-}
-else {
+    $class22 = "";
+} else {
     $vivo3 = null;
-    $class18 = "errors";
+    $class22 = "errors";
 }
+
 if(isset($_POST["fratelli_vivo4"])){
     $vivo4 = $_POST["fratelli_vivo4"];
-    $class18 = "";
-}
-else {
+    $class23 = "";
+} else {
     $vivo4 = null;
-    $class18 = "errors";
+    $class23 = "errors";
 }
 
 if(isset($_POST["fratelli_vivo5"])){
     $vivo5 = $_POST["fratelli_vivo5"];
-    $class18 = "";
-}
-else {
+    $class24 = "";
+} else {
     $vivo5 = null;
-    $class18 = "errors";
+    $class24 = "errors";
 }
 
-//NUOVI MESI
 if(isset($_POST["fratelli_mesiM5"])){
     $mesiM5 = $_POST["fratelli_mesiM5"];
-    $class17 = "";
-}
-else {
+    $class25 = "";
+} else {
     $mesiM5 = null;
-    $class17 = "errors";
+    $class25 = "errors";
 }
 
-//NUOVI ANNI
 if(isset($_POST["fratelli_anniM5"])){
     $anniM5 = $_POST["fratelli_anniM5"];
-    $class18 = "";
-}
-else {
+    $class26 = "";
+} else {
     $anniM5 = null;
-    $class18 = "errors";
+    $class26 = "errors";
 }
 
-//NUOVI CAUSA
 if(isset($_POST["fratelli_causaM5"])){
     $causaM5 = $_POST["fratelli_causaM5"];
-    $class19 = "";
-}
-else {
+    $class27 = "";
+} else {
     $causaM5 = null;
-    $class19 = "errors";
+    $class27 = "errors";
 }
 
-//NUOVI PER MALATTIE: 
-//EREDITARIE:
+// Malattie ereditarie
+
 if(isset($_POST["fratelli_ereditarieM1"])){
     $ereditarieM1 = $_POST["fratelli_ereditarieM1"];
-    $class6 = "";
-}
-else {
+    $class28 = "";
+} else {
     $ereditarieM1 = null;
-    $class6 = "errors";
+    $class28 = "errors";
 }
+
 if(isset($_POST["fratelli_ereditarieM2"])){
     $ereditarieM2 = $_POST["fratelli_ereditarieM2"];
-    $class6 = "";
-}
-else {
+    $class29 = "";
+} else {
     $ereditarieM2 = null;
-    $class6 = "errors";
+    $class29 = "errors";
 }
+
 if(isset($_POST["fratelli_ereditarieM3"])){
     $ereditarieM3 = $_POST["fratelli_ereditarieM3"];
-    $class6 = "";
-}
-else {
+    $class30 = "";
+} else {
     $ereditarieM3 = null;
-    $class6 = "errors";
+    $class30 = "errors";
 }
+
 if(isset($_POST["fratelli_ereditarieM4"])){
     $ereditarieM4 = $_POST["fratelli_ereditarieM4"];
-    $class6 = "";
-}
-else {
+    $class31 = "";
+} else {
     $ereditarieM4 = null;
-    $class6 = "errors";
+    $class31 = "errors";
 }
+
 if(isset($_POST["fratelli_ereditarieM5"])){
     $ereditarieM5 = $_POST["fratelli_ereditarieM5"];
-    $class6 = "";
-}
-else {
+    $class32 = "";
+} else {
     $ereditarieM5 = null;
-    $class6 = "errors";
+    $class32 = "errors";
 }
-//GENETICHE
+
+// Malattie genetiche
+
 if(isset($_POST["fratelli_geneticheM1"])){
     $geneticheM1 = $_POST["fratelli_geneticheM1"];
-    $class6 = "";
-}
-else {
+    $class33 = "";
+} else {
     $geneticheM1 = null;
-    $class6 = "errors";
+    $class33 = "errors";
 }
+
 if(isset($_POST["fratelli_geneticheM2"])){
     $geneticheM2 = $_POST["fratelli_geneticheM2"];
-    $class6 = "";
-}
-else {
+    $class34 = "";
+} else {
     $geneticheM2 = null;
-    $class6 = "errors";
+    $class34 = "errors";
 }
+
 if(isset($_POST["fratelli_geneticheM3"])){
     $geneticheM3 = $_POST["fratelli_geneticheM3"];
-    $class6 = "";
-}
-else {
+    $class35 = "";
+} else {
     $geneticheM3 = null;
-    $class6 = "errors";
+    $class35 = "errors";
 }
+
 if(isset($_POST["fratelli_geneticheM4"])){
     $geneticheM4 = $_POST["fratelli_geneticheM4"];
-    $class6 = "";
-}
-else {
+    $class36 = "";
+} else {
     $geneticheM4 = null;
-    $class6 = "errors";
+    $class36 = "errors";
 }
+
 if(isset($_POST["fratelli_geneticheM5"])){
     $geneticheM5 = $_POST["fratelli_geneticheM5"];
-    $class6 = "";
-}
-else {
+    $class37 = "";
+} else {
     $geneticheM5 = null;
-    $class6 = "errors";
+    $class37 = "errors";
 }
-//DISMETABOLICHE
+
+// Malattie dismetaboliche
+
 if(isset($_POST["fratelli_dismetabolicheM1"])){
     $dismetabolicheM1 = $_POST["fratelli_dismetabolicheM1"];
-    $class6 = "";
-}
-else {
+    $class38 = "";
+} else {
     $dismetabolicheM1 = null;
-    $class6 = "errors";
+    $class38 = "errors";
 }
+
 if(isset($_POST["fratelli_dismetabolicheM2"])){
     $dismetabolicheM2 = $_POST["fratelli_dismetabolicheM2"];
-    $class6 = "";
-}
-else {
+    $class39 = "";
+} else {
     $dismetabolicheM2 = null;
-    $class6 = "errors";
+    $class39 = "errors";
 }
+
 if(isset($_POST["fratelli_dismetabolicheM3"])){
     $dismetabolicheM3 = $_POST["fratelli_dismetabolicheM3"];
-    $class6 = "";
-}
-else {
+    $class40 = "";
+} else {
     $dismetabolicheM3 = null;
-    $class6 = "errors";
+    $class40 = "errors";
 }
+
 if(isset($_POST["fratelli_dismetabolicheM4"])){
     $dismetabolicheM4 = $_POST["fratelli_dismetabolicheM4"];
-    $class6 = "";
-}
-else {
+    $class41 = "";
+} else {
     $dismetabolicheM4 = null;
-    $class6 = "errors";
+    $class41 = "errors";
 }
+
 if(isset($_POST["fratelli_dismetabolicheM5"])){
     $dismetabolicheM5 = $_POST["fratelli_dismetabolicheM5"];
-    $class6 = "";
-}
-else {
+    $class42 = "";
+} else {
     $dismetabolicheM5 = null;
-    $class6 = "errors";
+    $class42 = "errors";
 }
-//ALTRO
+
+// Altro
+
 if(isset($_POST["fratelli_altroM1"])){
     $altroM1 = $_POST["fratelli_altroM1"];
-    $class6 = "";
-}
-else {
+    $class43 = "";
+} else {
     $altroM1 = null;
-    $class6 = "errors";
+    $class43 = "errors";
 }
 
 if(isset($_POST["fratelli_altroM2"])){
     $altroM2 = $_POST["fratelli_altroM2"];
-    $class6 = "";
-}
-else {
+    $class44 = "";
+} else {
     $altroM2 = null;
-    $class6 = "errors";
+    $class44 = "errors";
 }
+
 if(isset($_POST["fratelli_altroM3"])){
     $altroM3 = $_POST["fratelli_altroM3"];
-    $class6 = "";
-}
-else {
+    $class45 = "";
+} else {
     $altroM3 = null;
-    $class6 = "errors";
+    $class45 = "errors";
 }
+
 if(isset($_POST["fratelli_altroM4"])){
     $altroM4 = $_POST["fratelli_altroM4"];
-    $class6 = "";
-}
-else {
+    $class46 = "";
+} else {
     $altroM4 = null;
-    $class6 = "errors";
+    $class46 = "errors";
 }
+
 if(isset($_POST["fratelli_altroM5"])){
     $altroM5 = $_POST["fratelli_altroM5"];
-    $class6 = "";
+    $class47 = "";
+} else {
+    $altroM5 = null;
+    $class47 = "errors";
 }
-else {
-    $altroM5 = null;    
-    $class6 = "errors";
-}
+
 ?>
 <script>
 
     
 $(function() {
-    // Per mesiM1 ... mesiM5 con limite max 11
+    // mesiM1 ... mesiM5 senza limiti
     for (let i = 1; i <= 5; i++) {
-        $('#mesiM' + i).keypad({
-            onClose: function(value, inst) {
-                if (parseInt(value) > 11) {
-                    $('#mesiM' + i).val(11);
-                }
-            }
-        });
+        $('#mesiM' + i).keypad();
     }
 
-    // Per anniM1 ... anniM5 senza limiti particolari
+    // anniM1 ... anniM5 senza limiti
     for (let i = 1; i <= 5; i++) {
         $('#anniM' + i).keypad();
     }
 });
+
 
     
 $(function() {
@@ -637,7 +617,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" style="width:40%;">
-        <label style="padding-top:7px;" <?php echo "class=".$class3 ?>>
+        <label style="padding-top:7px;" <?php echo "class=".$class2 ?>>
             FRATELLI/SORELLE (del neonato/lattante deceduto) <br/>
             <select tabindex="13" id="slct2" name="fratelli_sorelle" style="width:60%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option> 
@@ -682,15 +662,15 @@ function performSubmit(action)
           <label>
         Morto all'età di:
     </label>
-        <label <?php echo "class=".$class5 ?>>
+        <label <?php echo "class=".$class4 ?>>
             Età in Mesi *<br/>
             <?php
                 echo "<input id=\"mesiM1\" $dis name=\"mesiM1\" tabindex=\"8\" value=\"".$mesiM1."\">";
             ?>
         </label>
     </div>
-    <div class="col-3" id="c2" style="display:none;">
-        <label <?php echo "class=".$class5 ?>>
+    <div class="col-3" id="c2" style="display">
+    <label >
             Età in Anni<br/>
             <?php
                 echo "<input id=\"anniM1\" $dis name=\"anniM1\" tabindex=\"8\" value=\"".$anniM1."\">";
@@ -698,7 +678,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c3" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label <?php echo "class=".$class6 ?>>
         Causa *
         <textarea name="causaM1" style="height:60px;" <?php echo $dis; ?>><?php echo $causaM1; ?></textarea>
     </label>
@@ -708,25 +688,25 @@ function performSubmit(action)
           <label>
         MALATTIE
     </label>
-        <label <?php echo "class=".$class7 ?>>
+        <label>
         Ereditarie
         <textarea name="ereditarieM1" style="height:40px;" <?php echo $dis; ?>><?php echo $causaM1; ?></textarea>
     </label>
     </div>
    <div class="col-4" id="d5" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label >
         Genetiche
         <textarea name="geneticheM1" style="height:40px;" <?php echo $dis; ?>><?php echo $causaM1; ?></textarea>
     </label>
     </div>
      <div class="col-4" id="d6" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label >
         Dismetaboliche
         <textarea name="dismetabolicheM1" style="height:40px;" <?php echo $dis; ?>><?php echo $causaM1; ?></textarea>
     </label>
     </div>
     <div class="col-4" id="d7" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altro
         <textarea name="altroM1" style="height:40px;" <?php echo $dis; ?>><?php echo $causaM1; ?></textarea>
     </label>
@@ -745,7 +725,7 @@ function performSubmit(action)
         </label>
     </div>
      <div class="col-3" id="d10">
-        <label <?php echo "class=".$class3 ?>>
+         <label <?php echo "class=".$class21 ?>>
             Vivo? <br/>
             <select tabindex="14" id="slct3_2" class="slct3" name="vivo2" style="width:150%;" <?php echo $class19; ?>>
     <option value=""> &nbsp; </option> 
@@ -760,7 +740,7 @@ function performSubmit(action)
           <label>
         Morto all'età di:
     </label>
-        <label <?php echo "class=".$class5 ?>>
+        <label <?php echo "class=".$class8 ?>>
             Età in Mesi *<br/>
             <?php
                 echo "<input id=\"mesiM2\" $dis name=\"mesiM2\" tabindex=\"8\" value=\"".$mesiM2."\">";
@@ -768,7 +748,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c5" style="display:none;">
-        <label <?php echo "class=".$class5 ?>>
+        <label >
             Età in Anni<br/>
             <?php
                 echo "<input id=\"anniM2\" $dis name=\"anniM2\" tabindex=\"8\" value=\"".$anniM2."\">";
@@ -776,7 +756,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c6" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label <?php echo "class=".$class10 ?>>
         Causa *
         <textarea name="causaM2" style="height:60px;" <?php echo $dis; ?>><?php echo $causaM2; ?></textarea>
     </label>
@@ -786,25 +766,25 @@ function performSubmit(action)
           <label>
         MALATTIE
     </label>
-        <label <?php echo "class=".$class7 ?>>
+        <label>
         Ereditarie
         <textarea name="ereditarieM2" style="height:40px;" <?php echo $dis; ?>><?php echo $ereditarieM2; ?></textarea>
     </label>
     </div>
    <div class="col-4" id="d12" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Genetiche
         <textarea name="geneticheM2" style="height:40px;" <?php echo $dis; ?>><?php echo $geneticheM2; ?></textarea>
     </label>
     </div>
      <div class="col-4" id="d13" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Dismetaboliche
         <textarea name="dismetabolicheM2" style="height:40px;" <?php echo $dis; ?>><?php echo $dismetabolicheM2; ?></textarea>
     </label>
     </div>
     <div class="col-4" id="d14" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altro
         <textarea name="altroM2" style="height:40px;" <?php echo $dis; ?>><?php echo $altroM2; ?></textarea>
     </label>
@@ -841,7 +821,7 @@ function performSubmit(action)
           <label>
         Morto all'età di:
     </label>
-        <label <?php echo "class=".$class5 ?>>
+        <label <?php echo "class=".$class12 ?>>
             Età in Mesi *<br/>
             <?php
                 echo "<input id=\"mesiM3\" $dis name=\"mesiM3\" tabindex=\"8\" value=\"".$mesiM3."\">";
@@ -849,7 +829,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c8" style="display:none;">
-        <label <?php echo "class=".$class5 ?>>
+        <label>
             Età in Anni<br/>
             <?php
                 echo "<input id=\"anniM3\" $dis name=\"anniM3\" tabindex=\"8\" value=\"".$anniM3."\">";
@@ -857,7 +837,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c9" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label <?php echo "class=".$class14 ?>>
         Causa *
         <textarea name="causaM3" style="height:60px;" <?php echo $dis; ?>><?php echo $causaM3; ?></textarea>
     </label>
@@ -867,25 +847,25 @@ function performSubmit(action)
           <label>
         MALATTIE
     </label>
-        <label <?php echo "class=".$class7 ?>>
+        <label>
         Ereditarie
         <textarea name="ereditarieM3" style="height:40px;" <?php echo $dis; ?>><?php echo $ereditarieM3; ?></textarea>
     </label>
     </div>
    <div class="col-4" id="d19" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Genetiche
         <textarea name="geneticheM3" style="height:40px;" <?php echo $dis; ?>><?php echo $geneticheM3; ?></textarea>
     </label>
     </div>
      <div class="col-4" id="d20" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Dismetaboliche
         <textarea name="dismetabolicheM3" style="height:40px;" <?php echo $dis; ?>><?php echo $dismetabolicheM3; ?></textarea>
     </label>
     </div>
     <div class="col-4" id="d21" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altro
         <textarea name="altroM3" style="height:40px;" <?php echo $dis; ?>><?php echo $altroM3; ?></textarea>
     </label>
@@ -920,7 +900,7 @@ function performSubmit(action)
           <label>
         Morto all'età di:
     </label>
-        <label <?php echo "class=".$class5 ?>>
+        <label <?php echo "class=".$class16 ?>>
             Età in Mesi *<br/>
             <?php
                 echo "<input id=\"mesiM4\" $dis name=\"mesiM4\" tabindex=\"8\" value=\"".$mesiM4."\">";
@@ -928,7 +908,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c11" style="display:none;">
-        <label <?php echo "class=".$class5 ?>>
+        <label>
             Età in Anni<br/>
             <?php
                 echo "<input id=\"anniM4\" $dis name=\"anniM4\" tabindex=\"8\" value=\"".$anniM4."\">";
@@ -936,7 +916,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c12" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label <?php echo "class=".$class18 ?>>
         Causa *
         <textarea name="causaM4" style="height:60px;" <?php echo $dis; ?>><?php echo $causaM4; ?></textarea>
     </label>
@@ -946,25 +926,25 @@ function performSubmit(action)
           <label>
         MALATTIE
     </label>
-        <label <?php echo "class=".$class7 ?>>
+        <label>
         Ereditarie
         <textarea name="ereditarieM4" style="height:40px;" <?php echo $dis; ?>><?php echo $ereditarieM4; ?></textarea>
     </label>
     </div>
    <div class="col-4" id="d26" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Genetiche
         <textarea name="geneticheM4" style="height:40px;" <?php echo $dis; ?>><?php echo $geneticheM4; ?></textarea>
     </label>
     </div>
      <div class="col-4" id="d27" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Dismetaboliche
         <textarea name="dismetabolicheM4" style="height:40px;" <?php echo $dis; ?>><?php echo $dismetabolicheM4; ?></textarea>
     </label>
     </div>
     <div class="col-4" id="d28" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altro
         <textarea name="altroM4" style="height:40px;" <?php echo $dis; ?>><?php echo $altroM4; ?></textarea>
     </label>
@@ -999,7 +979,7 @@ function performSubmit(action)
           <label>
         Morto all'età di:
     </label>
-        <label <?php echo "class=".$class5 ?>>
+        <label <?php echo "class=".$class25 ?>>
             Età in Mesi *<br/>
             <?php
                 echo "<input id=\"mesiM5\" $dis name=\"mesiM5\" tabindex=\"8\" value=\"".$mesiM5."\">";
@@ -1007,7 +987,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c14" style="display:none;">
-        <label <?php echo "class=".$class5 ?>>
+        <label>
             Età in Anni<br/>
             <?php
                 echo "<input id=\"anniM5\" $dis name=\"anniM5\" tabindex=\"8\" value=\"".$anniM5."\">";
@@ -1015,7 +995,7 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-3" id="c15" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label <?php echo "class=".$class27 ?>>
         Causa *
         <textarea name="causaM5" style="height:60px;" <?php echo $dis; ?>><?php echo $causaM5; ?></textarea>
     </label>
@@ -1025,25 +1005,25 @@ function performSubmit(action)
           <label>
         MALATTIE
     </label>
-        <label <?php echo "class=".$class7 ?>>
+        <label>
         Ereditarie
         <textarea name="ereditarieM5" style="height:40px;" <?php echo $dis; ?>><?php echo $ereditarieM5; ?></textarea>
     </label>
     </div>
    <div class="col-4" id="d33" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Genetiche
         <textarea name="geneticheM5" style="height:40px;" <?php echo $dis; ?>><?php echo $geneticheM5; ?></textarea>
     </label>
     </div>
      <div class="col-4" id="d34" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Dismetaboliche
         <textarea name="dismetabolicheM5" style="height:40px;" <?php echo $dis; ?>><?php echo $dismetabolicheM5; ?></textarea>
     </label>
     </div>
     <div class="col-4" id="d35" style="display:none;">
-    <label <?php echo "class=".$class7 ?>>
+    <label>
         Altro
         <textarea name="altroM5" style="height:40px;" <?php echo $dis; ?>><?php echo $altroM5; ?></textarea>
     </label>

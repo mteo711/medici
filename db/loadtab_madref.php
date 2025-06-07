@@ -23,56 +23,7 @@
             $_SESSION['perso_madreF'] = "tabs";
         }
         else {
-            if (
-                // Dati anagrafici
-                $recordp['cognome'] == null ||
-                $recordp['nome'] == null ||
-                $recordp['comune'] == null ||
-                $recordp['provincia'] == null ||
-                $recordp['data_nascita'] == null ||
-                $recordp['luogo_nascita'] == null ||
-                $recordp['eta'] == null ||
-                $recordp['professione'] == null ||
-            
-                // Etnia (con specifica se 'altra')
-                $recordp['etnia'] == null ||
-                ($recordp['etnia'] == 'altra' && $recordp['specifica_etnia'] == null) ||
-            
-                // Contatti e identificazione
-                $recordp['cell'] == null ||
-                $recordp['codice_fiscale'] == null ||
-            
-                // Altri dati generali
-                $recordp['ultimo_avvistamento'] == null ||
-                $recordp['rischi'] == null ||
-                $recordp['titolo_studio'] == null ||
-                $recordp['altezza'] == null ||
-                $recordp['peso'] == null ||
-                $recordp['morte_feto'] == null ||
-            
-                // Stato civile (con specifica se coniugata)
-                $recordp['stato_civile'] == null ||
-                ($recordp['stato_civile'] == 'coniugata' && $recordp['specifica_matrimonio'] == null) ||
-            
-                // Morte fetale / Procreazione assistita
-                $recordp['num_visite'] == null ||
-                $recordp['fecondazione'] == null ||
-                $recordp['dataF'] == null ||
-                $recordp['struttura'] == null ||
-                $recordp['inseminazione_endouterina'] == null ||
-                $recordp['fecondazione_in_vitro'] == null ||
-                $recordp['intracitoplasmatica'] == null ||
-                $recordp['gameti'] == null ||
-                $recordp['specifica_altre'] == null ||
-                $recordp['ovulazione_indotta'] == null ||
-                $recordp['omologa'] == null ||
-                $recordp['eterologa'] == null ||
-                $recordp['embriodonazione'] == null ||
-                $recordp['a_fresco'] == null ||
-                $recordp['crioconservazione'] == null ||
-                $recordp['test_preimpianto'] == null
-            ) 
-            
+            if (($recordp['cognome'] == null) || ($recordp['nome'] == null) || ($recordp['comune'] == null) || ($recordp['provincia'] == null) || ($recordp['data_nascita'] == null) || ($recordp['luogo_nascita'] == null) || ($recordp['eta'] == null) || ($recordp['professione'] == null) || (($recordp['etnia'] == null) || (($recordp['etnia'] == 'altra') && ($recordp['specifica_etnia'] == null))))
             {
              
                 $insert_data = array();
@@ -354,18 +305,69 @@
             $_SESSION['frat_mF'] = "tabs";
         }
         else {
-            if (($recordf['num_figli_in_vita'] == null) || ($recordf['num_figli_morti'] == null) || (($recordf['num_figli_morti'] == '1') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null))) || (($recordf['num_figli_morti'] == '2') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) ||  ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null))) || (($recordf['num_figli_morti'] == '3') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) || ($recordf['dataN3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null))) || (($recordf['num_figli_morti'] == '4') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) || ($recordf['dataN3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) || ($recordf['dataN4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null)))){
-                
-                $insert_data = array();
-                $insert_data["conclusa"] = "N";
-                $obj = new fratelli();
-                $condition= array("patologie_gest_madre_schede_id" => $_SESSION['case_id']);
-                $obj->update($insert_data,$condition);
-                //var_dump($insert_data);
-                $obj->error();
-                
-                $_SESSION['frat_mF'] = "tabs_er";
-            }
+            //rimuovo 
+           if (
+   ($recordf['fratelli_sorelle'] == null) ||
+(
+    ($recordf['fratelli_sorelle'] == '1') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '2') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '3') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '4') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) ||
+        ($recordf['dataN4'] == null) || ($recordf['vivo4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '5') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) ||
+        ($recordf['dataN4'] == null) || ($recordf['vivo4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null) ||
+        ($recordf['dataN5'] == null) || ($recordf['vivo5'] == null) || ($recordf['mesiM5'] == null) || ($recordf['causaM5'] == null)
+    )
+)
+           )
+
+    
+
+
+    
+ {
+    $insert_data = array();
+    $insert_data["conclusa"] = "N";
+
+    $obj = new fratelli();
+    $condition = array("patologie_gest_madre_schede_id" => $_SESSION['case_id']);
+    $obj->update($insert_data, $condition);
+    
+    // var_dump($insert_data);
+    $obj->error();
+
+    $_SESSION['frat_mF'] = "tabs_er";
+}
+
             else {
                 
                 $insert_data = array();

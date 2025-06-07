@@ -29,6 +29,8 @@
 	require_once("./db/loadtab_autopsiaf.php");
 	tab_autopsiaf();
 
+
+
     if(isset($_POST["data_morte"])){
         list($year, $month, $day) = explode("-", $_POST['data_morte']);
         $morte = "$day-$month-$year";
@@ -36,6 +38,11 @@
     else {
         $morte = null;
     }
+
+	echo "<pre>";
+var_dump($_SESSION["data_morte"] ?? 'data_morte non presente in sessione');
+var_dump($morte);
+echo "</pre>";
 
 	if(isset($_POST["esame_esterno_num"])){
 		$num = $_POST["esame_esterno_num"];

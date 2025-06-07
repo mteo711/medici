@@ -618,7 +618,7 @@ function performSubmit(action)
             </label>
     </div>
     <div class="col-1">
-        <label style="padding-top: 7px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 7px;">
             Infezioni materne *<br/>
             <select tabindex="9" id="slctInf" name="infezioni" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
@@ -853,7 +853,7 @@ function performSubmit(action)
     
    <!-- aggiunte -->
    <div class="col-1">
-        <label style="padding-top: 7px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 7px;">
             Screening *<br/>
             <select tabindex="12" id="slct7" name="screening" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
@@ -863,62 +863,62 @@ function performSubmit(action)
         </label>
     </div>
     <div class="col-12" id="b1" style="display: none;">
-        <label style="padding-top: 7px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 7px;">
             <input type="checkbox" name="tipo_screening[]" value="NT_Patologico" style="margin-bottom: 0px;"<?php echo $checked18."  ".$dis;?> >
         </label>
     </div>
     <div class="col-14" id="b2" style="display: none;">
-        <label style="padding-top:8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top:8px;">
         Translucenza nucale (NT) patologico
         </label>
     </div>
     <div class="col-12" id="b3" style="display: none;">
-        <label style="padding-top: 7px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 7px;">
             <input type="checkbox" name="tipo_screening[]" value="NT_nonPatologico" style="margin-bottom: 0px;" <?php echo $checked19."  ".$dis;?> >
         </label>
     </div>
     <div class="col-14" id="b4" style="display: none;">
-        <label style="padding-top: 8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 8px;">
         Translucenza nucale (NT)  NON patologico
         </label>
     </div>
     <div class="col-12" id="b5" style="display: none;">
-        <label style="padding-top: 8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 8px;">
             <input type="checkbox" name="tipo_screening[]" value="cromosopatie_Patologico" style="margin-bottom: 0px;" <?php echo $checked20."  ".$dis;?>>
         </label>
     </div>
     <div class="col-14" id="b6" style="display: none;">
-        <label style="padding-top: 9px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 9px;">
         Screening per cromosomopatie (NT+-BI TEST) patologico
         </label>
     </div>
     <div class="col-12" id="b7" style="display: none;">
-        <label style="padding-top: 8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 8px;">
             <input type="checkbox" name="tipo_screening[]" value="cromosopatie_nonPatologico" style="margin-bottom: 0px;" <?php echo $checked21."  ".$dis;?>>
         </label>
     </div>
     <div class="col-14" id="b8" style="display: none;">
-        <label style="padding-top: 9px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 9px;">
         Screening per cromosomopatie (NT+-BI TEST) NON patologico
         </label>
     </div>
     <div class="col-12" id="b9" style="display: none;">
-        <label style="padding-top: 8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 8px;">
             <input type="checkbox" name="tipo_screening[]" value="triplotest_Patologico" style="margin-bottom: 0px;" <?php echo $checked22."  ".$dis ;?> >
         </label>
     </div>
     <div class="col-14" id="b10" style="display: none;">
-        <label style="padding-top: 9px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 9px;">
             TRIPLO TEST patologico
         </label>
     </div> 
     <div class="col-12" id="b11" style="display: none;">
-        <label style="padding-top: 8px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 8px;">
             <input type="checkbox" name="tipo_screening[]" value="triplotest_nonPatologico" style="margin-bottom: 0px;" <?php echo $checked23."  ".$dis ;?> >
         </label>
     </div>
     <div class="col-14" id="b12" style="display: none;">
-        <label style="padding-top: 9px;" <?php echo "class=".$class19; ?>>
+        <label style="padding-top: 9px;">
             TRIPLO TEST NON patologico
         </label>
     </div>  
@@ -929,7 +929,7 @@ function performSubmit(action)
    
   
 <div class="col-1">
-        <label style="padding-top: 7px;" <?php echo "class=".$class15; ?>>
+        <label style="padding-top: 7px;">
             DNA fetale nel sangue materno *<br/>
             <select tabindex="11" id="slct8" name="sanguematerno" style="width:75%;" <?php echo $dis; ?>>
                 <option value=""> &nbsp </option>
@@ -947,7 +947,7 @@ function performSubmit(action)
     </label>
     </div>
      <div class="col-2" id="c2" style="display:none;">
-        <label <?php echo "class=".$class19 ?>>
+        <label >
             Con risultato: <br/>
             <?php
                 echo "<input type=\"text\" $dis id=\"risultato\" name=\"risultato\" value=\"".$risultato."\"";
@@ -956,7 +956,7 @@ function performSubmit(action)
     </div>
     </div>
      <div class="col-1" id="c3" style="display:none;">
-        <label <?php echo "class=".$class19 ?>>
+        <label>
             Altri test di screening: <br/>
             <?php
                 echo "<textarea name=\"altriTest\" style=\"height:40px;\" $dis tabindex=\"22\"> $altriTest</textarea>";

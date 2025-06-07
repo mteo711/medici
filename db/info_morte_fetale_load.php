@@ -9,11 +9,7 @@ function loadPage() {
     
     $recordz= $obx->fetchRecord(array("schede_id"=>$_SESSION['case_id'],'tipo' => 'MADRE'));
     
-    if ((isset($_POST['data_nascita'])) && (!empty($_POST['data_nascita']))) {
-        $insert_data["data_nascita"] = $_POST['data_nascita'];
-    } else {
-    }
-    
+  $_POST["data_nascita"] = $recordz['data_nascita'];
     
     require_once("./db/dati_feto.php");
 
@@ -21,10 +17,7 @@ function loadPage() {
 
 	$recordy= $oby->fetchRecord(array("schede_id"=>$_SESSION['case_id']));
 
-    if ((isset($_POST['data_morte'])) && (!empty($_POST['data_morte']))) {
-        $insert_data["data_morte"] = $_POST['data_morte'];
-    } else {
-    }
+  $_POST["data_morte"] = $recordy['data_morte'];
   
     
 

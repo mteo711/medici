@@ -439,23 +439,23 @@ $(document).ready(function() {
         </label>
     </div>
     <div class="col-2">
-    <label <?php echo "class=".$class5; ?>>
-        Data ultima visita ostetrica * <sup>1</sup><br/>
+    <label>
+        Data ultima visita ostetrica <br/>
         <input id="dataO" name="dataO" tabindex="12" value="<?php echo $dataO; ?>" <?php echo $dis; ?>>
     </label>
 </div>
 
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class6; ?>>
-            Nome e indirizzo del ginecologo/a curante *<br/>
+        <label style="padding-top: 6px;">
+            Nome e indirizzo del ginecologo/a curante <br/>
             <?php
                 echo "<input name=\"ginecologo\" $dis tabindex=\"13\" value=\"".$ginecologo."\">";
             ?>
         </label>
     </div>
     <div class="col-2">
-        <label style="padding-top: 6px;" <?php echo "class=".$class7; ?>>
-        Nome e indirizzo dell'ostetrica di riferimento *<br/>
+        <label style="padding-top: 6px;">
+        Nome e indirizzo dell'ostetrica di riferimento <br/>
             <?php
                 echo "<input name=\"ostetrica\" $dis tabindex=\"14\" value=\"".$ostetrica."\">";
             ?>
@@ -463,8 +463,8 @@ $(document).ready(function() {
     </div>
     <br>
     <div class="col-3" style="width:40%;">
-        <label style="padding-top:7px;" <?php echo "class=".$class18 ?>>
-            La Fecondazione è stata medicalmente assistita? * <br/>
+        <label style="padding-top:7px;" >
+            La Fecondazione è stata medicalmente assistita? <br/>
             <select tabindex="15" id="slct3" name="fecondazione" style="width:50%;" <?php echo $dis ; ?>>
             <option value=""> &nbsp </option>
                 <option value="mancante">Dato Mancante</option>
