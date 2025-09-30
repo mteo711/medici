@@ -86,6 +86,19 @@ class dati_pers extends Database
     'morte_nonnamaterna' => 'string',
     'morte_nonnomaterno' => 'string',
 
+	'tentativiFecondazione' => 'string',
+				 'dataCaso1' => 'date',
+				 'dataCaso2' => 'date',
+				 'dataCaso3' => 'date',
+				 'dataCaso4' => 'date',
+				 'dataCaso5' => 'date',
+				 'descriviCaso1' => 'string',
+				 'descriviCaso2' => 'string',
+				 'descriviCaso3' => 'string',
+				 'descriviCaso4' => 'string',
+				 'descriviCaso5' => 'string',
+
+
 				
 
 'conclusa' => 'bool',

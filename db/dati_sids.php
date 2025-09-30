@@ -56,6 +56,7 @@ class dati_sids extends Database
 				'ora_decesso' => 'time',
 				'ora_rilievo_decesso' => 'time',
 				'ora_ultimo_controllo_parentale' => 'time',
+				'skin' => 'string',
                 'conclusa' => 'bool');
 
 private function checkInput(array $val_cols)

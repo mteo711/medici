@@ -151,6 +151,16 @@
         $sex = null;
         $class14 = "errors";
     }
+
+    if(isset($_POST["dati_sids_skin"])){
+        $skin = $_POST["dati_sids_skin"];
+        $class15 = "";
+    }
+    else {
+        $skin = null;
+        $class15 = "errors";
+    }
+
 ?>
 <script>
   $( document ).ready(function() {
@@ -203,6 +213,13 @@
       $('#sex').val('<?php echo $sex; ?>');
       $('#sex').selectmenu('refresh', true);    
   });
+
+ $(function() {
+      $('#skin').selectmenu();  
+      $('#skin').val('<?php echo $skin; ?>');
+      $('#skin').selectmenu('refresh', true);    
+  });
+
   $(function() {
     $( "#dataN" ).datepicker({
         dateFormat: "dd-mm-yy",
@@ -362,12 +379,11 @@ function performSubmit(action)
 </script>
 
 <div class="col-3">
-    <label class="form-label" style="padding-top: 8px;">
+    <label class="form-label" style="padding-top: 8px;" <?php echo "class=".$class12; ?>>
         Ora del rilievo del decesso * *<br/>
         <input type="text" id="oraD" name="oraD" readonly value="<?php echo $oraD; ?>">
     </label>
 </div>
-
 
     <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -381,11 +397,24 @@ function performSubmit(action)
 </script>
 
 <div class="col-3">
-    <label class="form-label" style="padding-top: 8px;">
+    <label class="form-label" style="padding-top: 8px;" <?php echo "class=".$class13; ?> >
     Ora AAA dell'ultimo controllo parentale *<br/>
         <input type="text" id="oraC" name="oraC" readonly value="<?php echo $oraC; ?>">
     </label>
 </div>
+<br>
+<div class="col-1">
+        <label style="padding-top: 8px;">  
+           E’ stato praticato alla nascita il contatto pelle-pelle (skin-to-skin) tra mamma e neonato?<br/>
+            <select id="skin" style="width:25%;" tabindex="7" name="skin" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option>
+                <option value="dato mancante"> Dato mancante </option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+        </label>
+    </div>
+
     <div class="col-9">
         <label style="font-size: 10px; color: #e80d0d;">
                * Campi obbligatori. <br/>

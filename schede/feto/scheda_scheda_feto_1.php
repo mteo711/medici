@@ -95,12 +95,15 @@
     if(isset($_POST["dati_feto_dataM"])) {
         list($year, $month, $day) = explode("-", $_POST['dati_feto_dataM']);
         $dataM = "$day-$month-$year";
+        
         $class8 = "";
     }
     else {
         $dataM = null;
         $class8 = "errors";
     }
+
+ 
 
 
     if(isset($_POST["dati_feto_eta"])) {

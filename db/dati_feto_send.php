@@ -72,6 +72,8 @@ if((isset($_POST['dataM'])) && (!empty($_POST['dataM']))){
 }
 else {
 }
+
+
 if((isset($_POST['eta'])) && (!empty($_POST['eta'])) && (ctype_digit($_POST['eta']))){
     $insert_data["eta_settimana_gestazione"] = $_POST['eta'];
 }

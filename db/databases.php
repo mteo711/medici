@@ -141,7 +141,7 @@ public $tipoCasoSIDS=array('SIDS','SUID','non classificato','incerto');
 // valori usati per campi di tipo SET
 
 public $tipoPeriodo =array('gestazionale','pregestazionale');
-public $tipoInfezione =array('hiv','hbv','hcv','lue','toxo','cmv','rubeo','altro');
+public $tipoInfezione =array('hiv','hbv','hcv','lue','toxo','cmv','rubeo', 'hmv','altro');
 public $tipoPatologie =array('disturbi tiroide','cardiopatia','patologie renali','colestasi gravidica','parodontopatie','altro');
 
 public $tipoAlimenti =array('materno', 'polvere', 'mucca', 'acqua', 'liquidi', 'omogeneizzati', 'altro');

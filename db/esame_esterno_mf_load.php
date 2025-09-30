@@ -11,10 +11,7 @@ function loadPage() {
     $recordz= $obx->fetchRecord(array("schede_id"=>$_SESSION['case_id']));
     
    
-    if ((isset($_POST['data_morte'])) && (!empty($_POST['data_morte']))) {
-        $insert_data["data_morte"] = $_POST['data_morte'];
-    } else {
-    }
+  $_POST["data_morte"] = $recordz['data_morte'];
 
 	$obj = new esame_esterno_mf();
 

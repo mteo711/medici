@@ -212,8 +212,8 @@ else {
 }
 
 //dati fecondazione 
-if(isset($_POST["fecondazione"])){
-    $fecondazione = $_POST["fecondazione"];
+if(isset($_POST["dati_pers_fecondazione"])){
+    $fecondazione = $_POST["dati_pers_fecondazione"];
     $class18 = "";
 }
 else {
@@ -234,21 +234,17 @@ else {
 
 if(isset($_POST["dati_pers_struttura"])){
     $struttura = $_POST["dati_pers_struttura"];
-    $class9 = "";
 }
 else {
     $struttura = null;
-    $class9 = "errors";
 }
 
 if((isset($_POST["dati_pers_endouterina"]))&&($_POST["dati_pers_endouterina"] == 'Y')){
     $endouterina = $_POST["dati_pers_endouterina"];
-    $class10 = "";
     $checked1 = "checked";
 }
 else{ 
     $endouterina = null;
-    $class10 = "errors";
     $checked1 = "";
 }
 
@@ -265,12 +261,10 @@ else{
 
 if((isset($_POST["dati_pers_intracitoplasmatica"]))&&($_POST["dati_pers_intracitoplasmatica"] == 'Y')){
     $intracitoplasmatica = $_POST["dati_pers_intracitoplasmatica"];
-    $class12 = "";
     $checked3 = "checked";
 }
 else{ 
     $intracitoplasmatica = null;
-    $class12 = "errors";
     $checked3 = "";
 }
 
@@ -369,6 +363,223 @@ else{
 }
 
 
+//TENTATIVI 
+if(isset($_POST["dati_pers_tentativiFecondazione"])){
+    $tentativiFecondazione = $_POST["dati_pers_tentativiFecondazione"];
+    $class23 = "";
+}
+else {
+    $tentativiFecondazione = null;
+    $class23 = "errors23";
+}
+
+if(isset($_POST["dati_pers_dataCaso1"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataCaso1']);
+    $dataCaso1 = "$day-$month-$year";
+    $class24 = "";
+}
+else {
+    $dataCaso1 = null;
+    $class24 = "errors";
+}
+
+if(isset($_POST["dati_pers_dataCaso2"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataCaso2']);
+    $dataCaso2 = "$day-$month-$year";
+    $class25 = "";
+}
+else {
+    $dataCaso2 = null;
+    $class25= "errors";
+}
+
+if(isset($_POST["dati_pers_dataCaso3"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataCaso3']);
+    $dataCaso3 = "$day-$month-$year";
+    $class26 = "";
+}
+else {
+    $dataCaso3 = null;
+    $class26 = "errors";
+}
+
+if(isset($_POST["dati_pers_dataCaso4"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataCaso4']);
+    $dataCaso4 = "$day-$month-$year";
+    $class27 = "";
+}
+else {
+    $dataCaso4 = null;
+    $class28 = "errors";
+}
+
+if(isset($_POST["dati_pers_dataCaso5"])){
+    list($year, $month, $day) = explode("-", $_POST['dati_pers_dataCaso5']);
+    $dataCaso5 = "$day-$month-$year";
+    $class29= "";
+}
+else {
+    $dataCaso4 = null;
+    $class29= "errors";
+}
+
+
+
+if(isset($_POST["dati_pers_descriviCaso1"])){
+    $descriviCaso1 = $_POST["dati_pers_descriviCaso1"];
+    $class30 = "";
+}
+else {
+    $descriviCaso1 = null;
+    $class30 = "errors26";
+}
+
+if(isset($_POST["dati_pers_descriviCaso2"])){
+    $descriviCaso2 = $_POST["dati_pers_descriviCaso2"];
+    $class31 = "";
+}
+else {
+    $descriviCaso2 = null;
+    $class32 = "errors26";
+}
+
+if(isset($_POST["dati_pers_descriviCaso3"])){
+    $descriviCaso3 = $_POST["dati_pers_descriviCaso3"];
+    $class33 = "";
+}
+else {
+    $descriviCaso3 = null;
+    $class33 = "errors33";
+}
+
+if(isset($_POST["dati_pers_descriviCaso4"])){
+    $descriviCaso4 = $_POST["dati_pers_descriviCaso4"];
+    $class34 = "";
+}
+else {
+    $descriviCaso4 = null;
+    $class34 = "errors34";
+}
+
+if(isset($_POST["dati_pers_descriviCaso5"])){
+    $descriviCaso5 = $_POST["dati_pers_descriviCaso5"];
+    $class35 = "";
+}
+else {
+    $descriviCaso5 = null;
+    $class35 = "errors35";
+}
+
+//ANAMNESI FAMILIARE
+
+if(isset($_POST["dati_pers_anni_nonnamaterna"])){
+    $anni_nonnamaterna = $_POST["dati_pers_anni_nonnamaterna"];
+    $class23 = "";
+}
+else {
+    $anni_nonnamaterna = null;
+    $class23 = "errors23";
+}
+
+if(isset($_POST["dati_pers_anni_nonnomaterno"])){
+    $anni_nonnomaterno = $_POST["dati_pers_anni_nonnomaterno"];
+    $class24 = "";
+}
+else {
+    $anni_nonnomaterno = null;
+    $class24 = "errors24";
+}
+
+if(isset($_POST["dati_pers_patologie_nonnamaterna"])){
+    $patologie_nonnamaterna = $_POST["dati_pers_patologie_nonnamaterna"];
+    $class25 = "";
+}
+else {
+    $patologie_nonnamaterna = null;
+    $class25 = "errors25";
+}
+
+if(isset($_POST["dati_pers_patologie_nonnomaterno"])){
+    $patologie_nonnomaterno = $_POST["dati_pers_patologie_nonnomaterno"];
+    $class26 = "";
+}
+else {
+    $patologie_nonnomaterno = null;
+    $class26 = "errors26";
+}
+
+if(isset($_POST["dati_pers_fratelli_sorelle"])){
+    $fratelli_sorelle = $_POST["dati_pers_fratelli_sorelle"];
+    $class27 = "";
+}
+else {
+    $fratelli_sorelle = null;
+    $class27 = "errors27";
+}
+
+if(isset($_POST["dati_pers_patologie_famiglia"])){
+    $patologie_famiglia = $_POST["dati_pers_patologie_famiglia"];
+    $class28 = "";
+}
+else {
+    $patologie_famiglia = null;
+    $class28 = "errors28";
+}
+
+if(isset($_POST["dati_pers_altricasi"])){
+    $altricasi = $_POST["dati_pers_altricasi"];
+    $class29 = "";
+}
+else {
+    $altricasi = null;
+    $class29 = "errors29";
+}
+
+if(isset($_POST["dati_pers_altri_casi"])){
+    $altri_casi = $_POST["dati_pers_altri_casi"];
+    $class30 = "";
+}
+else {
+    $altri_casi = null;
+    $class30 = "errors30";
+}
+
+if(isset($_POST["dati_pers_nonnaviva"])){
+    $nonnaviva = $_POST["dati_pers_nonnaviva"];
+    $class31 = "";
+}
+else {
+    $nonnaviva = null;
+    $class31 = "errors31";
+}
+
+if(isset($_POST["dati_pers_nonnovivo"])){
+    $nonnovivo = $_POST["dati_pers_nonnovivo"];
+    $class32 = "";
+}
+else {
+    $nonnovivo = null;
+    $class32 = "errors32";
+}
+
+if (isset($_POST["dati_pers_morte_nonnamaterna"])) {
+    $mortenonnamaterna = $_POST["dati_pers_morte_nonnamaterna"];
+    $class33 = "";
+} else {
+    $mortenonnamaterna = null;
+    $class33 = "errors33";
+}
+
+
+if(isset($_POST["dati_pers_morte_nonnomaterno"])){
+    $morte_nonnomaterno = $_POST["dati_pers_morte_nonnomaterno"];
+    $class34 = "";
+}
+else {
+    $morte_nonnomaterno = null;
+    $class34 = "errors34";
+}
+
 
 
 ?>
@@ -377,6 +588,47 @@ $( document ).ready(function() {
     if ('<?php echo $etnia; ?>' == 'altra'){
     document.getElementById('spec').style.visibility = 'visible';
     }
+});
+
+  $( document ).ready(function() {
+    if (('<?php echo $tentativiFecondazione; ?>' == 'mancante') || ('<?php echo $tentativiFecondazione; ?>' == 'nessuno') || ('<?php echo $tentativiFecondazione; ?>' == '')){
+    }
+    else{
+        i=(<?php echo $tentativiFecondazione; ?>+0)*3;
+        for (j=1; j<=i; j++)
+        document.getElementById('a'+j).style.display='inline-block';return;
+    }
+});
+
+
+ $(function() {
+   $( "#dataN" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-60:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
+        onSelect: function(selectedDate) {
+            console.log(selectedDate);
+            var dd = selectedDate.split('-');
+            var daN = dd[2] + '-' + dd[1] + '-' + dd[0];
+            console.log(daN);
+            dob = new Date(daN);
+            var today = new Date();
+            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+            $("#eta").val(age);
+       }
+    });
+ });
+
+$(function() {
+  $( "#dataF" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
 });
 $(function() {
    $( "#specM" ).datepicker({
@@ -396,38 +648,55 @@ $(function() {
 });
 
 $(function() {
-   $( "#dataF" ).datepicker({
+  $( "#dataCaso1" ).datepicker({
         dateFormat: "dd-mm-yy",
-        yearRange: "-60:+0",
+        yearRange: "-30:+0",
         changeMonth: true,
         changeYear: true,
-        maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
-        onSelect: function(selectedDate) {
-            console.log(selectedDate);
-            var dd = selectedDate.split('-');
-            var daN = dd[2] + '-' + dd[1] + '-' + dd[0];
-            console.log(daN);
-            
-        }
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
     });
 });
-  $(function() {
-      $( "#slct" ).selectmenu({
-           change: function(event, ui){
-               var select = document.getElementById('slct');
-                  var value = select.value;
-                  if (value == 'altra') {
-                     document.getElementById('spec').style.visibility='visible'; return;
-                  }
-                     document.getElementById('spec').style.visibility='hidden'; return;
-           }
-      })
-      .selectmenu( "menuWidget")
-      .addClass( "overflow" );;
-      $("#slct").val('<?php echo $etnia; ?>')
-      $('#slct').selectmenu('refresh', true);
+$(function() {
+  $( "#dataCaso2" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso3" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso4" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso5" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
 
-  });
+
+
+
+
     
   $(function() {
       $('#cap').keypad({
@@ -438,6 +707,8 @@ $(function() {
       }
       });   
   }); 
+  
+  
 
 
   $(function() {
@@ -458,9 +729,40 @@ $(function() {
 
   });
 
+
+$(function() {
+    $( "#slct1" ).selectmenu({
+         change: function(event, ui){
+             var select = document.getElementById('slct1');
+                var value = select.value;
+                if ((value == 'mancante') || (value == 'nessuno')) {
+                    for (i=1; i<=15; i++){
+                        document.getElementById("a"+i).style.display = 'none';
+                        
+                    }
+                }
+                else {
+                    for (x=1; x<=15; x++){
+                        document.getElementById("a"+x).style.display = 'none'; 
+                    }
+                    i=value*3;
+                    for (j=1; j<=i; j++)
+                    document.getElementById('a'+j).style.display='inline-block';
+                       return;
+    
+                }
+         }
+    });
+    $("#slct1").val('<?php echo $tentativiFecondazione; ?>')
+    $('#slct1').selectmenu('refresh', true);
+});
+
   $(function() {
       $('#numVisite').keypad();    
    });
+
+   
+   
   
 
   $(function() {
@@ -485,24 +787,124 @@ $(function() {
     }
 });
 
-$(function() {
-    $("#slct3").selectmenu({
-        change: function(event, ui) {
-            var value = ui.item.value; 
-            for (let i = 1; i <= 20; i++) {
-                var div = document.getElementById('d' + i);
-                if (div) {
-                    if (value === 'si') {
-                        div.style.display = 'inline-block';
-                        div.style.verticalAlign = 'top';
-                    } else {
-                        div.style.display = 'none';
-                    }
+
+
+
+
+$(function () {
+    $('.slct4').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        $(targetSelector).hide();
+
+        if ($select.val() === 'no') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'no') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
                 }
+            }
+        });
+    });
+});
+
+$(function () {
+    $('.slct5').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        $(targetSelector).hide();
+
+        if ($select.val() === 'si') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'si') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
+                }
+            }
+        });
+    });
+});
+
+$(function () {
+    $('.slct6').each(function () {
+        const $select = $(this);
+        const targetSelector = $select.data('target');
+
+        $(targetSelector).hide();
+
+        if ($select.val() === 'no') {
+            $(targetSelector).show();
+        }
+
+        $select.selectmenu({
+            change: function (event, ui) {
+                const value = ui.item.value;
+
+                if (value === 'no') {
+                    $(targetSelector).show();
+                } else {
+                    $(targetSelector).hide();
+                }
+            }
+        });
+    });
+});
+
+$(document).ready(function() {
+    // Imposta il valore del select al valore PHP
+    $("#slct3").val('<?php echo $fecondazione; ?>');
+
+    // Gestisci il cambiamento del valore
+    $("#slct3").selectmenu({
+        change: function(event, ui){
+            var select = document.getElementById('slct3');
+            var value = select.value;
+            if (value !== 'si') {  // Controlla se il valore è diverso da 'si'
+                for (i = 1; i <= 20; i++) {
+                    document.getElementById('d' + i).style.display = 'none';
+                }
+                return;
+            } else {
+                for (j = 1; j <= 20; j++) {
+                    document.getElementById('d' + j).style.display = 'inline-block';
+                    document.getElementById('d' + j).style.verticalAlign = 'top';
+                }
+                return;
             }
         }
     });
+
+    // Esegui una verifica iniziale per mostrare o nascondere i div in base al valore
+    var initialValue = $("#slct3").val();
+    if (initialValue !== 'si') {  // Se il valore è diverso da 'si' (incluso 'mancante')
+        for (i = 1; i <= 20; i++) {
+            document.getElementById('d' + i).style.display = 'none';
+        }
+    } else {
+        for (j = 1; j <= 20; j++) {
+            document.getElementById('d' + j).style.display = 'inline-block';
+            document.getElementById('d' + j).style.verticalAlign = 'top';
+        }
+    }
 });
+
+
 
  
  function performSubmit(action)
@@ -517,25 +919,8 @@ $(function() {
       document.adminform.submit();
    }
 
- $(function() {
-   $( "#dataN" ).datepicker({
-        dateFormat: "dd-mm-yy",
-        yearRange: "-60:+0",
-        changeMonth: true,
-        changeYear: true,
-        maxDate: "+0D", //new Date(2015, 10 - 10, 29) //"+0D"
-        onSelect: function(selectedDate) {
-            console.log(selectedDate);
-            var dd = selectedDate.split('-');
-            var daN = dd[2] + '-' + dd[1] + '-' + dd[0];
-            console.log(daN);
-            dob = new Date(daN);
-            var today = new Date();
-            var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
-            $("#eta").val(age);
-       }
-    });
- });
+
+
 </script>
 <style>
 .overflow {
@@ -570,6 +955,7 @@ $(function() {
             ?>
         </label>
     </div>
+    
     <div class="col-3">
         <label style="padding-top: 6px;" <?php echo "class=".$class4; ?>>
             Luogo di Nascita *<br/>
@@ -622,7 +1008,7 @@ $(function() {
         <label style="padding-top: 6px;">
             Cell *<br/>
             <?php
-                echo "<input id=\"prov\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
+                echo "<input id=\"cell\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
             ?>
         </label>
     </div>
@@ -631,7 +1017,7 @@ $(function() {
         <label style="padding-top: 6px;">
             Codice Fiscale <br/>
             <?php
-                echo "<input id=\"prov\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
+                echo "<input id=\"codfiscale\" $dis name=\"codfiscale\" tabindex=\"14\" value=\"".$codfiscale."\">";
             ?>
         </label>
     </div>
@@ -741,7 +1127,7 @@ $(function() {
     <label style="padding-top:7px;">
         La Fecondazione è stata medicalmente assistita? * <br/>
         <select tabindex="15" id="slct3" name="fecondazione" style="width:50%;" <?php echo $dis; ?>>
-            <option value="">-- Seleziona --</option>
+            <option value=""></option>
             <option value="mancante">Dato Mancante</option>
             <option value="si">Si</option>
             <option value="no">No</option>
@@ -765,6 +1151,7 @@ $(function() {
             ?>
         </label>
     </div>
+    
     <div class="col-3" id="d3" style="display:none;">
     <label>
     Inseminazione endouterina (IUI)
@@ -785,15 +1172,19 @@ $(function() {
            echo "<input type=\"checkbox\" id=\"vitro\" $dis name=\"vitro\" value=\"Y\" $checked>";
         ?>
         </label>
+        </div>
+    <div class="col-3" id="d5" style="display:none;">
         <label 
         >
             Iniezione Intracitoplasmatica dello Spermatozoo (ICSI)
             <?php
            $intracitoplasmatica = !empty($intracitoplasmatica) ? $intracitoplasmatica : 'N';
-           $checked = ($endouterina == 'Y') ? 'checked' : '';
+           $checked = ($intracitoplasmatica == 'Y') ? 'checked' : '';
            echo "<input type=\"checkbox\" id=\"intracitoplasmatica\" $dis name=\"intracitoplasmatica\" value=\"Y\" $checked>";
         ?>
         </label>
+        </div>
+    <div class="col-3" id="d6" style="display:none;">
         <label 
         >
             Trasferimento Intrafallopiano di Gameti (GIFT)
@@ -803,14 +1194,9 @@ $(function() {
            echo "<input type=\"checkbox\" id=\"gameti\" $dis name=\"gameti\" value=\"Y\" $checked>";
         ?>
         </label>
-        <label style="padding-top: 6px;">
-            Altre <br/>
-            <?php
-                echo "<input name=\"altre\" $dis tabindex=\"13\" value=\"".$altre."\">";
-            ?>
-        </label>
-    </div>
-    <div class="col-3" id="d5" style="display:none;">
+        </div>
+    
+    <div class="col-3" id="d8" style="display:none;">
     <label>
         Ovulazione indotta
         <?php
@@ -820,7 +1206,7 @@ $(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d6" style="display:none;">
+<div class="col-3" id="d9" style="display:none;">
     <label>
         Omologa
         <?php
@@ -833,29 +1219,28 @@ $(function() {
 
 
 
-     <div class="col-3" id="d7" style="display:none;">
-    <label>
-        Eterologa<br/>
-        <label style="margin-right: 15px; display: inline-block;">
-            Maschile
+     <div class="col-3" id="d10" style="display:none;">
+        <label>
+            Eterologa Maschile
             <?php
            $eterologa = !empty($eterologa) ? $eterologa : 'N';
            $checked = ($eterologa == 'maschile') ? 'checked' : '';
-           echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"maschile\" $checked>";
+           echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"maschile\" $checked>";           
+           
         ?>
         </label>
-
-        <label style="display: inline-block;">
-            Femminile
+    </div>
+         <div class="col-3" id="d11" style="display:none;">
+        <label>
+         Eterologa Femminile
             <?php
            $eterologa = !empty($eterologa) ? $eterologa : 'N';
            $checked = ($eterologa == 'femminile') ? 'checked' : '';
            echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"femminile\" $checked>";
         ?>
-        </label>
-    </label>
+        </label>    
 </div>
-<div class="col-3" id="d8" style="display:none;">
+<div class="col-3" id="d12" style="display:none;">
     <label>
         Embriodonazione
         <?php
@@ -865,7 +1250,7 @@ $(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d9" style="display:none;">
+<div class="col-3" id="d13" style="display:none;">
     <label>
         A Fresco
         <?php
@@ -875,7 +1260,7 @@ $(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d10" style="display:none;">
+<div class="col-3" id="d14" style="display:none;">
     <label>
         Crioconservazione
         <?php
@@ -885,7 +1270,7 @@ $(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d11" style="display:none;">
+<div class="col-3" id="d15" style="display:none;">
     <label>
         Test Preimpianto
         <?php
@@ -893,6 +1278,269 @@ $(function() {
            $checked = ($preimpianto == 'Y') ? 'checked' : '';
            echo "<input type=\"checkbox\" id=\"preimpianto\" $dis name=\"preimpianto\" value=\"Y\" $checked>";
         ?>
+    </label>
+</div>
+<div class="col-1" id="d7" style="display:none;">
+        <label style="padding-top: 6px;">
+            Altre <br/>
+            <?php
+                echo "<input name=\"altre\" $dis tabindex=\"13\" value=\"".$altre."\">";
+            ?>
+        </label>
+    </div>
+    <br>
+
+    <div class="col-1">
+        <label <?php echo "class=".$class1 ?>>
+            Numero Tentativi di fecondazione assistita <br/>
+            <select tabindex="13" id="slct1" name="tentativiFecondazione" style="width:50%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option> 
+                <option value="mancante">Dato Mancante</option>
+                <option value="nessuno">Nessuno</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-3" id="a1" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #1
+    </label>
+    </div>
+    <div class="col-3" id="a2" style="display:none;">          
+    <label style="padding-top: 6px;" <?php echo "class=".$class30; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso1\" $dis name=\"dataCaso1\" value=\"".$dataCaso1."\" readonly>";
+            ?>
+        </label>
+
+    </div>
+    <div class="col-3" id="a3" style="display:none;">
+         <label>
+        Descrivere
+        <textarea name="descriviCaso1" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso1; ?></textarea>
+    </label>
+        
+    </div>
+    
+    <div class="col-3" id="a4" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #2
+    </label>
+    </div>
+    <div class="col-3" id="a5" style="display:none;">
+         <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso2\" $dis name=\"dataCaso2\" value=\"".$dataCaso2."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a6" style="display:none;">
+           <label>
+        Descrivere
+        <textarea name="descriviCaso2" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso2; ?></textarea>
+    </label>
+        
+    </div>
+    
+    <div class="col-3" id="a7" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #3
+    </label>
+    </div>
+    <div class="col-3" id="a8" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso3\" $dis name=\"dataCaso3\" value=\"".$dataCaso3."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a9" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso3" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso3; ?></textarea>
+    </label>
+      
+    </div>
+    
+    <div class="col-3" id="a10" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #4
+    </label>
+    </div>
+    <div class="col-3" id="a11" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso4\" $dis name=\"dataCaso4\" value=\"".$dataCaso4."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a12" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso4" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso4; ?></textarea>
+    </label>
+       
+    </div>
+    
+    <div class="col-3" id="a13" style="display:none;">
+        
+    <label>
+        &nbsp; &nbsp; Tentativo #5
+    </label>
+    </div>
+    <div class="col-3" id="a14" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso5\" $dis name=\"dataCaso5\" value=\"".$dataCaso5."\" readonly>";
+            ?>
+        </label>
+     
+    </div>
+    <div class="col-3" id="a15" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso5" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso5; ?></textarea>
+    </label>
+       
+    </div>
+    <br>
+
+<div class="col-2">
+        <label>
+            Madre (nonna materna del lattante deceduto) di anni<br/>
+            <?php
+                echo "<input id=\"anni_nonnamaterna\" $dis name=\"dati_pers_anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
+            ?>
+        </label>
+    </div>
+
+     <div class="col-2">
+    <label>
+        Patologie della madre
+        <textarea name="dati_pers_patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
+    </label>
+</div>
+    
+
+<div class="col-3">
+    <label class="<?php echo $class31; ?>">
+        Vivente <br/>
+        <select tabindex="17"
+                name="dati_pers_nonnaviva"
+                class="slct4"
+                data-target="#nonnamaterna"
+                style="width:50%;"
+                <?php echo $class22; ?>>
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($nonnaviva === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($nonnaviva === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($nonnaviva === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+
+<div class="col-3" id="nonnamaterna">
+    <label>
+        Causa di morte
+        <textarea name="dati_pers_morte_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $mortenonnamaterna; ?></textarea>
+
+    </label>
+</div>
+<br>
+
+<div class="col-2">
+        <label>
+           Padre (nonno materno del lattante deceduto) di anni<br/>
+            <?php
+                echo "<input id=\"anni_nonnomaterno\" $dis name=\"dati_pers_anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
+            ?>
+        </label>
+    </div>
+
+     <div class="col-2">
+    <label>
+        Patologie del padre
+        <textarea name="dati_pers_patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
+    </label>
+</div>
+
+    
+
+<div class="col-3">
+    <label >
+        Vivente <br/>
+        <select tabindex="17"
+                name="dati_pers_nonnovivo"
+                class="slct6"
+                data-target="#nonnomaterno"
+                style="width:50%;"
+               >
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($nonnovivo === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($nonnovivo === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($nonnovivo === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+
+
+<div class="col-3" id="nonnomaterno">
+    <label>
+       Causa di morte
+        <textarea name="dati_pers_morte_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $morte_nonnomaterno; ?></textarea>
+    </label>
+</div>
+<br>
+
+ <div class="col-2">
+    <label>
+        Fratelli/Sorelle: Età e stato di salute
+        <textarea name="dati_pers_fratelli_sorelle" style="height:40px;" <?php echo $dis; ?>><?php echo $fratelli_sorelle; ?></textarea>
+    </label>
+</div>
+
+ <div class="col-2">
+    <label>
+        Altre patologie nella famiglia
+        <textarea name="dati_pers_patologie_famiglia" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_famiglia; ?></textarea>
+    </label>
+</div>
+
+<div class="col-3">
+    <label>
+        Ci sono stati altri casi di morte improvvisa in famiglia? <br/>
+        <select tabindex="17"
+                name="dati_pers_altricasi"
+                class="slct5"
+                data-target="#altri_casi"
+                style="width:50%;"
+               >
+            <option value=""> &nbsp; </option> 
+            <option value="mancante" <?php if($altricasi === "mancante") echo "selected"; ?>>Dato Mancante</option>
+            <option value="si" <?php if($altricasi === "si") echo "selected"; ?>>Si</option>
+            <option value="no" <?php if($altricasi === "no") echo "selected"; ?>>No</option>
+        </select>
+    </label>
+</div>
+
+<div class="col-3" id="altri_casi">
+    <label>
+       Se sì, specificare
+        <textarea name="dati_pers_altri_casi" style="height:40px;" <?php echo $dis; ?>><?php echo $altri_casi; ?></textarea>
     </label>
 </div>
 

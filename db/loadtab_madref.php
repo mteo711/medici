@@ -266,35 +266,55 @@
 
 	    $recordh = $objh->fetchRecord(array("madre_schede_id"=>$_SESSION['case_id']));
         
-        if($objh->fetchNumRows() == 0){
-            $_SESSION['mestruoF'] = "tabs";
-        }
-        else {  
-            if (($recordh['data_ultima_mestruazione'] == null ) || ($recordh['data_presunta_parto_anamnestico'] == null ) || ($recordh['data_presunta_parto_ecografico'] == null ) || ($recordh['num_visite_controllo_in_gravidanza'] == null )){
-                
-                $insert_data = array();
-                $insert_data["conclusa1"] = "N";
-                $obj = new info_morte_fetale();
-                $condition= array("madre_schede_id" => $_SESSION['case_id']);
-                $obj->update($insert_data,$condition);
-                //var_dump($insert_data);
-                $obj->error();
-                
-                $_SESSION['mestruoF'] = "tabs_er";
-            }
-            else {
-                
-                $insert_data = array();
-                $insert_data["conclusa1"] = "Y";
-                $obj = new info_morte_fetale();
-                $condition= array("madre_schede_id" => $_SESSION['case_id']);
-                $obj->update($insert_data,$condition);
-                //var_dump($insert_data);
-                $obj->error();
-                
-                $_SESSION['mestruoF'] = "tabs_ok";
-            }
-        }
+     if ($objh->fetchNumRows() == 0) {
+    $_SESSION['mestruoF'] = "tabs";
+}
+else {  
+    if (
+        ($recordh['data_ultima_mestruazione'] == null) || 
+        ($recordh['data_presunta_parto_anamnestico'] == null) || 
+        ($recordh['data_presunta_parto_ecografico'] == null) || 
+        ($recordh['num_visite_controllo_in_gravidanza'] == null) ||
+        ($recordh['tentativiFecondazione'] == null) ||
+        ($recordh['dataCaso1'] == null) ||
+        ($recordh['dataCaso2'] == null) ||
+        ($recordh['dataCaso3'] == null) ||
+        ($recordh['dataCaso4'] == null) ||
+        ($recordh['dataCaso5'] == null) ||
+        ($recordh['descriviCaso1'] == null) ||
+        ($recordh['descriviCaso2'] == null) ||
+        ($recordh['descriviCaso3'] == null) ||
+        ($recordh['descriviCaso4'] == null) ||
+        ($recordh['descriviCaso5'] == null) ||
+        ($recordh['ginecologo_curante'] == null) ||
+        ($recordh['ostetrica'] == null) ||
+        ($recordh['fecondazione'] == null) ||
+        ($recordh['struttura'] == null) ||
+        ($recordh['eterologa'] == null) ||
+        ($recordh['specifica_altre'] == null)
+    ) {
+        $insert_data = array();
+        $insert_data["conclusa1"] = "N";
+        $obj = new info_morte_fetale();
+        $condition= array("madre_schede_id" => $_SESSION['case_id']);
+        $obj->update($insert_data,$condition);
+        $obj->error();
+        
+        $_SESSION['mestruoF'] = "tabs_er";
+    }
+    else {
+        $insert_data = array();
+        $insert_data["conclusa1"] = "Y";
+        $obj = new info_morte_fetale();
+        $condition= array("madre_schede_id" => $_SESSION['case_id']);
+        $obj->update($insert_data,$condition);
+        $obj->error();
+        
+        $_SESSION['mestruoF'] = "tabs_ok";
+    }
+}
+
+
         
         //fratelli
         $objf = new fratelli();

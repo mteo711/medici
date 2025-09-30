@@ -35,16 +35,19 @@ public function saveSecret($username, $secret) {
   return $this -> update ($set_val_cols, $cod_val_cols);
 }
 
-public function fetchOTP ($username) {
-  $columns = ['otp'];
-  $val_cols = ['username'];
-  $result = $this-> fetch($columns, $val_cols);
+public function fetchOTP($username) {
+    $columns = ['otp'];
+    $val_cols = ['username'];
+    $values = [$username]; // <--- qui passo lo username
 
-   if (count($result) > 0 ) {
-    return $result[0]['otp'];
-   }
-   return null;    
+    $result = $this->fetch($columns, $val_cols, $values);
+
+    if (count($result) > 0) {
+        return $result[0]['otp'];
+    }
+    return null;    
 }
+
 
 
 

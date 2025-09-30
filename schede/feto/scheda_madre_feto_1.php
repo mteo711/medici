@@ -765,7 +765,7 @@ $(function() {
 
     <div class="col-2">
         <label>
-            Madre (nonna materna del lattante deceduto) di anni<br/>
+            Nonna materna del lattante deceduto di anni<br/>
             <?php
                 echo "<input id=\"anni_nonnamaterna\" $dis name=\"dati_pers_anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
             ?>
@@ -774,7 +774,7 @@ $(function() {
 
      <div class="col-2">
     <label>
-        Patologie della madre
+        Patologie della nonna
         <textarea name="dati_pers_patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
     </label>
 </div>
@@ -809,7 +809,7 @@ $(function() {
 
 <div class="col-2">
         <label>
-           Padre (nonno materno del lattante deceduto) di anni<br/>
+           Nonno materno del lattante deceduto di anni<br/>
             <?php
                 echo "<input id=\"anni_nonnomaterno\" $dis name=\"dati_pers_anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
             ?>
@@ -818,7 +818,7 @@ $(function() {
 
      <div class="col-2">
     <label>
-        Patologie del padre
+        Patologie del nonno
         <textarea name="dati_pers_patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
     </label>
 </div>

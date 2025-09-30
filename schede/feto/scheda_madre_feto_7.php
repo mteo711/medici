@@ -274,6 +274,113 @@ else{
     $checked11 = "";
 }
 
+//numero tentativi
+if(isset($_POST["morte_fetale_tentativiFecondazione"])){
+    $tentativiFecondazione = $_POST["morte_fetale_tentativiFecondazione"];
+    $class23 = "";
+}
+else {
+    $tentativiFecondazione = null;
+    $class23 = "errors23";
+}
+
+if(isset($_POST["morte_fetale_dataCaso1"])){
+    list($year, $month, $day) = explode("-", $_POST['morte_fetale_dataCaso1']);
+    $dataCaso1 = "$day-$month-$year";
+    $class24 = "";
+}
+else {
+    $dataCaso1 = null;
+    $class24 = "errors";
+}
+
+if(isset($_POST["morte_fetale_dataCaso2"])){
+    list($year, $month, $day) = explode("-", $_POST['morte_fetale_dataCaso2']);
+    $dataCaso2 = "$day-$month-$year";
+    $class25 = "";
+}
+else {
+    $dataCaso2 = null;
+    $class25= "errors";
+}
+
+if(isset($_POST["morte_fetale_dataCaso3"])){
+    list($year, $month, $day) = explode("-", $_POST['morte_fetale_dataCaso3']);
+    $dataCaso3 = "$day-$month-$year";
+    $class26 = "";
+}
+else {
+    $dataCaso3 = null;
+    $class26 = "errors";
+}
+
+if(isset($_POST["morte_fetale_dataCaso4"])){
+    list($year, $month, $day) = explode("-", $_POST['morte_fetale_dataCaso4']);
+    $dataCaso4 = "$day-$month-$year";
+    $class27 = "";
+}
+else {
+    $dataCaso4 = null;
+    $class28 = "errors";
+}
+
+if(isset($_POST["morte_fetale_dataCaso5"])){
+    list($year, $month, $day) = explode("-", $_POST['morte_fetale_dataCaso5']);
+    $dataCaso5 = "$day-$month-$year";
+    $class29= "";
+}
+else {
+    $dataCaso4 = null;
+    $class29= "errors";
+}
+
+
+
+if(isset($_POST["morte_fetale_descriviCaso1"])){
+    $descriviCaso1 = $_POST["morte_fetale_descriviCaso1"];
+    $class30 = "";
+}
+else {
+    $descriviCaso1 = null;
+    $class30 = "errors26";
+}
+
+if(isset($_POST["morte_fetale_descriviCaso2"])){
+    $descriviCaso2 = $_POST["morte_fetale_descriviCaso2"];
+    $class31 = "";
+}
+else {
+    $descriviCaso2 = null;
+    $class32 = "errors26";
+}
+
+if(isset($_POST["morte_fetale_descriviCaso3"])){
+    $descriviCaso3 = $_POST["morte_fetale_descriviCaso3"];
+    $class33 = "";
+}
+else {
+    $descriviCaso3 = null;
+    $class33 = "errors33";
+}
+
+if(isset($_POST["morte_fetale_descriviCaso4"])){
+    $descriviCaso4 = $_POST["morte_fetale_descriviCaso4"];
+    $class34 = "";
+}
+else {
+    $descriviCaso4 = null;
+    $class34 = "errors34";
+}
+
+if(isset($_POST["morte_fetale_descriviCaso5"])){
+    $descriviCaso5 = $_POST["morte_fetale_descriviCaso5"];
+    $class35 = "";
+}
+else {
+    $descriviCaso5 = null;
+    $class35 = "errors35";
+}
+
 
 
 
@@ -291,6 +398,16 @@ else{
         document.getElementById("dataE").disabled = false;
     }
    });
+
+   $( document ).ready(function() {
+    if (('<?php echo $tentativiFecondazione; ?>' == 'mancante') || ('<?php echo $tentativiFecondazione; ?>' == 'nessuno') || ('<?php echo $tentativiFecondazione; ?>' == '')){
+    }
+    else{
+        i=(<?php echo $tentativiFecondazione; ?>+0)*3;
+        for (j=1; j<=i; j++)
+        document.getElementById('a'+j).style.display='inline-block';return;
+    }
+});
      
    $(function() {
       $('#numVisite').keypad();    
@@ -353,6 +470,79 @@ $(function() {
             
         }
     });
+});
+
+$(function() {
+  $( "#dataCaso1" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso2" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso3" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso4" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+$(function() {
+  $( "#dataCaso5" ).datepicker({
+        dateFormat: "dd-mm-yy",
+        yearRange: "-30:+0",
+        changeMonth: true,
+        changeYear: true,
+        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+    });
+});
+
+$(function() {
+    $( "#slct1" ).selectmenu({
+         change: function(event, ui){
+             var select = document.getElementById('slct1');
+                var value = select.value;
+                if ((value == 'mancante') || (value == 'nessuno')) {
+                    for (i=1; i<=15; i++){
+                        document.getElementById("a"+i).style.display = 'none';
+                        
+                    }
+                }
+                else {
+                    for (x=1; x<=15; x++){
+                        document.getElementById("a"+x).style.display = 'none'; 
+                    }
+                    i=value*3;
+                    for (j=1; j<=i; j++)
+                    document.getElementById('a'+j).style.display='inline-block';
+                       return;
+    
+                }
+         }
+    });
+    $("#slct1").val('<?php echo $tentativiFecondazione; ?>')
+    $('#slct1').selectmenu('refresh', true);
 });
  
 
@@ -488,7 +678,8 @@ $(document).ready(function() {
                 echo "<input type=\"text\" $dis id=\"struttura\" name=\"struttura\" value=\"".$struttura."\"";
             ?>
         </label>
-    </div>
+    </div> 
+    
     <div class="col-3" id="d3" style="display:none;">
     <label>
     Inseminazione endouterina (IUI)
@@ -509,6 +700,8 @@ $(document).ready(function() {
            echo "<input type=\"checkbox\" id=\"vitro\" $dis name=\"vitro\" value=\"Y\" $checked>";
         ?>
         </label>
+        </div>
+    <div class="col-3" id="d5" style="display:none;">
         <label 
         >
             Iniezione Intracitoplasmatica dello Spermatozoo (ICSI)
@@ -518,6 +711,8 @@ $(document).ready(function() {
            echo "<input type=\"checkbox\" id=\"intracitoplasmatica\" $dis name=\"intracitoplasmatica\" value=\"Y\" $checked>";
         ?>
         </label>
+        </div>
+    <div class="col-3" id="d6" style="display:none;">
         <label 
         >
             Trasferimento Intrafallopiano di Gameti (GIFT)
@@ -527,14 +722,9 @@ $(document).ready(function() {
            echo "<input type=\"checkbox\" id=\"gameti\" $dis name=\"gameti\" value=\"Y\" $checked>";
         ?>
         </label>
-        <label style="padding-top: 6px;">
-            Altre <br/>
-            <?php
-                echo "<input name=\"altre\" $dis tabindex=\"13\" value=\"".$altre."\">";
-            ?>
-        </label>
-    </div>
-    <div class="col-3" id="d5" style="display:none;">
+        </div>
+    
+    <div class="col-3" id="d8" style="display:none;">
     <label>
         Ovulazione indotta
         <?php
@@ -544,7 +734,7 @@ $(document).ready(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d6" style="display:none;">
+<div class="col-3" id="d9" style="display:none;">
     <label>
         Omologa
         <?php
@@ -557,29 +747,28 @@ $(document).ready(function() {
 
 
 
-     <div class="col-3" id="d7" style="display:none;">
-    <label>
-        Eterologa<br/>
-        <label style="margin-right: 15px; display: inline-block;">
-            Maschile
+     <div class="col-3" id="d10" style="display:none;">
+        <label>
+            Eterologa Maschile
             <?php
            $eterologa = !empty($eterologa) ? $eterologa : 'N';
            $checked = ($eterologa == 'maschile') ? 'checked' : '';
-           echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"maschile\" $checked>";
+           echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"maschile\" $checked>";           
+           
         ?>
         </label>
-
-        <label style="display: inline-block;">
-            Femminile
+    </div>
+         <div class="col-3" id="d11" style="display:none;">
+        <label>
+         Eterologa Femminile
             <?php
            $eterologa = !empty($eterologa) ? $eterologa : 'N';
            $checked = ($eterologa == 'femminile') ? 'checked' : '';
            echo "<input type=\"checkbox\" id=\"eterologa\" $dis name=\"eterologa\" value=\"femminile\" $checked>";
         ?>
-        </label>
-    </label>
+        </label>    
 </div>
-<div class="col-3" id="d8" style="display:none;">
+<div class="col-3" id="d12" style="display:none;">
     <label>
         Embriodonazione
         <?php
@@ -589,7 +778,7 @@ $(document).ready(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d9" style="display:none;">
+<div class="col-3" id="d13" style="display:none;">
     <label>
         A Fresco
         <?php
@@ -599,7 +788,7 @@ $(document).ready(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d10" style="display:none;">
+<div class="col-3" id="d14" style="display:none;">
     <label>
         Crioconservazione
         <?php
@@ -609,7 +798,7 @@ $(document).ready(function() {
         ?>
     </label>
 </div>
-<div class="col-3" id="d11" style="display:none;">
+<div class="col-3" id="d15" style="display:none;">
     <label>
         Test Preimpianto
         <?php
@@ -619,6 +808,140 @@ $(document).ready(function() {
         ?>
     </label>
 </div>
+<div class="col-1" id="d7" style="display:none;">
+        <label style="padding-top: 6px;">
+            Altre <br/>
+            <?php
+                echo "<input name=\"altre\" $dis tabindex=\"13\" value=\"".$altre."\">";
+            ?>
+        </label>
+    </div>
+
+     <div class="col-1">
+        <label <?php echo "class=".$class1 ?>>
+            Numero Tentativi di fecondazione assistita <br/>
+            <select tabindex="13" id="slct1" name="tentativiFecondazione" style="width:50%;" <?php echo $dis; ?>>
+                <option value=""> &nbsp </option> 
+                <option value="mancante">Dato Mancante</option>
+                <option value="nessuno">Nessuno</option>
+                <option value=1>1</option>
+                <option value=2>2</option>
+                <option value=3>3</option>
+                <option value=4>4</option>
+                <option value=5>5</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-3" id="a1" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #1
+    </label>
+    </div>
+    <div class="col-3" id="a2" style="display:none;">          
+    <label style="padding-top: 6px;" <?php echo "class=".$class30; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso1\" $dis name=\"dataCaso1\" value=\"".$dataCaso1."\" readonly>";
+            ?>
+        </label>
+
+    </div>
+    <div class="col-3" id="a3" style="display:none;">
+         <label>
+        Descrivere
+        <textarea name="descriviCaso1" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso1; ?></textarea>
+    </label>
+        
+    </div>
+    
+    <div class="col-3" id="a4" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #2
+    </label>
+    </div>
+    <div class="col-3" id="a5" style="display:none;">
+         <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso2\" $dis name=\"dataCaso2\" value=\"".$dataCaso2."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a6" style="display:none;">
+           <label>
+        Descrivere
+        <textarea name="descriviCaso2" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso2; ?></textarea>
+    </label>
+        
+    </div>
+    
+    <div class="col-3" id="a7" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #3
+    </label>
+    </div>
+    <div class="col-3" id="a8" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso3\" $dis name=\"dataCaso3\" value=\"".$dataCaso3."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a9" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso3" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso3; ?></textarea>
+    </label>
+      
+    </div>
+    
+    <div class="col-3" id="a10" style="display:none;">
+    <label>
+        &nbsp; &nbsp; Tentativo #4
+    </label>
+    </div>
+    <div class="col-3" id="a11" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso4\" $dis name=\"dataCaso4\" value=\"".$dataCaso4."\" readonly>";
+            ?>
+        </label>
+      
+    </div>
+    <div class="col-3" id="a12" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso4" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso4; ?></textarea>
+    </label>
+       
+    </div>
+    
+    <div class="col-3" id="a13" style="display:none;">
+        
+    <label>
+        &nbsp; &nbsp; Tentativo #5
+    </label>
+    </div>
+    <div class="col-3" id="a14" style="display:none;">
+        <label style="padding-top: 6px;" <?php echo "class=".$class3; ?>>
+            Data<br/>
+            <?php
+                echo "<input type=\"text\" id=\"dataCaso5\" $dis name=\"dataCaso5\" value=\"".$dataCaso5."\" readonly>";
+            ?>
+        </label>
+     
+    </div>
+    <div class="col-3" id="a15" style="display:none;">
+          <label>
+        Descrivere
+        <textarea name="descriviCaso5" style="height:40px;" <?php echo $dis; ?>><?php echo $descriviCaso5; ?></textarea>
+    </label>
+       
+    </div>
 
 
 

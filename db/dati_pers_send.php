@@ -173,6 +173,67 @@ function invia($i){
     $insert_data["a_fresco"] = !empty($_POST['fresco']) ? $_POST['fresco'] : 'N';
     $insert_data["crioconservazione"] = !empty($_POST['crioconservazione']) ? $_POST['crioconservazione'] : 'N';
     $insert_data["test_preimpianto"] = !empty($_POST['preimpianto']) ? $_POST['preimpianto'] : 'N';
+
+    if (isset($_POST["dati_pers_anni_nonnamaterna"]) && !empty(trim($_POST["dati_pers_anni_nonnamaterna"]))) {
+    $insert_data["anni_nonnamaterna"] = trim($_POST["dati_pers_anni_nonnamaterna"]);
+}
+
+if (isset($_POST["dati_pers_anni_nonnomaterno"]) && !empty(trim($_POST["dati_pers_anni_nonnomaterno"]))) {
+    $insert_data["anni_nonnomaterno"] = trim($_POST["dati_pers_anni_nonnomaterno"]);
+}
+
+if (isset($_POST["dati_pers_patologie_nonnamaterna"]) && !empty(trim($_POST["dati_pers_patologie_nonnamaterna"]))) {
+    $insert_data["patologie_nonnamaterna"] = trim($_POST["dati_pers_patologie_nonnamaterna"]);
+}
+
+if (isset($_POST["dati_pers_patologie_nonnomaterno"]) && !empty(trim($_POST["dati_pers_patologie_nonnomaterno"]))) {
+    $insert_data["patologie_nonnomaterno"] = trim($_POST["dati_pers_patologie_nonnomaterno"]);
+}
+
+if (isset($_POST["dati_pers_fratelli_sorelle"]) && !empty(trim($_POST["dati_pers_fratelli_sorelle"]))) {
+    $insert_data["fratelli_sorelle"] = trim($_POST["dati_pers_fratelli_sorelle"]);
+}
+
+if (isset($_POST["dati_pers_patologie_famiglia"]) && !empty(trim($_POST["dati_pers_patologie_famiglia"]))) {
+    $insert_data["patologie_famiglia"] = trim($_POST["dati_pers_patologie_famiglia"]);
+}
+
+if (isset($_POST["dati_pers_altricasi"]) && !empty(trim($_POST["dati_pers_altricasi"]))) {
+    $insert_data["altricasi"] = trim($_POST["dati_pers_altricasi"]);
+}
+
+if (isset($_POST["dati_pers_altri_casi"]) && !empty(trim($_POST["dati_pers_altri_casi"]))) {
+    $insert_data["altri_casi"] = trim($_POST["dati_pers_altri_casi"]);
+}
+
+if (isset($_POST["dati_pers_nonnaviva"]) && !empty(trim($_POST["dati_pers_nonnaviva"]))) {
+    $insert_data["nonnaviva"] = trim($_POST["dati_pers_nonnaviva"]);
+}
+
+if (isset($_POST["dati_pers_nonnovivo"]) && !empty(trim($_POST["dati_pers_nonnovivo"]))) {
+    $insert_data["nonnovivo"] = trim($_POST["dati_pers_nonnovivo"]);
+}
+
+if (isset($_POST["dati_pers_morte_nonnamaterna"]) && !empty(trim($_POST["dati_pers_morte_nonnamaterna"]))) {
+    $insert_data["morte_nonnamaterna"] = trim($_POST["dati_pers_morte_nonnamaterna"]);
+}
+
+if (isset($_POST["dati_pers_morte_nonnomaterno"]) && !empty(trim($_POST["dati_pers_morte_nonnomaterno"]))) {
+    $insert_data["morte_nonnomaterno"] = trim($_POST["dati_pers_morte_nonnomaterno"]);
+}
+
+  if (!empty($_POST['tentativiFecondazione'])) $insert_data["tentativiFecondazione"] = $_POST['tentativiFecondazione'];
+    if (!empty($_POST['dataCaso1'])) $insert_data["dataCaso1"] = convertiData($_POST['dataCaso1']);
+    if (!empty($_POST['dataCaso2'])) $insert_data["dataCaso2"] = convertiData($_POST['dataCaso2']);
+    if (!empty($_POST['dataCaso3'])) $insert_data["dataCaso3"] = convertiData($_POST['dataCaso3']);
+    if (!empty($_POST['dataCaso4'])) $insert_data["dataCaso4"] = convertiData($_POST['dataCaso4']);
+    if (!empty($_POST['dataCaso5'])) $insert_data["dataCaso5"] = convertiData($_POST['dataCaso5']);
+
+    if (!empty($_POST['descriviCaso1'])) $insert_data["descriviCaso1"] = $_POST['descriviCaso1'];
+    if (!empty($_POST['descriviCaso2'])) $insert_data["descriviCaso2"] = $_POST['descriviCaso2'];
+    if (!empty($_POST['descriviCaso3'])) $insert_data["descriviCaso3"] = $_POST['descriviCaso3'];
+    if (!empty($_POST['descriviCaso4'])) $insert_data["descriviCaso4"] = $_POST['descriviCaso4'];
+    if (!empty($_POST['descriviCaso5'])) $insert_data["descriviCaso5"] = $_POST['descriviCaso5'];
 echo "qui";
 
 

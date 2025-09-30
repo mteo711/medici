@@ -269,8 +269,55 @@
             $_SESSION['frat_m'] = "tabs";
         }
         else {
-            if (($recordf['num_figli_in_vita'] == null) || ($recordf['num_figli_morti'] == null) || (($recordf['num_figli_morti'] == '1') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null))) || (($recordf['num_figli_morti'] == '2') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) ||  ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null))) || (($recordf['num_figli_morti'] == '3') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) || ($recordf['dataN3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null))) || (($recordf['num_figli_morti'] == '4') && (($recordf['dataN1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) || ($recordf['dataN2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) || ($recordf['dataN3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) || ($recordf['dataN4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null)))){
-                
+           if (
+   ($recordf['fratelli_sorelle'] == null) ||
+(
+    ($recordf['fratelli_sorelle'] == '1') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '2') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '3') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '4') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) ||
+        ($recordf['dataN4'] == null) || ($recordf['vivo4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null)
+    )
+) ||
+(
+    ($recordf['fratelli_sorelle'] == '5') &&
+    (
+        ($recordf['dataN1'] == null) || ($recordf['vivo1'] == null) || ($recordf['mesiM1'] == null) || ($recordf['causaM1'] == null) ||
+        ($recordf['dataN2'] == null) || ($recordf['vivo2'] == null) || ($recordf['mesiM2'] == null) || ($recordf['causaM2'] == null) ||
+        ($recordf['dataN3'] == null) || ($recordf['vivo3'] == null) || ($recordf['mesiM3'] == null) || ($recordf['causaM3'] == null) ||
+        ($recordf['dataN4'] == null) || ($recordf['vivo4'] == null) || ($recordf['mesiM4'] == null) || ($recordf['causaM4'] == null) ||
+        ($recordf['dataN5'] == null) || ($recordf['vivo5'] == null) || ($recordf['mesiM5'] == null) || ($recordf['causaM5'] == null)
+    )
+)
+           )
+
+    
+
+
+    
+ {
                 $insert_data = array();
                 $insert_data["conclusa"] = "N";
                 $obj = new fratelli();

@@ -84,6 +84,20 @@ $_POST["dati_pers_nonnovivo"] = $records['nonnovivo'];
 $_POST["dati_pers_morte_nonnamaterna"] = $records['morte_nonnamaterna'];
 $_POST["dati_pers_morte_nonnomaterno"] = $records['morte_nonnomaterno'];
 
+     $_POST["dati_pers_tentativiFecondazione"] = $records['tentativiFecondazione'];
+        
+        $_POST["dati_pers_dataCaso1"] = $records['dataCaso1'];
+        $_POST["dati_pers_dataCaso2"] = $records['dataCaso2'];
+        $_POST["dati_pers_dataCaso3"] = $records['dataCaso3'];
+        $_POST["dati_pers_dataCaso4"] = $records['dataCaso4'];
+        $_POST["dati_pers_dataCaso5"] = $records['dataCaso5'];
+        
+        $_POST["dati_pers_descriviCaso1"] = $records['descriviCaso1'];
+        $_POST["dati_pers_descriviCaso2"] = $records['descriviCaso2'];
+        $_POST["dati_pers_descriviCaso3"] = $records['descriviCaso3'];
+        $_POST["dati_pers_descriviCaso4"] = $records['descriviCaso4'];
+        $_POST["dati_pers_descriviCaso5"] = $records['descriviCaso5'];
+
 
 
         

@@ -57,6 +57,28 @@ function invia($i) {
     $insert_data["test_preimpianto"] = !empty($_POST['preimpianto']) ? $_POST['preimpianto'] : 'N';
 
 
+
+    if (!empty($_POST['tentativiFecondazione'])) $insert_data["tentativiFecondazione"] = $_POST['tentativiFecondazione'];
+    if (!empty($_POST['dataCaso1'])) $insert_data["dataCaso1"] = convertiData($_POST['dataCaso1']);
+    if (!empty($_POST['dataCaso2'])) $insert_data["dataCaso2"] = convertiData($_POST['dataCaso2']);
+    if (!empty($_POST['dataCaso3'])) $insert_data["dataCaso3"] = convertiData($_POST['dataCaso3']);
+    if (!empty($_POST['dataCaso4'])) $insert_data["dataCaso4"] = convertiData($_POST['dataCaso4']);
+    if (!empty($_POST['dataCaso5'])) $insert_data["dataCaso5"] = convertiData($_POST['dataCaso5']);
+
+    if (!empty($_POST['descriviCaso1'])) $insert_data["descriviCaso1"] = $_POST['descriviCaso1'];
+    if (!empty($_POST['descriviCaso2'])) $insert_data["descriviCaso2"] = $_POST['descriviCaso2'];
+    if (!empty($_POST['descriviCaso3'])) $insert_data["descriviCaso3"] = $_POST['descriviCaso3'];
+    if (!empty($_POST['descriviCaso4'])) $insert_data["descriviCaso4"] = $_POST['descriviCaso4'];
+    if (!empty($_POST['descriviCaso5'])) $insert_data["descriviCaso5"] = $_POST['descriviCaso5'];
+
+
+
+
+
+
+
+
+
     $obj = new info_morte_fetale();
 
     if ($_SESSION["morte_fetale"] != "Y") {

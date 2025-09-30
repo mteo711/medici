@@ -48,6 +48,8 @@
  $checked21 = "";
  $checked22 = "";
  $checked23 = "";
+ $checked24 = "";
+ $checked25 = "";
  if(isset($_POST["patologie_gest_ipertensione"])){
      $ipertensione = $_POST["patologie_gest_ipertensione"];
      $class1 = "";
@@ -138,6 +140,7 @@
      (in_array("lue", $check)) ? $checked4 = "checked" : $checked4 = "";
      (in_array("toxo", $check)) ? $checked5 = "checked" : $checked5 = "";
      (in_array("rubeo", $check)) ? $checked6 = "checked" : $checked6 = "";
+     (in_array("hmv", $check)) ? $checked24 = "checked" : $checked24 = "";
  }
  else{ 
      $tipoPre = null;
@@ -161,6 +164,7 @@
      (in_array("lue", $check)) ? $checked10 = "checked" : $checked10 = "";
      (in_array("toxo", $check)) ? $checked11 = "checked" : $checked11 = "";
      (in_array("rubeo", $check)) ? $checked12 = "checked" : $checked12 = "";
+      (in_array("hmv", $check)) ? $checked25 = "checked" : $checked25 = "";
  }
  else{ 
      $tipoPeri = null;
@@ -294,21 +298,21 @@ else {
     document.getElementById('tipoemo').style.visibility = 'visible';
     }
     if ('<?php echo $infezioni; ?>' == 'Y'){
-    for (i=0; i<30; i++)
+    for (i=0; i<34; i++)
        document.getElementById('p'+i).style.display='inline-block';
     }
    if ('<?php echo $patologie; ?>' == 'Y'){
-    for (let j=1; j<=30; j++)  // se patologie sono 6, correggi il numero max
+    for (let j=1; j<=30; j++)  
        if(document.getElementById('d'+j)) 
            document.getElementById('d'+j).style.display='inline-block';
 }
 if ('<?php echo $screening; ?>' == 'Y'){
-    for (let j=1; j<=30; j++)  // qui metti 6 se hai solo 6 elementi screening
+    for (let j=1; j<=30; j++)  
        if(document.getElementById('b'+j)) 
            document.getElementById('b'+j).style.display='inline-block';
 }
 if ('<?php echo $sanguematerno; ?>' == 'Y'){
-    for (let j=1; j<=30; j++)  // sanguematerno ha 3 elementi nel tuo html
+    for (let j=1; j<=30; j++)  
        if(document.getElementById('c'+j)) 
            document.getElementById('c'+j).style.display='inline-block';
 }
@@ -388,12 +392,12 @@ $(function() {
              var select = document.getElementById('slctInf');
              var value = select.value;
              if (value == 'Y') {
-                 for (i=0; i<30; i++)
+                 for (i=0; i<34; i++)
                  document.getElementById('p'+i).style.display='inline-block';
                         return;
              }
              else {
-                 for (i=0; i<30; i++)
+                 for (i=0; i<34; i++)
                  document.getElementById('p'+i).style.display='none';
                         return;
              }
@@ -692,7 +696,19 @@ function performSubmit(action)
         <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
             RUBEO
         </label>
-    </div><div class="col-16" id="p29" style="display: none; width:8%;">
+    </div>
+     <div class="col-12" id="p30" style="display: none;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
+            <input type="checkbox" name="preinfezioni[]" value="hmv" style="margin-bottom: 0px;" <?php echo $checked24."  ".$dis;?>>
+        </label>
+    </div>
+    <div class="col-16" id="p31" style="display: none; width:8%;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
+            HMV
+        </label>
+    </div>
+    <br>
+    <div class="col-16" id="p29" style="display: none; width:8%;">
         <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
             Altro
         </label>
@@ -767,6 +783,17 @@ function performSubmit(action)
             RUBEO
         </label>
     </div>
+     <div class="col-12" id="p32" style="display: none;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
+            <input type="checkbox" name="periinfezioni[]" value="hmv" style="margin-bottom: 0px;" <?php echo $checked25."  ".$dis;?>>
+        </label>
+    </div>
+    <div class="col-16" id="p33" style="display: none;">
+        <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
+            HMV
+        </label>
+    </div>
+    <br>
     <div class="col-16" id="p27" style="display: none; width:8%;">
         <label style="padding-top: 7px;" <?php echo "class=".$class14; ?>>
             Altro

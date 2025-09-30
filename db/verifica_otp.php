@@ -15,7 +15,7 @@ $g = new GoogleAuthenticator();
 $isValidOtp = $g->checkCode($secret, $otp);
 
 if ($isValidOtp) {
-    // Impostazione del tipo di utente
+    
     if ($_SESSION['regionale'] == 'Y') {
         $_SESSION["tipo_usr"] = 'reg';
         $redirectUrl = '../index_reg.php?usr=reg';
@@ -29,7 +29,6 @@ if ($isValidOtp) {
     header("Location: $redirectUrl");
     exit();
 } else {
-    // OTP errato, reindirizza con un parametro per indicare l'errore
     $_SESSION['errore_otp'] = true;
     header('Location: otp.php');
     exit();

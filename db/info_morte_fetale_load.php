@@ -54,7 +54,22 @@ function loadPage() {
         $_POST["morte_fetale_embriodonazione"] = $records['embriodonazione'];
         $_POST["morte_fetale_fresco"] = $records['a_fresco'];
         $_POST["morte_fetale_crioconservazione"] = $records['crioconservazione'];
-        $_POST["morte_fetale_preimpianto"] = $records['test_preimpianto'];   
+        $_POST["morte_fetale_preimpianto"] = $records['test_preimpianto'];  
+        
+        
+        $_POST["morte_fetale_tentativiFecondazione"] = $records['tentativiFecondazione'];
+        
+        $_POST["morte_fetale_dataCaso1"] = $records['dataCaso1'];
+        $_POST["morte_fetale_dataCaso2"] = $records['dataCaso2'];
+        $_POST["morte_fetale_dataCaso3"] = $records['dataCaso3'];
+        $_POST["morte_fetale_dataCaso4"] = $records['dataCaso4'];
+        $_POST["morte_fetale_dataCaso5"] = $records['dataCaso5'];
+        
+        $_POST["morte_fetale_descriviCaso1"] = $records['descriviCaso1'];
+        $_POST["morte_fetale_descriviCaso2"] = $records['descriviCaso2'];
+        $_POST["morte_fetale_descriviCaso3"] = $records['descriviCaso3'];
+        $_POST["morte_fetale_descriviCaso4"] = $records['descriviCaso4'];
+        $_POST["morte_fetale_descriviCaso5"] = $records['descriviCaso5'];
 
 
 

@@ -65,6 +65,20 @@ class info_morte_fetale extends Database
 				 'test_preimpianto' => 'bool',
 
 
+				 'tentativiFecondazione' => 'string',
+				 'dataCaso1' => 'date',
+				 'dataCaso2' => 'date',
+				 'dataCaso3' => 'date',
+				 'dataCaso4' => 'date',
+				 'dataCaso5' => 'date',
+				 'descriviCaso1' => 'string',
+				 'descriviCaso2' => 'string',
+				 'descriviCaso3' => 'string',
+				 'descriviCaso4' => 'string',
+				 'descriviCaso5' => 'string',
+
+
+
 
                  'conclusa1' => 'bool',
                  'idindagini' => 'int',

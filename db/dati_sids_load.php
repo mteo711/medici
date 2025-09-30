@@ -44,6 +44,7 @@ function loadPage() {
             $_POST["dati_sids_oraD"] = $records["ora_rilievo_decesso"];
             $_POST["dati_sids_oraC"] = $records["ora_ultimo_controllo_parentale"];
             $_POST["dati_sids_sex"] = $records["sesso"];
+            $_POST["dati_sids_skin"] = $records["skin"];
             
         }
         $_SESSION["dati_sids"] = "Y";

@@ -442,47 +442,47 @@ $(function() {
 
 
     
-$(function() {
+$(function () {
     const maxElements = 60;
 
+    // Prima select: numero fratelli
     $("#slct2").selectmenu({
-        change: function(event, ui) {
-            var value = ui.item.value;
+        change: function (event, ui) {
+            const value = ui.item.value;
 
-            // Nasconde tutti gli elementi d1...d50
+            // Nasconde tutto
             for (let i = 1; i <= maxElements; i++) {
                 $('#d' + i).hide();
             }
 
-            if (value === 'mancante' || value === 'nessuno') {
-                return;
-            }
+            if (value === 'mancante' || value === 'nessuno') return;
 
-            let limite = parseInt(value) * 7;
+            const limite = parseInt(value) * 7;
             for (let i = 1; i <= limite; i++) {
                 $('#d' + i).css('display', 'inline-block');
             }
+
+            // Dopo il cambio del numero, nascondo eventuali campi cX fuori soglia
+            aggiornaCampiCondizionali(parseInt(value));
         }
     });
 
-    var valoreMorti = '<?php echo $morti; ?>';
+    const valoreMorti = '<?php echo $morti; ?>';
     $("#slct2").val(valoreMorti).selectmenu('refresh');
 
-    // Logica iniziale
+    // Nasconde tutti all'avvio
     for (let i = 1; i <= maxElements; i++) {
         $('#d' + i).hide();
     }
 
     if (valoreMorti !== 'mancante' && valoreMorti !== 'nessuno') {
-        let limite = parseInt(valoreMorti) * 7;
+        const limite = parseInt(valoreMorti) * 7;
         for (let i = 1; i <= limite; i++) {
             $('#d' + i).css('display', 'inline-block');
         }
     }
-});
 
-
-$(function () {
+    // Seconda parte: gestione slct3
     $('.slct3').each(function () {
         const $select = $(this);
         const id = $select.attr('id');
@@ -507,6 +507,7 @@ $(function () {
             }
         });
 
+        // Logica iniziale
         for (let i = start; i <= end; i++) {
             $('#c' + i).hide();
         }
@@ -518,7 +519,32 @@ $(function () {
             }
         }
     });
+
+    // Nasconde eventuali cX al caricamento in base al valore selezionato
+    aggiornaCampiCondizionali(parseInt(valoreMorti));
+
+    function aggiornaCampiCondizionali(numeroFratelli) {
+        const fratelliVisibili = numeroFratelli || 0;
+
+        $('.slct3').each(function () {
+            const $select = $(this);
+            const id = $select.attr('id');
+            const index = parseInt(id.split('_')[1]);
+
+            const start = (index - 1) * 3 + 1;
+            const end = start + 2;
+
+            // Nasconde se questo fratello non dovrebbe essere visibile
+            if (index > fratelliVisibili) {
+                for (let i = start; i <= end; i++) {
+                    $('#c' + i).hide();
+                }
+            }
+        });
+    }
 });
+
+
 
 
 
@@ -647,7 +673,7 @@ function performSubmit(action)
      <div class="col-3" id="d3">
         <label <?php echo "class=".$class3 ?>>
             Vivo? <br/>
-     <select tabindex="13" id="slct3_1" class="slct3" name="vivo1" style="width:150%;" <?php echo $class18; ?>>
+     <select tabindex="13" id="slct3_1" class="slct3" name="vivo1" style="width:50%;" <?php echo $class18; ?>>
     <option value=""> &nbsp; </option> 
     <option value="mancante" <?php if($vivo1 === "mancante") echo "selected"; ?>>Dato Mancante</option>
     <option value="si" <?php if($vivo1 === "si") echo "selected"; ?>>Si</option>
@@ -717,7 +743,7 @@ function performSubmit(action)
     </label>
     </div>
     <div class="col-3" id="d9" style="display:none;">
-        <label <?php echo "class=".$class4 ?>>
+        <label <?php echo "class=".$class7 ?>>
             Nato il *<br/>
             <?php
                 echo "<input type=\"text\" $dis id=\"dataN2\" name=\"dataN2\" value=\"".$dataN2."\" readonly>";
@@ -727,7 +753,7 @@ function performSubmit(action)
      <div class="col-3" id="d10">
          <label <?php echo "class=".$class21 ?>>
             Vivo? <br/>
-            <select tabindex="14" id="slct3_2" class="slct3" name="vivo2" style="width:150%;" <?php echo $class19; ?>>
+            <select tabindex="14" id="slct3_2" class="slct3" name="vivo2" style="width:50%;" <?php echo $class21; ?>>
     <option value=""> &nbsp; </option> 
     <option value="mancante" <?php if($vivo2 === "mancante") echo "selected"; ?>>Dato Mancante</option>
     <option value="si" <?php if($vivo2 === "si") echo "selected"; ?>>Si</option>
@@ -798,7 +824,7 @@ function performSubmit(action)
     </label>
     </div>
     <div class="col-3" id="d16" style="display:none;">
-        <label <?php echo "class=".$class4 ?>>
+        <label <?php echo "class=".$class11 ?>>
             Nato il *<br/>
             <?php
                 echo "<input type=\"text\" $dis id=\"dataN3\" name=\"dataN3\" value=\"".$dataN3."\" readonly>";
@@ -806,9 +832,9 @@ function performSubmit(action)
         </label>
     </div>
      <div class="col-3" id="d17">
-        <label <?php echo "class=".$class3 ?>>
+        <label <?php echo "class=".$class22 ?>>
             Vivo? <br/>
-          <select tabindex="15" id="slct3_3" class="slct3" name="vivo3" style="width:150%;" <?php echo $class20; ?>>
+          <select tabindex="15" id="slct3_3" class="slct3" name="vivo3" style="width:50%;" <?php echo $class22; ?>>
     <option value=""> &nbsp; </option> 
     <option value="mancante" <?php if($vivo3 === "mancante") echo "selected"; ?>>Dato Mancante</option>
     <option value="si" <?php if($vivo3 === "si") echo "selected"; ?>>Si</option>
@@ -877,7 +903,7 @@ function performSubmit(action)
     </label>
     </div>
     <div class="col-3" id="d23" style="display:none;">
-        <label <?php echo "class=".$class4 ?>>
+        <label <?php echo "class=".$class15 ?>>
             Nato il *<br/>
             <?php
                 echo "<input type=\"text\" $dis id=\"dataN4\" name=\"dataN4\" value=\"".$dataN4."\" readonly>";
@@ -885,9 +911,9 @@ function performSubmit(action)
         </label>
     </div>
      <div class="col-3" id="d24">
-        <label <?php echo "class=".$class3 ?>>
+        <label <?php echo "class=".$class23 ?>>
             Vivo? <br/>
-           <select tabindex="16" id="slct3_4" class="slct3" name="vivo4" style="width:150%;" <?php echo $class21; ?>>
+           <select tabindex="16" id="slct3_4" class="slct3" name="vivo4" style="width:50%;" <?php echo $class23; ?>>
     <option value=""> &nbsp; </option> 
     <option value="mancante" <?php if($vivo4 === "mancante") echo "selected"; ?>>Dato Mancante</option>
     <option value="si" <?php if($vivo4 === "si") echo "selected"; ?>>Si</option>
@@ -956,7 +982,7 @@ function performSubmit(action)
     </label>
     </div>
     <div class="col-3" id="d30" style="display:none;">
-        <label <?php echo "class=".$class4 ?>>
+        <label <?php echo "class=".$class19 ?>>
             Nato il *<br/>
             <?php
                 echo "<input type=\"text\" $dis id=\"dataN5\" name=\"dataN5\" value=\"".$dataN5."\" readonly>";
@@ -964,9 +990,9 @@ function performSubmit(action)
         </label>
     </div>
      <div class="col-3" id="d31">
-        <label <?php echo "class=".$class3 ?>>
+        <label <?php echo "class=".$class24 ?>>
             Vivo? <br/>
-           <select tabindex="17" id="slct3_5" class="slct3" name="vivo5" style="width:150%;" <?php echo $class22; ?>>
+           <select tabindex="17" id="slct3_5" class="slct3" name="vivo5" style="width:50%;" <?php echo $class24; ?>>
     <option value=""> &nbsp; </option> 
     <option value="mancante" <?php if($vivo5 === "mancante") echo "selected"; ?>>Dato Mancante</option>
     <option value="si" <?php if($vivo5 === "si") echo "selected"; ?>>Si</option>

@@ -100,6 +100,17 @@ if((isset($_POST['oraC'])) && (!empty($_POST['oraC']))){
 else {
 }
 
+if((isset($_POST['oraC'])) && (!empty($_POST['oraC']))){
+    $insert_data["ora_ultimo_controllo_parentale"] = $_POST['oraC'];
+}
+else {
+}
+
+if((isset($_POST['skin'])) && (!empty($_POST['skin']))){
+    $insert_data["skin"] = $_POST['skin'];
+}
+else {
+}
 
 echo "qui";
 
