@@ -27,6 +27,7 @@
   loadPage();
   require_once("./db/loadtab_scheda.php");
   tab_scheda();
+  
   if(isset($_POST["ritrovamento_luogo_morte"])){
       $luogoM = $_POST["ritrovamento_luogo_morte"];
       $class3 = "";
@@ -159,22 +160,21 @@
   }
   
   //fuori casa
-  if(isset($_POST["ritrovamento_luogo_spec"])){
-      $luogoFC = $_POST["ritrovamento_luogo_spec"];
-      $class21 = "";
-  }
-  else{ 
-      $luogoFC = null;
-      $class21 = "errors";
-  }
-  if(isset($_POST["ritrovamento_specA"])){
-      $specFc = $_POST["ritrovamento_specA"];
-      $class22 = "";
-  }
-  else{ 
-      $specFc = null;
-      $class22 = "errors";
-  }
+if(isset($_POST["ritrovamento_luogo_spec"]) && !empty(trim($_POST["ritrovamento_luogo_spec"]))) {
+    $luogoFC = trim($_POST["ritrovamento_luogo_spec"]);
+    $class21 = "";
+} else {
+    $luogoFC = null;
+    $class21 = "errors";
+}
+
+if(isset($_POST["ritrovamento_specA"]) && !empty(trim($_POST["ritrovamento_specA"]))) {
+    $specFc = trim($_POST["ritrovamento_specA"]);
+    $class22 = "";
+} else {
+    $specFc = null;
+    $class22 = "errors";
+}
 ?>
 <script>
   $( document ).ready(function() {

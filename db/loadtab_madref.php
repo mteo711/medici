@@ -275,23 +275,8 @@ else {
         ($recordh['data_presunta_parto_anamnestico'] == null) || 
         ($recordh['data_presunta_parto_ecografico'] == null) || 
         ($recordh['num_visite_controllo_in_gravidanza'] == null) ||
-        ($recordh['tentativiFecondazione'] == null) ||
-        ($recordh['dataCaso1'] == null) ||
-        ($recordh['dataCaso2'] == null) ||
-        ($recordh['dataCaso3'] == null) ||
-        ($recordh['dataCaso4'] == null) ||
-        ($recordh['dataCaso5'] == null) ||
-        ($recordh['descriviCaso1'] == null) ||
-        ($recordh['descriviCaso2'] == null) ||
-        ($recordh['descriviCaso3'] == null) ||
-        ($recordh['descriviCaso4'] == null) ||
-        ($recordh['descriviCaso5'] == null) ||
-        ($recordh['ginecologo_curante'] == null) ||
-        ($recordh['ostetrica'] == null) ||
-        ($recordh['fecondazione'] == null) ||
-        ($recordh['struttura'] == null) ||
-        ($recordh['eterologa'] == null) ||
-        ($recordh['specifica_altre'] == null)
+        ($recordh['tentativiFecondazione'] == null)
+       
     ) {
         $insert_data = array();
         $insert_data["conclusa1"] = "N";

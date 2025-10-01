@@ -27,10 +27,14 @@
             <input class="form-control" placeholder="Codice" name="otp"   required>
             <button type="submit" class="btn btn-primary">Login</button><br/><br/>
         </form>
-        <div class="alert alert-primary" role="alert">
-           Inquadra il <b>qrcode</b> utilizzando l'app di <b> Google Authenticator</b> e inserisci il codice
+    <div class="alert alert-primary" role="alert">
+    Inquadra l'immagine utilizzando l'app di <b>Google Authenticator</b> cliccando su <b>Scansiona un codice QR </b> 
+    <br>
+<img src="../guidaqrd.jpg" alt="Immagine" style="margin-top:10px; max-width:200px;">
 
-        </div>
+</div>
+
+
         <div class="alert alert-primary" role="alert">
            Se hai problemi di accesso, prova a <b>rigenerare</b> il qrcode cliccando il pulsante qui sotto
         </div>

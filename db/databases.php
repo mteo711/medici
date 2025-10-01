@@ -345,7 +345,6 @@ public function insert(array $val_cols) {
     $types = str_repeat('s', count($val_cols)); // Assuming all values are strings; adjust types as necessary
     $stmt->bind_param($types, ...array_values($val_cols)); // Use the spread operator
 	echo "INSERT INTO $tblname ($keysString) VALUES ($placeholders)";
-	print_r($_SESSION["dati_persF"]);
     // Execute the statement
     if ($stmt->execute()) {
         $this->num_rows = $stmt->affected_rows;

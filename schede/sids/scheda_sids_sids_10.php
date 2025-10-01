@@ -16,6 +16,7 @@
 <![endif]-->
 
 <?php
+
     if (($_SESSION["stato"] == 'chiusa') || ($_SESSION["stato"] == 'chiusa_usr')){
         $dis = "disabled";
     }
@@ -35,21 +36,20 @@ $checked5 = "";
 $checked6 = "";
 $checked7 = "";
 
-if(isset($_POST["data_morte"])){
+if (!empty($_POST["data_morte"]) && count(explode("-", $_POST["data_morte"])) === 3) {
     list($year, $month, $day) = explode("-", $_POST['data_morte']);
     $morte = "$day-$month-$year";
-}
-else {
+} else {
     $morte = null;
 }
 
-if(isset($_POST["data_nato"])){
+if (!empty($_POST["data_nato"]) && count(explode("-", $_POST["data_nato"])) === 3) {
     list($year, $month, $day) = explode("-", $_POST['data_nato']);
     $nato = "$day-$month-$year";
-}
-else {
+} else {
     $nato = null;
 }
+
 
 
 if(isset($_POST["scheda_sids_ultimo"])){

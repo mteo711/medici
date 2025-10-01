@@ -653,7 +653,7 @@ $(function() {
         yearRange: "-30:+0",
         changeMonth: true,
         changeYear: true,
-        maxDate: "+0D" //new Date(2015, 10 - 10, 29) //"+0D"
+        maxDate: "+0D" 
     });
 });
 $(function() {
@@ -707,6 +707,14 @@ $(function() {
       }
       });   
   }); 
+
+ $(function() {
+    // Applica keypad all'input anni_nonnamaterna
+    $('#anni_nonnamaterna').keypad();
+
+    // Applica keypad a anni_nonnomaterno solo se esiste nell'HTML
+    $('#anni_nonnomaterno').keypad();
+});
   
   
 
@@ -1006,7 +1014,7 @@ $(document).ready(function() {
     </div>
     <div class="col-2">
         <label style="padding-top: 6px;">
-            Cell *<br/>
+            Cell <br/>
             <?php
                 echo "<input id=\"cell\" $dis name=\"cell\" tabindex=\"13\" value=\"".$cell."\">";
             ?>
@@ -1092,7 +1100,7 @@ $(document).ready(function() {
 
     <div class="col-4">
         <label  id="spec2" style="visibility: hidden;padding-top: 6px;">
-            Data Matrimonio *<br/>
+            Data Matrimonio <br/>
             <?php
                 echo "<input type=\"text\" id=\"specM\" $dis name=\"specM\" value=\"".$specM."\" readonly>";
             ?>
@@ -1101,7 +1109,7 @@ $(document).ready(function() {
 
     <div class="col-4">
         <label style="padding-top: 6px;">
-            Altezza *<br/>
+            Altezza <br/>
             <?php
                 echo "<input name=\"altezza\" $dis tabindex=\"18\" value=\"".$altezza."\">";
             ?>
@@ -1110,7 +1118,7 @@ $(document).ready(function() {
     
     <div class="col-4">
         <label style="padding-top: 6px;" >
-            Peso *<br/>
+            Peso <br/>
             <?php
                 echo "<input name=\"peso\" $dis tabindex=\"19\" value=\"".$peso."\">";
             ?>
@@ -1125,7 +1133,7 @@ $(document).ready(function() {
 <br>
 <div class="col-3" style="width:40%;">
     <label style="padding-top:7px;">
-        La Fecondazione è stata medicalmente assistita? * <br/>
+        La Fecondazione è stata medicalmente assistita?  <br/>
         <select tabindex="15" id="slct3" name="fecondazione" style="width:50%;" <?php echo $dis; ?>>
             <option value=""></option>
             <option value="mancante">Dato Mancante</option>
@@ -1419,7 +1427,7 @@ $(document).ready(function() {
 
 <div class="col-2">
         <label>
-            Madre (nonna materna del lattante deceduto) di anni<br/>
+            Nonna materno del lattante deceduto di anni<br/>
             <?php
                 echo "<input id=\"anni_nonnamaterna\" $dis name=\"dati_pers_anni_nonnamaterna\" tabindex=\"8\" value=\"".$anni_nonnamaterna."\">";
             ?>
@@ -1428,7 +1436,7 @@ $(document).ready(function() {
 
      <div class="col-2">
     <label>
-        Patologie della madre
+        Patologie della nonna
         <textarea name="dati_pers_patologie_nonnamaterna" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnamaterna; ?></textarea>
     </label>
 </div>
@@ -1463,7 +1471,7 @@ $(document).ready(function() {
 
 <div class="col-2">
         <label>
-           Padre (nonno materno del lattante deceduto) di anni<br/>
+           Nonno materno del lattante deceduto di anni<br/>
             <?php
                 echo "<input id=\"anni_nonnomaterno\" $dis name=\"dati_pers_anni_nonnomaterno\" tabindex=\"8\" value=\"".$anni_nonnomaterno."\">";
             ?>
@@ -1472,7 +1480,7 @@ $(document).ready(function() {
 
      <div class="col-2">
     <label>
-        Patologie del padre
+        Patologie del nonno
         <textarea name="dati_pers_patologie_nonnomaterno" style="height:40px;" <?php echo $dis; ?>><?php echo $patologie_nonnomaterno; ?></textarea>
     </label>
 </div>

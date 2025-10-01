@@ -8,10 +8,9 @@ function loadPage() {
     
     $recordz= $obx->fetchRecord(array("schede_id"=>$_SESSION['case_id']));
     
-    $_POST["data_morte"] = $recordz['data_morte'];
-    $_POST["data_nato"] = $recordz['data_nascita'];
-    
-    
+  $_POST["data_morte"] = !empty($recordz['data_morte']) ? $recordz['data_morte'] : '';
+$_POST["data_nato"]  = !empty($recordz['data_nascita']) ? $recordz['data_nascita'] : '';
+
     
 	$obj = new scheda_sids();
 
